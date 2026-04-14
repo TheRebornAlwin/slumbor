@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "The DreamWave Mask combines gentle heat therapy and micro-vibration massage to help you fall asleep in minutes, reduce puffiness, and wake up feeling truly rested.",
   icons: {
-    icon: "",
+    icon: "https://5jmyzbx4u2.ufs.sh/f/L6n7pVDecsTrGCzKJv2wQbFMujXdcqsWtxAaEginK1m8SPLG",
   },
 };
 
