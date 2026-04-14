@@ -46,7 +46,7 @@ export default function FeaturesLove() {
           <ScrollReveal delay={0.15} className="min-w-0">
             <div className="rounded-2xl overflow-hidden">
               <Image
-                src="https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pf2ahKRZrFugs4NIcOUi37j5bWlYR9zHkLheMr"
+                src=""
                 alt="DreamWave Mask features"
                 width={600}
                 height={500}

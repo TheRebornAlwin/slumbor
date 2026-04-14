@@ -45,7 +45,7 @@ export default function AboutPage() {
           <ScrollReveal className="min-w-0">
             <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-gold/20 to-surface border border-gold/10 flex items-center justify-center">
               <Image
-                src="https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pf4pRa3LfnI5pftsHlKbCS38YwuzArQJ9v1TWO"
+                src=""
                 alt="Slumbor"
                 width={200}
                 height={200}

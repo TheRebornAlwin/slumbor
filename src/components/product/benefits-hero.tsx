@@ -55,7 +55,7 @@ export default function BenefitsHero() {
 
               <div className="rounded-2xl overflow-hidden shadow-lg mb-6">
                 <Image
-                  src="https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pf8c3fWIWs4qMzpg3kyZeFh0XQWYPCr7wRbN9V"
+                  src=""
                   alt="Effective for sleep issues, eye strain, and restless nights"
                   width={600}
                   height={400}

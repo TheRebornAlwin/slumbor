@@ -52,7 +52,7 @@ export default function SpecialOffer() {
 
               <div className="w-full rounded-2xl overflow-hidden mb-8">
                 <Image
-                  src="https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pfx99oRjb1MPrfg9puSNxnElw5GYkU0mA27yJO"
+                  src=""
                   alt="Slumbor DreamWave Mask special offer"
                   width={600}
                   height={450}

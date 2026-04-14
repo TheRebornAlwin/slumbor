@@ -46,7 +46,7 @@ export default function Header() {
         title: "DreamWave Mask",
         price: 69.99,
         image:
-          "https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pfegBNepm5SKDuf4CUMsBOTcyEJkPbFvgL8lq7",
+          "",
       },
       1
     );

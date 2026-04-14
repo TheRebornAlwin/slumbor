@@ -25,7 +25,7 @@ export default function DiscoverSection() {
                 </h3>
                 <div className="aspect-[3/4] rounded-2xl bg-gradient-to-b from-white/5 to-white/2 border border-white/10 overflow-hidden">
                   <Image
-                    src="https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pfliEmY86AmfChxDcXdnWLKpN6ZUw9YFPzMa4J"
+                    src=""
                     alt="Before Slumbor"
                     width={300}
                     height={400}
@@ -45,7 +45,7 @@ export default function DiscoverSection() {
                 </h3>
                 <div className="aspect-[3/4] rounded-2xl bg-gradient-to-b from-gold/5 to-gold/10 border border-gold/20 overflow-hidden">
                   <Image
-                    src="https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pfyV6GQeSwyRmT5N4UxsjMfXha3kb7JeSpnK9Z"
+                    src=""
                     alt="After Slumbor"
                     width={300}
                     height={400}

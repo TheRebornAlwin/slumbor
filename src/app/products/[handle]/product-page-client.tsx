@@ -40,7 +40,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
       img.src = src;
     });
     const cartImg = new window.Image();
-    cartImg.src = "https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pfegBNepm5SKDuf4CUMsBOTcyEJkPbFvgL8lq7";
+    cartImg.src = "";
   }, [product.images]);
 
   const tierDiscounts = [0, 10, 20];
@@ -60,7 +60,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
         id: product.id,
         title: product.title,
         price: effectivePrice,
-        image: "https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pfegBNepm5SKDuf4CUMsBOTcyEJkPbFvgL8lq7",
+        image: "",
       },
       quantity * effectiveQty
     );
@@ -85,7 +85,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
         id: product.id,
         title: product.title,
         price: product.price,
-        image: "https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pfegBNepm5SKDuf4CUMsBOTcyEJkPbFvgL8lq7",
+        image: "",
       },
       1
     );

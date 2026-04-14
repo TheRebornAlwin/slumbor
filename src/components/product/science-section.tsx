@@ -19,7 +19,7 @@ export default function ScienceSection() {
           <ScrollReveal className="min-w-0">
             <div className="text-center">
               <Image
-                src="https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pfVjxSwuCcDRq1IaUousEkQV5YgOpbLT7hxeNm"
+                src=""
                 alt="The science behind the DreamWave Mask"
                 width={500}
                 height={500}

@@ -39,7 +39,7 @@ export default function HeroSection() {
                   <div className="absolute inset-0 bg-gold/10 rounded-3xl blur-2xl scale-110" />
                   <div className="relative w-64 h-64 rounded-3xl overflow-hidden shadow-2xl shadow-gold/15">
                     <Image
-                      src="https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pfk0Kw47MguLm6ivMzDEsFxVQ3ahCRKr0yb9T7"
+                      src=""
                       alt="DreamWave Mask"
                       width={500}
                       height={500}
@@ -98,7 +98,7 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-gold/10 rounded-3xl blur-2xl scale-110" />
                 <div className="relative w-96 h-96 rounded-3xl overflow-hidden shadow-2xl shadow-gold/15">
                   <Image
-                    src="https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pfk0Kw47MguLm6ivMzDEsFxVQ3ahCRKr0yb9T7"
+                    src=""
                     alt="DreamWave Mask"
                     width={500}
                     height={500}

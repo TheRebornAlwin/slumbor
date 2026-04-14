@@ -7,17 +7,17 @@ import BrandName from "@/components/ui/brand-name";
 const steps = [
   {
     step: 1,
-    image: "https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pfEyjo2PN5jIWLlegYskdQVfhE3cGRCDKxNiBZ",
+    image: "",
     description: "Place the DreamWave Mask over your eyes and lie back",
   },
   {
     step: 2,
-    image: "https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pfE7GgSL5jIWLlegYskdQVfhE3cGRCDKxNiBZw",
+    image: "",
     description: "Select your heat and vibration intensity",
   },
   {
     step: 3,
-    image: "https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pf8caa9Abs4qMzpg3kyZeFh0XQWYPCr7wRbN9V",
+    image: "",
     description: "Feel the tension melt away as you drift into deep sleep...",
   },
 ];

@@ -34,7 +34,7 @@ export default function PerfectFor() {
 
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="https://xp3x50z315.ufs.sh/f/4WAjKEfnI5pfeOS28Nm5SKDuf4CUMsBOTcyEJkPbFvgL8lq7"
+                  src=""
                   alt="Perfect for people who struggle with sleep"
                   width={600}
                   height={400}
