@@ -1,46 +1,47 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a14;
-  --surface: #111120;
-  --surface-raised: #1a1a2e;
-  --foreground: #f0eeff;
+  --background: #08080f;
+  --surface: #0e0e1a;
+  --surface-raised: #151524;
+  --foreground: #e8e4f0;
   --heading: #ffffff;
-  --muted: #6b6b8a;
-  --gold: #c9a84c;
-  --gold-dark: #a8883a;
-  --gold-light: rgba(201,168,76,0.12);
-  --purple: #7b5ea7;
-  --purple-light: rgba(123,94,167,0.15);
-  --navy: #0d0d1a;
-  --border: rgba(255,255,255,0.08);
-  --border-gold: rgba(201,168,76,0.25);
-  --slate: #9a9ab0;
-  --warm: #c9a84c;
-  --warm-light: rgba(201,168,76,0.12);
+  --muted: #7a7a96;
+  --gold: #e2b855;
+  --gold-dark: #c9a045;
+  --gold-light: rgba(226,184,85,0.10);
+  --gold-glow: rgba(226,184,85,0.25);
+  --purple: #8b6cc0;
+  --purple-light: rgba(139,108,192,0.12);
+  --navy: #06060c;
+  --border: rgba(255,255,255,0.06);
+  --border-gold: rgba(226,184,85,0.20);
+  --slate: #a0a0b8;
+  --warm: #e2b855;
+  --warm-light: rgba(226,184,85,0.10);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-surface: #111120;
-  --color-surface-raised: #1a1a2e;
+  --color-surface: #0e0e1a;
+  --color-surface-raised: #151524;
   --color-heading: #ffffff;
-  --color-soft-white: #f0eeff;
+  --color-soft-white: #e8e4f0;
   --color-light-gray: rgba(255,255,255,0.06);
-  --color-muted: #6b6b8a;
-  --color-gold: #c9a84c;
-  --color-gold-dark: #a8883a;
-  --color-gold-light: rgba(201,168,76,0.12);
-  --color-purple: #7b5ea7;
-  --color-purple-light: rgba(123,94,167,0.15);
-  --color-navy: #0d0d1a;
-  --color-slate: #9a9ab0;
-  --color-teal: #c9a84c;
-  --color-teal-dark: #a8883a;
-  --color-teal-light: rgba(201,168,76,0.12);
-  --color-warm: #c9a84c;
-  --color-warm-light: rgba(201,168,76,0.12);
+  --color-muted: #7a7a96;
+  --color-gold: #e2b855;
+  --color-gold-dark: #c9a045;
+  --color-gold-light: rgba(226,184,85,0.10);
+  --color-purple: #8b6cc0;
+  --color-purple-light: rgba(139,108,192,0.12);
+  --color-navy: #06060c;
+  --color-slate: #a0a0b8;
+  --color-teal: #e2b855;
+  --color-teal-dark: #c9a045;
+  --color-teal-light: rgba(226,184,85,0.10);
+  --color-warm: #e2b855;
+  --color-warm-light: rgba(226,184,85,0.10);
   --font-sans: var(--font-body);
   --font-heading: var(--font-cormorant);
   --font-mono: var(--font-geist-mono);
@@ -92,13 +93,18 @@
 
 @keyframes pulse-ring {
   0% { transform: scale(0.8); opacity: 0.5; }
-  50% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 1; }
   100% { transform: scale(0.8); opacity: 0.5; }
 }
 
-@keyframes star-twinkle {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.2); }
+@keyframes gold-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.08; }
 }
 
 html {
@@ -117,28 +123,47 @@ body {
   font-family: var(--font-cormorant), Georgia, serif;
 }
 
+/* Premium glass card */
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.06);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255,255,255,0.03),
+    inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
 .glass-card-hover:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: linear-gradient(135deg, rgba(226,184,85,0.04) 0%, rgba(255,255,255,0.02) 100%);
+  border-color: rgba(226,184,85,0.12);
   box-shadow:
-    0 10px 40px rgba(201, 168, 76, 0.08),
-    0 8px 16px rgba(0, 0, 0, 0.3);
+    0 16px 48px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(226,184,85,0.05),
+    inset 0 1px 0 rgba(226,184,85,0.08);
 }
 
+/* Premium section backgrounds */
 .section-glow-gold {
-  background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%);
+  position: relative;
+}
+.section-glow-gold::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(226,184,85,0.06) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .section-glow-purple {
-  background: radial-gradient(ellipse at 50% 100%, rgba(123,94,167,0.08) 0%, transparent 70%);
+  position: relative;
+}
+.section-glow-purple::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(139,108,192,0.06) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .section-gradient-teal {
@@ -146,16 +171,52 @@ body {
 }
 
 .section-gradient-warm {
-  background: linear-gradient(180deg, var(--background) 0%, rgba(201,168,76,0.04) 50%, var(--background) 100%);
+  background: linear-gradient(180deg, var(--background) 0%, rgba(226,184,85,0.03) 50%, var(--background) 100%);
+}
+
+.section-gradient-gold {
+  background: linear-gradient(180deg, var(--background) 0%, rgba(226,184,85,0.03) 50%, var(--background) 100%);
 }
 
 .god-ray {
   background: radial-gradient(
     ellipse at center bottom,
-    rgba(201, 168, 76, 0.06) 0%,
-    rgba(123, 94, 167, 0.04) 30%,
+    rgba(226, 184, 85, 0.05) 0%,
+    rgba(139, 108, 192, 0.03) 30%,
     transparent 70%
   );
+}
+
+/* Gold shimmer text effect */
+.gold-shimmer {
+  background: linear-gradient(
+    110deg,
+    #e2b855 0%,
+    #f5dfa0 25%,
+    #e2b855 50%,
+    #f5dfa0 75%,
+    #e2b855 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gold-shimmer 4s linear infinite;
+}
+
+/* Premium divider */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(226,184,85,0.3) 50%, transparent 100%);
+}
+
+/* Ambient glow behind sections */
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: breathe 8s ease-in-out infinite;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -167,18 +228,18 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #111120;
+  background: #0e0e1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2a2a3e;
+  background: rgba(226,184,85,0.2);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a3a50;
+  background: rgba(226,184,85,0.35);
 }

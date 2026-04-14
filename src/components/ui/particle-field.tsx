@@ -31,28 +31,30 @@ export default function ParticleField() {
       size: number;
       speed: number;
       twinkle: number;
-      color: "gold" | "purple";
+      color: "gold" | "purple" | "white";
       isOrb: boolean;
     }[] = [];
 
-    for (let i = 0; i < 50; i++) {
+    // Tiny star-like particles
+    for (let i = 0; i < 40; i++) {
       particles.push({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
-        size: Math.random() * 1.5 + 0.5,
-        speed: Math.random() * 0.08 + 0.02,
+        size: Math.random() * 1.2 + 0.3,
+        speed: Math.random() * 0.05 + 0.01,
         twinkle: Math.random() * Math.PI * 2,
-        color: Math.random() > 0.4 ? "gold" : "purple",
+        color: Math.random() > 0.6 ? "gold" : Math.random() > 0.5 ? "purple" : "white",
         isOrb: false,
       });
     }
 
-    for (let i = 0; i < 5; i++) {
+    // Larger glowing orbs
+    for (let i = 0; i < 4; i++) {
       particles.push({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
-        size: Math.random() * 3 + 2,
-        speed: Math.random() * 0.03 + 0.01,
+        size: Math.random() * 4 + 3,
+        speed: Math.random() * 0.02 + 0.005,
         twinkle: Math.random() * Math.PI * 2,
         color: Math.random() > 0.5 ? "gold" : "purple",
         isOrb: true,
@@ -72,7 +74,7 @@ export default function ParticleField() {
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
       particles.forEach((p) => {
-        p.twinkle += 0.015;
+        p.twinkle += 0.01;
         p.y -= p.speed;
 
         if (p.y < -10) {
@@ -81,26 +83,31 @@ export default function ParticleField() {
         }
 
         if (p.isOrb) {
-          const alpha = 0.04 + Math.sin(p.twinkle) * 0.03;
-          const r = p.color === "gold" ? 201 : 123;
-          const g = p.color === "gold" ? 168 : 94;
-          const b = p.color === "gold" ? 76 : 167;
+          const alpha = 0.03 + Math.sin(p.twinkle) * 0.02;
+          const r = p.color === "gold" ? 226 : 139;
+          const g = p.color === "gold" ? 184 : 108;
+          const b = p.color === "gold" ? 85 : 192;
 
-          const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 4);
-          gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${alpha * 2})`);
+          const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 6);
+          gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${alpha * 2.5})`);
+          gradient.addColorStop(0.5, `rgba(${r}, ${g}, ${b}, ${alpha})`);
           gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
           ctx.fillStyle = gradient;
           ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size * 4, 0, Math.PI * 2);
+          ctx.arc(p.x, p.y, p.size * 6, 0, Math.PI * 2);
           ctx.fill();
         } else {
-          const alpha = 0.04 + Math.sin(p.twinkle) * 0.04;
+          const alpha = 0.15 + Math.sin(p.twinkle) * 0.15;
           if (p.color === "gold") {
-            ctx.fillStyle = `rgba(201, 168, 76, ${alpha})`;
+            ctx.fillStyle = `rgba(226, 184, 85, ${alpha * 0.4})`;
+          } else if (p.color === "purple") {
+            ctx.fillStyle = `rgba(139, 108, 192, ${alpha * 0.3})`;
           } else {
-            ctx.fillStyle = `rgba(123, 94, 167, ${alpha})`;
+            ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.2})`;
           }
-          ctx.fillRect(p.x, p.y, p.size, p.size);
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
         }
       });
 

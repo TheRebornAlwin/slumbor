@@ -60,7 +60,7 @@ export default function Header() {
         className={cn(
           "fixed top-[36px] left-0 right-0 z-40 transition-all duration-300",
           scrolled
-            ? "bg-[#0a0a14]/90 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20"
+            ? "bg-[#08080f]/85 backdrop-blur-xl border-b border-white/[0.04] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
             : "bg-transparent"
         )}
       >
@@ -86,7 +86,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <button
               onClick={handleAddToCart}
-              className="px-5 py-2 rounded-full bg-gold text-navy text-sm font-semibold hover:bg-gold-dark transition-all duration-300 cursor-pointer hover:shadow-[0_4px_16px_rgba(201,168,76,0.3)]"
+              className="px-5 py-2 rounded-full bg-gradient-to-r from-gold to-[#d4a040] text-[#08080f] text-sm font-bold hover:shadow-[0_4px_20px_rgba(226,184,85,0.35)] transition-all duration-300 cursor-pointer hover:-translate-y-0.5 active:translate-y-0"
             >
               {addedToCart ? "Added!" : "Add to Cart"}
             </button>

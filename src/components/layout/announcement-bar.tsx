@@ -23,13 +23,16 @@ export default function AnnouncementBar() {
   const pad = (n: number) => String(n).padStart(2, "0");
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-navy text-gold text-center py-2 px-4 sm:px-6 text-xs sm:text-sm font-medium border-b border-gold/10">
-      <span className="font-bold tracking-wide">
-        LIMITED TIME: 50% OFF<span className="hidden sm:inline"> + FREE SHIPPING</span> — OFFER ENDS IN {pad(h)}:{pad(m)}:{pad(s)}
+    <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#06060c] via-[#0e0e1a] to-[#06060c] text-center py-2.5 px-4 sm:px-6 text-xs sm:text-sm font-medium border-b border-gold/10">
+      <span className="tracking-wide">
+        <span className="gold-shimmer font-bold">LIMITED TIME: 50% OFF</span>
+        <span className="hidden sm:inline text-foreground/80"> + FREE SHIPPING</span>
+        <span className="text-foreground/60"> — ENDS IN </span>
+        <span className="font-mono font-bold text-gold">{pad(h)}:{pad(m)}:{pad(s)}</span>
       </span>
       <button
         onClick={() => setVisible(false)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-gold/60 hover:text-gold transition-colors cursor-pointer"
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-foreground/30 hover:text-foreground/60 transition-colors cursor-pointer"
         aria-label="Close announcement"
       >
         <svg
