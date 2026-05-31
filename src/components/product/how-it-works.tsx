@@ -8,7 +8,7 @@ const steps = [
   {
     step: 1,
     image: "",
-    description: "Place the DreamWave Mask over your eyes and lie back",
+    description: "Place the SleepWave Pro over your eyes and lie back",
   },
   {
     step: 2,

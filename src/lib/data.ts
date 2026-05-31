@@ -16,12 +16,12 @@ export interface Product {
 }
 
 export const heroProduct: Product = {
-  id: "dreamwave-mask",
-  handle: "dreamwave-mask",
-  title: "DreamWave Mask",
+  id: "sleepwave-pro",
+  handle: "sleepwave-pro",
+  title: "SleepWave Pro",
   tagline: "Fall asleep faster. Sleep deeper. Wake up actually rested.",
   description:
-    "The DreamWave Mask combines gentle heat therapy with micro-vibration massage to relax the muscles around your eyes and signal your brain it's time to sleep. Unlike regular sleep masks or supplements, it works with your body's natural wind-down response to help you drift off in minutes.",
+    "The SleepWave Pro combines gentle heat therapy with micro-vibration massage to relax the muscles around your eyes and signal your brain it's time to sleep. Unlike regular sleep masks or supplements, it works with your body's natural wind-down response to help you drift off in minutes.",
   price: 69.99,
   compareAtPrice: 139.99,
   images: [
@@ -75,7 +75,7 @@ export const heroProduct: Product = {
     "Run time: Up to 4 sessions per charge",
     "Weight: 120g (ultra-lightweight)",
     "Charge time: 1.5 hours",
-    "Includes: DreamWave Mask, USB-C cable, travel pouch, user guide",
+    "Includes: SleepWave Pro, USB-C cable, travel pouch, user guide",
   ],
   category: "Sleep & Wellness",
 };
@@ -96,12 +96,12 @@ export const faqData: FAQItem[] = [
   {
     question: "How does the heat and vibration help me sleep?",
     answer:
-      "The gentle warmth relaxes the muscles around your eyes, temples, and forehead, while micro-vibrations release built-up tension. Together, they activate your parasympathetic nervous system — your body's natural wind-down response — helping you fall asleep faster and more deeply.",
+      "The gentle warmth relaxes the muscles around your eyes, temples, and forehead, while micro-vibrations release built-up tension. Together, they activate your parasympathetic nervous system (your body's natural wind-down response), helping you fall asleep faster and more deeply.",
   },
   {
     question: "Is it safe to fall asleep wearing it?",
     answer:
-      "Absolutely. The DreamWave Mask has a 15-minute auto-shutoff feature, so it gently powers down once you've drifted off. The materials are hypoallergenic and breathable, and the heat stays within a safe, comfortable range at all times.",
+      "Absolutely. The SleepWave Pro has a 15-minute auto-shutoff feature, so it gently powers down once you've drifted off. The materials are hypoallergenic and breathable, and the heat stays within a safe, comfortable range at all times.",
   },
   {
     question: "Do you ship worldwide?",
@@ -193,7 +193,7 @@ export const reviewsData: Review[] = [
     name: "Emily W.",
     rating: 5,
     date: "Feb 22, 2026",
-    text: "I have the worst time winding down after work. My brain just won't shut off. This mask is now my nightly ritual — put it on, turn on the wave vibration mode, and I'm asleep before the auto shutoff even kicks in.",
+    text: "I have the worst time winding down after work. My brain just won't shut off. This mask is now my nightly ritual. Put it on, turn on the wave vibration mode, and I'm asleep before the auto shutoff even kicks in.",
   },
   {
     name: "Natalie L.",

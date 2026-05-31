@@ -63,7 +63,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       if (typeof window !== "undefined" && typeof window.fbq === "function") {
         window.fbq("track", "AddToCart", {
           content_name: item.title,
-          content_ids: ["dreamwave-mask"],
+          content_ids: ["sleepwave-pro"],
           content_type: "product",
           value: item.price,
           currency: "USD",

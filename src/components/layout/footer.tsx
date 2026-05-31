@@ -5,7 +5,7 @@ import BrandName from "@/components/ui/brand-name";
 
 const shopLinks = [
   { href: "/shop/", label: "All Products" },
-  { href: "/products/dreamwave-mask/", label: "DreamWave Mask" },
+  { href: "/products/sleepwave-pro/", label: "SleepWave Pro" },
   { href: "/cart/", label: "Cart" },
 ];
 

@@ -20,7 +20,7 @@ export default function ScienceSection() {
             <div className="text-center">
               <Image
                 src=""
-                alt="The science behind the DreamWave Mask"
+                alt="The science behind the SleepWave Pro"
                 width={500}
                 height={500}
                 className="w-full h-auto object-contain mx-auto"

@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 import BrandName from "@/components/ui/brand-name";
 
 const benefits = [
-  "Fall Asleep Faster — No More Lying Awake",
+  "Fall Asleep Faster, No More Lying Awake",
   "Visibly Reduce Puffiness and Dark Circles",
   "Release Eye Strain from Hours at Screens",
   "Wake Up Feeling Like You Actually Slept",

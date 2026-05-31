@@ -40,7 +40,7 @@ export default function HeroSection() {
                   <div className="relative w-64 h-64 rounded-3xl overflow-hidden shadow-2xl shadow-gold/15">
                     <Image
                       src=""
-                      alt="DreamWave Mask"
+                      alt="SleepWave Pro"
                       width={500}
                       height={500}
                       className="w-full h-full object-cover"
@@ -67,7 +67,7 @@ export default function HeroSection() {
               <MagneticButton
                 variant="primary"
                 size="lg"
-                href="/products/dreamwave-mask/"
+                href="/products/sleepwave-pro/"
               >
                 Shop Now
               </MagneticButton>
@@ -99,7 +99,7 @@ export default function HeroSection() {
                 <div className="relative w-96 h-96 rounded-3xl overflow-hidden shadow-2xl shadow-gold/15">
                   <Image
                     src=""
-                    alt="DreamWave Mask"
+                    alt="SleepWave Pro"
                     width={500}
                     height={500}
                     className="w-full h-full object-cover"

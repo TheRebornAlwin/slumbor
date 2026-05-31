@@ -6,7 +6,7 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 const features = [
   {
     title: "5 Adjustable Heat Levels",
-    description: "from a gentle warmth to a deep soothing heat — find the exact temperature that helps you drift off",
+    description: "from a gentle warmth to a deep soothing heat. Find the exact temperature that helps you drift off",
   },
   {
     title: "3 Vibration Massage Modes",
@@ -18,7 +18,7 @@ const features = [
   },
   {
     title: "Ultra-Long Battery Life",
-    description: "up to 4 full sessions per charge — your nightly ritual is always ready when you are",
+    description: "up to 4 full sessions per charge. Your nightly ritual is always ready when you are",
   },
 ];
 
@@ -36,7 +36,7 @@ export default function FeaturesLove() {
                 <div key={i} className="inline-flex items-start gap-3 max-w-[90%] md:max-w-none">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
                   <p className="text-[15px] text-slate leading-relaxed">
-                    <span className="font-bold text-heading">{f.title}</span> — {f.description}
+                    <span className="font-bold text-heading">{f.title}</span>: {f.description}
                   </p>
                 </div>
               ))}
@@ -47,7 +47,7 @@ export default function FeaturesLove() {
             <div className="rounded-2xl overflow-hidden">
               <Image
                 src=""
-                alt="DreamWave Mask features"
+                alt="SleepWave Pro features"
                 width={600}
                 height={500}
                 className="w-full h-auto object-cover"

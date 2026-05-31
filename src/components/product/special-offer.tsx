@@ -53,7 +53,7 @@ export default function SpecialOffer() {
               <div className="w-full rounded-2xl overflow-hidden mb-8">
                 <Image
                   src=""
-                  alt="Slumbor DreamWave Mask special offer"
+                  alt="Slumbor SleepWave Pro special offer"
                   width={600}
                   height={450}
                   className="w-full h-auto object-cover"

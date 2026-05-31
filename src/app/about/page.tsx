@@ -69,7 +69,7 @@ export default function AboutPage() {
               inaccessible. We wondered: why can't everyone have access to this?
             </p>
             <p className="text-foreground leading-relaxed">
-              So we built the DreamWave Mask. A luxurious, weighted, heated
+              So we built the SleepWave Pro. A luxurious, weighted, heated
               vibrating eye mask that lulls you into deep sleep naturally. No
               pills. No side effects. Just real rest, on your terms.
             </p>

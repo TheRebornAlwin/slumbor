@@ -13,7 +13,7 @@ export default function RefundPolicyPage() {
           <div className="space-y-6 text-sm text-foreground leading-relaxed">
             <p>
               We want you to be completely satisfied with your purchase. If
-              you&apos;re not happy with your DreamWave Mask, we offer a
+              you&apos;re not happy with your SleepWave Pro, we offer a
               30-day money-back guarantee.
             </p>
 

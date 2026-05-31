@@ -10,7 +10,7 @@ export default function EMSComparison() {
           <div className="text-center mb-14">
             <p className="text-xs font-bold tracking-[0.2em] uppercase text-gold mb-3">The Difference</p>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-heading tracking-tight">
-              DreamWave vs Everything Else
+              SleepWave vs Everything Else
             </h2>
           </div>
         </ScrollReveal>

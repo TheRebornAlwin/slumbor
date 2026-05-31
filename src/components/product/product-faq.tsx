@@ -8,17 +8,17 @@ const faqItems = [
   {
     question: "How does the heat and vibration help me sleep?",
     answer:
-      "The gentle warmth relaxes the muscles around your eyes, temples, and forehead, while micro-vibrations release built-up tension from the day. Together, they activate your parasympathetic nervous system — your body's natural wind-down response — helping you fall asleep faster and more deeply.",
+      "The gentle warmth relaxes the muscles around your eyes, temples, and forehead, while micro-vibrations release built-up tension from the day. Together, they activate your parasympathetic nervous system (your body's natural wind-down response), helping you fall asleep faster and more deeply.",
   },
   {
     question: "Is it safe to fall asleep wearing it?",
     answer:
-      "Absolutely. The DreamWave Mask has a 15-minute auto-shutoff feature, so it gently powers down once you've drifted off. The materials are hypoallergenic and breathable, and the heat stays within a safe, comfortable range at all times.",
+      "Absolutely. The SleepWave Pro has a 15-minute auto-shutoff feature, so it gently powers down once you've drifted off. The materials are hypoallergenic and breathable, and the heat stays within a safe, comfortable range at all times.",
   },
   {
     question: "How long should I use it before bed?",
     answer:
-      "Most people put it on as they lie down to sleep and are asleep before the 15-minute auto-shutoff even kicks in. You can also use it earlier in your wind-down routine — while reading, meditating, or just relaxing. There's no wrong time to use it.",
+      "Most people put it on as they lie down to sleep and are asleep before the 15-minute auto-shutoff even kicks in. You can also use it earlier in your wind-down routine, while reading, meditating, or just relaxing. There's no wrong time to use it.",
   },
   {
     question: "Will it help with dark circles and puffiness?",
@@ -28,7 +28,7 @@ const faqItems = [
   {
     question: "How is this different from a regular sleep mask?",
     answer:
-      "A regular sleep mask just blocks light. The DreamWave Mask actively helps you fall asleep through controlled heat therapy and micro-vibration massage. It relaxes your muscles, reduces eye strain, and triggers your body's natural sleep response — something a fabric mask simply cannot do.",
+      "A regular sleep mask just blocks light. The SleepWave Pro actively helps you fall asleep through controlled heat therapy and micro-vibration massage. It relaxes your muscles, reduces eye strain, and triggers your body's natural sleep response, something a fabric mask simply cannot do.",
   },
   {
     question: "What if it doesn't work for me?",
@@ -38,12 +38,12 @@ const faqItems = [
   {
     question: "How long until I notice a difference?",
     answer:
-      "Most people notice they fall asleep faster from the very first use. The relaxation effect is immediate — the warmth and vibration begin working the moment you put it on. For puffiness and dark circles, most customers see visible improvement within 5-7 days of nightly use.",
+      "Most people notice they fall asleep faster from the very first use. The relaxation effect is immediate. The warmth and vibration begin working the moment you put it on. For puffiness and dark circles, most customers see visible improvement within 5-7 days of nightly use.",
   },
   {
     question: "Can I adjust the intensity?",
     answer:
-      "Yes. The DreamWave Mask has 5 heat levels (from gentle warmth to deep soothing heat) and 3 vibration modes (constant, pulsing, and wave). You can mix and match to find the exact combination that works best for you.",
+      "Yes. The SleepWave Pro has 5 heat levels (from gentle warmth to deep soothing heat) and 3 vibration modes (constant, pulsing, and wave). You can mix and match to find the exact combination that works best for you.",
   },
 ];
 

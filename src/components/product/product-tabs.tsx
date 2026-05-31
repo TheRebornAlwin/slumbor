@@ -98,7 +98,7 @@ export default function ProductTabs({ product }: { product: Product }) {
             className="space-y-4"
           >
             <p>
-              We truly believe the DreamWave Mask is the best sleep tool
+              We truly believe the SleepWave Pro is the best sleep tool
               at this price, and we back that up with a risk-free, ironclad{" "}
               <strong className="text-heading">30-day money back guarantee</strong>.
             </p>

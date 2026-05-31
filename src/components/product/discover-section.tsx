@@ -8,7 +8,7 @@ const discoveryBullets = [
   "Combines heat therapy and micro-vibration for deep relaxation",
   "Signals your brain it's time to wind down and sleep",
   "Reduces puffiness and dark circles while you rest",
-  "Compact and rechargeable — use it every single night",
+  "Compact and rechargeable, use it every single night",
 ];
 
 export default function DiscoverSection() {

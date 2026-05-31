@@ -87,7 +87,7 @@ export default function ProductShowcase() {
               <MagneticButton
                 variant="primary"
                 size="lg"
-                href="/products/dreamwave-mask/"
+                href="/products/sleepwave-pro/"
               >
                 Get Yours Now
               </MagneticButton>

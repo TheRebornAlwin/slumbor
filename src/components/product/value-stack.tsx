@@ -80,7 +80,7 @@ export default function ValueStack() {
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-heading tracking-tight mb-3">
               Everything You Get Today
             </h2>
-            <p className="text-slate text-sm">All of this is included with your DreamWave Mask</p>
+            <p className="text-slate text-sm">All of this is included with your SleepWave Pro</p>
           </div>
         </ScrollReveal>
 

@@ -2,36 +2,32 @@
 
 import { useState, useEffect } from "react";
 
-const INITIAL_SECONDS = 3 * 3600 + 25 * 60;
+const DISMISS_KEY = "slumbor_announcement_dismissed";
 
 export default function AnnouncementBar() {
   const [visible, setVisible] = useState(true);
-  const [seconds, setSeconds] = useState(INITIAL_SECONDS);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setSeconds((prev) => (prev > 0 ? prev - 1 : 0));
-    }, 1000);
-    return () => clearInterval(interval);
+    if (sessionStorage.getItem(DISMISS_KEY) === "1") {
+      setVisible(false);
+    }
   }, []);
+
+  const dismiss = () => {
+    sessionStorage.setItem(DISMISS_KEY, "1");
+    setVisible(false);
+  };
 
   if (!visible) return null;
 
-  const h = Math.floor(seconds / 3600);
-  const m = Math.floor((seconds % 3600) / 60);
-  const s = seconds % 60;
-  const pad = (n: number) => String(n).padStart(2, "0");
-
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#06060c] via-[#0e0e1a] to-[#06060c] text-center py-2.5 px-4 sm:px-6 text-xs sm:text-sm font-medium border-b border-gold/10">
-      <span className="tracking-wide">
-        <span className="gold-shimmer font-bold">LIMITED TIME: 50% OFF</span>
-        <span className="hidden sm:inline text-foreground/80"> + FREE SHIPPING</span>
-        <span className="text-foreground/60"> — ENDS IN </span>
-        <span className="font-mono font-bold text-gold">{pad(h)}:{pad(m)}:{pad(s)}</span>
+      <span className="tracking-wide text-foreground/80">
+        Free US shipping on every order.
+        <span className="text-gold font-semibold"> 180-day full refund.</span>
       </span>
       <button
-        onClick={() => setVisible(false)}
+        onClick={dismiss}
         className="absolute right-4 top-1/2 -translate-y-1/2 text-foreground/30 hover:text-foreground/60 transition-colors cursor-pointer"
         aria-label="Close announcement"
       >

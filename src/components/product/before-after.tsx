@@ -26,7 +26,7 @@ export default function BeforeAfter() {
           <div className="text-center mb-14">
             <p className="text-xs font-bold tracking-[0.2em] uppercase text-gold mb-3">The Transformation</p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-heading tracking-tight">
-              Life Before vs After the DreamWave Mask
+              Life Before vs After the SleepWave Pro
             </h2>
           </div>
         </ScrollReveal>
@@ -59,7 +59,7 @@ export default function BeforeAfter() {
                 <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
-                <h3 className="font-heading text-xl font-bold text-heading">With DreamWave Mask</h3>
+                <h3 className="font-heading text-xl font-bold text-heading">With SleepWave Pro</h3>
               </div>
               <div className="space-y-3">
                 {afterItems.map((item, i) => (

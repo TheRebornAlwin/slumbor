@@ -58,7 +58,7 @@ export default function Testimonials() {
             </h2>
             <p className="text-slate max-w-2xl mx-auto">
               Don't just take our word for it. Here's what real people
-              experience with the DreamWave Mask.
+              experience with the SleepWave Pro.
             </p>
           </div>
         </ScrollReveal>

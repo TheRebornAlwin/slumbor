@@ -95,7 +95,7 @@ export default function PurchaseNotification() {
             <div className="min-w-0">
               <p className="text-sm text-foreground font-medium leading-snug">
                 <span className="font-bold">{notification.name}</span> from {notification.city} just purchased{" "}
-                <span className="text-gold font-semibold">DreamWave Mask</span>
+                <span className="text-gold font-semibold">SleepWave Pro</span>
               </p>
               <p className="text-[11px] text-muted mt-0.5">{time}</p>
             </div>

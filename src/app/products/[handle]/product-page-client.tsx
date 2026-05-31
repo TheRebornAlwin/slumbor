@@ -285,7 +285,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   "Fall asleep in minutes instead of lying awake for hours",
                   "Wake up with visibly less puffiness and dark circles",
                   "Release eye strain from long days at screens",
-                  "Use it every night — no supplements, no side effects",
+                  "Use it every night. No supplements, no side effects",
                 ].map((benefit, i) => (
                   <div key={i} className="inline-flex items-start gap-2.5 max-w-[90%] md:max-w-none">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -300,7 +300,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   Struggling to Fall Asleep, Stay Asleep, or Wake Up Rested?
                 </h3>
                 <p className="text-[15px] text-slate leading-relaxed mb-4 max-w-lg mx-auto md:mx-0">
-                  The <span className="font-bold text-heading"><BrandName tm /> DreamWave Mask</span> combines gentle heat therapy with micro-vibration massage to relax the muscles around your eyes, signal your brain it&apos;s time to sleep, and help you drift off naturally. It works with your body&apos;s wind-down response for real, lasting results.
+                  The <span className="font-bold text-heading"><BrandName tm /> SleepWave Pro</span> combines gentle heat therapy with micro-vibration massage to relax the muscles around your eyes, signal your brain it&apos;s time to sleep, and help you drift off naturally. It works with your body&apos;s wind-down response for real, lasting results.
                 </p>
                 <p className="text-[15px] text-slate leading-relaxed max-w-lg mx-auto md:mx-0">
                   <span className="font-bold text-heading">Try it for 30 nights</span> and if you don&apos;t love it, return it for your money back. <span className="font-bold text-heading">No questions asked.</span>

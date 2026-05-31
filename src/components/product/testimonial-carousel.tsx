@@ -6,7 +6,7 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const testimonials = [
   {
-    text: "I used to lie awake for at least an hour every single night. The first night I tried the DreamWave Mask I was out in fifteen minutes. The warmth is so soothing and the gentle vibration melts away all the tension from the day. I genuinely cannot sleep without it now.",
+    text: "I used to lie awake for at least an hour every single night. The first night I tried the SleepWave Pro I was out in fifteen minutes. The warmth is so soothing and the gentle vibration melts away all the tension from the day. I genuinely cannot sleep without it now.",
     name: "Amanda E.",
     location: "Ontario, Canada",
   },

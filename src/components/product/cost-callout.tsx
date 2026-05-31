@@ -16,7 +16,7 @@ export default function CostCallout() {
               Sleep supplements cost $30-60 every single month.
             </h2>
             <p className="text-lg md:text-xl font-medium opacity-85">
-              The DreamWave Mask costs <span className="font-bold underline underline-offset-4">$69.99 once</span> — and you can use it every single night.
+              The SleepWave Pro costs <span className="font-bold underline underline-offset-4">$69.99 once</span>, and you can use it every single night.
             </p>
           </div>
         </div>

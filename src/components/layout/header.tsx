@@ -42,8 +42,8 @@ export default function Header() {
   const handleAddToCart = () => {
     addItem(
       {
-        id: "dreamwave-mask",
-        title: "DreamWave Mask",
+        id: "sleepwave-pro",
+        title: "SleepWave Pro",
         price: 69.99,
         image:
           "",
