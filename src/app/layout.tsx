@@ -1,15 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./client-layout";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const fraunces = Fraunces({
+  variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  axes: ["SOFT", "opsz"],
 });
 
-const dmSans = DM_Sans({
+const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
 });
@@ -18,7 +19,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  themeColor: "#0a0a14",
+  themeColor: "#0E1626",
 };
 
 export const metadata: Metadata = {
@@ -39,7 +40,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
       </head>
-      <body className={`${cormorant.variable} ${dmSans.variable} antialiased`}>
+      <body className={`${fraunces.variable} ${inter.variable} antialiased`}>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

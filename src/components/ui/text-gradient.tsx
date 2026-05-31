@@ -16,9 +16,9 @@ export default function TextGradient({
   as: Component = "span",
 }: TextGradientProps) {
   const gradients = {
-    gold: "from-[#f5dfa0] via-gold to-[#d4a040]",
-    warm: "from-gold via-[#f5dfa0] to-gold",
-    aurora: "from-gold via-purple to-[#f5dfa0]",
+    gold: "from-[#F0D5AE] via-gold to-[#B88654]",
+    warm: "from-gold via-[#F0D5AE] to-gold",
+    aurora: "from-gold via-lavender to-[#F0D5AE]",
   };
 
   return (

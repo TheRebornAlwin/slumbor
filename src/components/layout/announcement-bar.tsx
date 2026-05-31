@@ -21,7 +21,7 @@ export default function AnnouncementBar() {
   if (!visible) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#06060c] via-[#0e0e1a] to-[#06060c] text-center py-2.5 px-4 sm:px-6 text-xs sm:text-sm font-medium border-b border-gold/10">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#0A0F1C] via-[#16233f] to-[#0A0F1C] text-center py-2.5 px-4 sm:px-6 text-xs sm:text-sm font-medium border-b border-gold/10">
       <span className="tracking-wide text-foreground/80">
         Free US shipping on every order.
         <span className="text-gold font-semibold"> 180-day full refund.</span>

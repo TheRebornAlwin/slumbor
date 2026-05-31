@@ -1,58 +1,65 @@
 @import "tailwindcss";
 
 :root {
-  --background: #08080f;
-  --surface: #0e0e1a;
-  --surface-raised: #151524;
-  --foreground: #e8e4f0;
-  --heading: #ffffff;
-  --muted: #7a7a96;
-  --gold: #e2b855;
-  --gold-dark: #c9a045;
-  --gold-light: rgba(226,184,85,0.10);
-  --gold-glow: rgba(226,184,85,0.25);
-  --purple: #8b6cc0;
-  --purple-light: rgba(139,108,192,0.12);
-  --navy: #06060c;
-  --border: rgba(255,255,255,0.06);
-  --border-gold: rgba(226,184,85,0.20);
-  --slate: #a0a0b8;
-  --warm: #e2b855;
-  --warm-light: rgba(226,184,85,0.10);
+  /* Warm midnight palette — a dim bedroom, one lamp on */
+  --background: #0E1626;       /* primary background, warm dusk */
+  --surface: #14213D;          /* section variation */
+  --surface-raised: #1C2A4A;   /* raised cards */
+  --foreground: #F2EDE4;       /* cream, warm paper */
+  --heading: #FBF8F2;          /* warm near-white, never cold pure white */
+  --muted: #6E7691;            /* muted blue-gray */
+  --gold: #D4A574;             /* warm lamp amber, the accent */
+  --gold-dark: #B88654;        /* deeper amber */
+  --gold-light: rgba(212,165,116,0.10);
+  --gold-glow: rgba(212,165,116,0.28);
+  --purple: #8B7FB0;           /* soft lavender-plum */
+  --purple-light: rgba(139,127,176,0.12);
+  --plum: #3A2745;             /* deep plum, rare accent */
+  --lavender: #A8A3C7;         /* muted lavender, fine print */
+  --navy: #0A0F1C;             /* darker than bg, footer */
+  --border: rgba(242,237,228,0.07);
+  --border-gold: rgba(212,165,116,0.20);
+  --slate: #A8A3C7;            /* secondary text, lavender */
+  --warm: #D4A574;
+  --warm-light: rgba(212,165,116,0.10);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-surface: #0e0e1a;
-  --color-surface-raised: #151524;
-  --color-heading: #ffffff;
-  --color-soft-white: #e8e4f0;
-  --color-light-gray: rgba(255,255,255,0.06);
-  --color-muted: #7a7a96;
-  --color-gold: #e2b855;
-  --color-gold-dark: #c9a045;
-  --color-gold-light: rgba(226,184,85,0.10);
-  --color-purple: #8b6cc0;
-  --color-purple-light: rgba(139,108,192,0.12);
-  --color-navy: #06060c;
-  --color-slate: #a0a0b8;
-  --color-teal: #e2b855;
-  --color-teal-dark: #c9a045;
-  --color-teal-light: rgba(226,184,85,0.10);
-  --color-warm: #e2b855;
-  --color-warm-light: rgba(226,184,85,0.10);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-heading: var(--heading);
+  --color-soft-white: #F2EDE4;
+  --color-light-gray: rgba(242,237,228,0.07);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-gold-dark: var(--gold-dark);
+  --color-gold-light: rgba(212,165,116,0.10);
+  --color-purple: var(--purple);
+  --color-purple-light: rgba(139,127,176,0.12);
+  --color-plum: var(--plum);
+  --color-lavender: var(--lavender);
+  --color-navy: var(--navy);
+  --color-slate: var(--slate);
+  --color-teal: var(--gold);
+  --color-teal-dark: var(--gold-dark);
+  --color-teal-light: rgba(212,165,116,0.10);
+  --color-warm: var(--gold);
+  --color-warm-light: rgba(212,165,116,0.10);
   --font-sans: var(--font-body);
-  --font-heading: var(--font-cormorant);
+  --font-heading: var(--font-heading);
   --font-mono: var(--font-geist-mono);
 
   --animate-aurora: aurora 60s linear infinite;
-  --animate-float: float 6s ease-in-out infinite;
+  --animate-float: float 7s ease-in-out infinite;
   --animate-glow-pulse: glow-pulse 4s ease-in-out infinite;
   --animate-shimmer: shimmer 2s linear infinite;
   --animate-fade-in: fade-in 0.8s ease-out forwards;
   --animate-logo-reveal: logo-reveal 2s ease-out forwards;
   --animate-spin-slow: spin 20s linear infinite;
+  --animate-breathe-glow: breathe-glow 11s ease-in-out infinite;
+  --animate-aurora-drift: aurora-drift 38s ease-in-out infinite;
 }
 
 @keyframes aurora {
@@ -63,7 +70,7 @@
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-18px); }
 }
 
 @keyframes glow-pulse {
@@ -107,6 +114,19 @@
   50% { opacity: 0.08; }
 }
 
+/* The breathing lamp — a calm inhale/exhale rhythm (~11s) */
+@keyframes breathe-glow {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.09); }
+}
+
+/* Hypnagogic light, drifting like color behind closed eyelids */
+@keyframes aurora-drift {
+  0%   { transform: translate3d(-4%, -2%, 0) rotate(0deg) scale(1.05); }
+  50%  { transform: translate3d(4%, 3%, 0) rotate(7deg) scale(1.12); }
+  100% { transform: translate3d(-4%, -2%, 0) rotate(0deg) scale(1.05); }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -115,32 +135,74 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body), system-ui, sans-serif;
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .font-heading {
-  font-family: var(--font-cormorant), Georgia, serif;
+  font-family: var(--font-heading), Georgia, serif;
+  letter-spacing: -0.01em;
 }
 
-/* Premium glass card */
+/* ── Atmosphere layers (the edge of sleep) ─────────────────── */
+
+/* Warm radial vignette that draws the eye inward, intimate */
+.atmosphere-vignette {
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 30%, transparent 0%, transparent 55%, rgba(8,11,20,0.55) 100%),
+    radial-gradient(ellipse 120% 100% at 50% 0%, rgba(212,165,116,0.05) 0%, transparent 45%);
+}
+
+/* The breathing lamp glow */
+.atmosphere-lamp {
+  background: radial-gradient(circle at center,
+    rgba(212,165,116,0.22) 0%,
+    rgba(212,165,116,0.10) 28%,
+    rgba(184,134,84,0.04) 50%,
+    transparent 70%);
+  filter: blur(40px);
+  animation: breathe-glow 11s ease-in-out infinite;
+}
+
+/* Drifting hypnagogic aurora */
+.atmosphere-aurora {
+  background:
+    radial-gradient(ellipse 50% 45% at 25% 30%, rgba(58,39,69,0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 40% at 78% 65%, rgba(168,163,199,0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 60% 20%, rgba(212,165,116,0.10) 0%, transparent 55%);
+  filter: blur(50px);
+  animation: aurora-drift 38s ease-in-out infinite;
+}
+
+/* Fine warm film grain over everything — analog, intimate */
+.atmosphere-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+/* Premium glass card, warmer and softer */
 .glass-card {
-  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  background: linear-gradient(135deg, rgba(242,237,228,0.045) 0%, rgba(242,237,228,0.012) 100%);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(242,237,228,0.07);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255,255,255,0.03),
-    inset 0 1px 0 rgba(255,255,255,0.06);
+    0 8px 32px rgba(6, 9, 18, 0.45),
+    0 0 0 1px rgba(242,237,228,0.03),
+    inset 0 1px 0 rgba(242,237,228,0.06);
 }
 
+.glass-card-hover {
+  transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease, transform 0.6s ease;
+}
 .glass-card-hover:hover {
-  background: linear-gradient(135deg, rgba(226,184,85,0.04) 0%, rgba(255,255,255,0.02) 100%);
-  border-color: rgba(226,184,85,0.12);
+  background: linear-gradient(135deg, rgba(212,165,116,0.06) 0%, rgba(242,237,228,0.02) 100%);
+  border-color: rgba(212,165,116,0.16);
   box-shadow:
-    0 16px 48px rgba(0, 0, 0, 0.5),
-    0 0 40px rgba(226,184,85,0.05),
-    inset 0 1px 0 rgba(226,184,85,0.08);
+    0 16px 48px rgba(6, 9, 18, 0.5),
+    0 0 50px rgba(212,165,116,0.06),
+    inset 0 1px 0 rgba(212,165,116,0.10);
 }
 
 /* Premium section backgrounds */
@@ -151,7 +213,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(226,184,85,0.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,165,116,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -162,7 +224,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(139,108,192,0.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(139,127,176,0.07) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -171,43 +233,43 @@ body {
 }
 
 .section-gradient-warm {
-  background: linear-gradient(180deg, var(--background) 0%, rgba(226,184,85,0.03) 50%, var(--background) 100%);
+  background: linear-gradient(180deg, var(--background) 0%, rgba(212,165,116,0.04) 50%, var(--background) 100%);
 }
 
 .section-gradient-gold {
-  background: linear-gradient(180deg, var(--background) 0%, rgba(226,184,85,0.03) 50%, var(--background) 100%);
+  background: linear-gradient(180deg, var(--background) 0%, rgba(212,165,116,0.04) 50%, var(--background) 100%);
 }
 
 .god-ray {
   background: radial-gradient(
     ellipse at center bottom,
-    rgba(226, 184, 85, 0.05) 0%,
-    rgba(139, 108, 192, 0.03) 30%,
+    rgba(212, 165, 116, 0.06) 0%,
+    rgba(58, 39, 69, 0.05) 30%,
     transparent 70%
   );
 }
 
-/* Gold shimmer text effect */
+/* Warm shimmer text effect */
 .gold-shimmer {
   background: linear-gradient(
     110deg,
-    #e2b855 0%,
-    #f5dfa0 25%,
-    #e2b855 50%,
-    #f5dfa0 75%,
-    #e2b855 100%
+    #D4A574 0%,
+    #F0D5AE 25%,
+    #D4A574 50%,
+    #F0D5AE 75%,
+    #D4A574 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gold-shimmer 4s linear infinite;
+  animation: gold-shimmer 5s linear infinite;
 }
 
 /* Premium divider */
 .gold-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(226,184,85,0.3) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(212,165,116,0.3) 50%, transparent 100%);
 }
 
 /* Ambient glow behind sections */
@@ -232,14 +294,28 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0e0e1a;
+  background: var(--surface);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(226,184,85,0.2);
+  background: rgba(212,165,116,0.2);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(226,184,85,0.35);
+  background: rgba(212,165,116,0.35);
+}
+
+/* Respect people who'd rather not have motion */
+@media (prefers-reduced-motion: reduce) {
+  .atmosphere-lamp,
+  .atmosphere-aurora,
+  .ambient-orb,
+  .gold-shimmer,
+  .animate-float {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

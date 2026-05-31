@@ -3,109 +3,110 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import MagneticButton from "@/components/ui/magnetic-button";
-import TextGradient from "@/components/ui/text-gradient";
 import FloatingElement from "@/components/ui/floating-element";
+
+// Drop a real product photo here when it's ready; until then the warm
+// light object below stands in as the centerpiece, fully intentional.
+const HERO_IMAGE = "";
+
+function WarmLight() {
+  return (
+    <div className="relative flex items-center justify-center">
+      {/* Breathing halo */}
+      <div className="atmosphere-lamp absolute h-[125%] w-[125%] rounded-full" />
+
+      {/* Soft concentric rings, like ripples in still air */}
+      <div className="absolute h-full w-full rounded-full border border-gold/10" />
+      <div className="absolute h-[82%] w-[82%] rounded-full border border-gold/15" />
+
+      {/* The light itself */}
+      <div className="relative h-72 w-72 overflow-hidden rounded-full md:h-96 md:w-96">
+        <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_42%,#FBF1DF_0%,#E8C79A_22%,#C99B66_46%,#2A2238_78%,#161E33_100%)]" />
+        {/* Inner shadow for depth */}
+        <div className="absolute inset-0 rounded-full shadow-[inset_0_-24px_60px_rgba(10,15,28,0.7),inset_0_10px_40px_rgba(251,241,223,0.25)]" />
+        {/* A single soft highlight, top-left */}
+        <div className="absolute left-[24%] top-[20%] h-16 w-16 rounded-full bg-white/30 blur-2xl md:h-24 md:w-24" />
+        {HERO_IMAGE && (
+          <Image
+            src={HERO_IMAGE}
+            alt="The SleepWave Pro resting in warm light"
+            width={500}
+            height={500}
+            priority
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Soft gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gold-light/30 via-surface to-background" />
-
-      {/* God ray */}
-      <div className="absolute inset-0 god-ray" />
-
-      {/* Decorative circles */}
-      <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-gold/5 blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-warm/5 blur-3xl" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 md:py-40 w-full">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Text column - on mobile: tag first, then image slot, then rest */}
+    <section className="relative flex min-h-screen items-center overflow-hidden">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-28 md:py-36">
+        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
+          {/* Text */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center md:text-left min-w-0 order-1 md:order-1"
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="order-1 min-w-0 text-center md:text-left"
           >
-            <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-gold-light/60 text-gold-dark text-xs font-semibold tracking-[0.15em] uppercase">
-              Heated Vibration Technology
+            <div className="mb-6 inline-block text-xs font-medium uppercase tracking-[0.28em] text-gold">
+              The Wind-Down Mask
             </div>
 
-            {/* Mobile-only image: shows between tag and headline */}
-            <div className="flex justify-center md:hidden mb-6">
+            {/* Mobile centerpiece, between eyebrow and headline */}
+            <div className="mb-10 flex justify-center md:hidden">
               <FloatingElement>
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gold/10 rounded-3xl blur-2xl scale-110" />
-                  <div className="relative w-64 h-64 rounded-3xl overflow-hidden shadow-2xl shadow-gold/15">
-                    <Image
-                      src=""
-                      alt="SleepWave Pro"
-                      width={500}
-                      height={500}
-                      className="w-full h-full object-cover"
-                      priority
-                    />
-                  </div>
+                <div className="scale-90">
+                  <WarmLight />
                 </div>
               </FloatingElement>
             </div>
 
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-heading leading-tight tracking-tight mb-6">
-              Your sleepless nights{" "}
-              <TextGradient variant="gold">
-                don&apos;t stand a chance
-              </TextGradient>
+            <h1 className="mb-7 font-heading text-[2.6rem] font-normal leading-[1.08] tracking-[-0.01em] text-heading sm:text-5xl lg:text-[3.9rem]">
+              Let the day{" "}
+              <span className="italic text-gold">finally</span> leave your body.
             </h1>
-            <p className="text-lg text-slate leading-relaxed mb-8 max-w-lg mx-auto md:mx-0">
-              The gentle warmth and soothing vibrations melt away the tension
-              around your eyes and you can actually feel yourself drifting off.
-              It&apos;s not like anything else you&apos;ve tried.
+
+            <p className="mx-auto mb-9 max-w-md text-lg leading-[1.7] text-foreground/80 md:mx-0">
+              The kind of warm pressure that pulls your shoulders down from your
+              ears. The kind of quiet that makes your brain stop rehearsing
+              tomorrow.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
               <MagneticButton
                 variant="primary"
                 size="lg"
                 href="/products/sleepwave-pro/"
               >
-                Shop Now
+                Shop the SleepWave Pro
               </MagneticButton>
               <MagneticButton variant="secondary" size="lg" href="/shop/">
-                Learn More
+                Learn more
               </MagneticButton>
             </div>
 
-            <div className="flex items-center gap-3 mt-8 justify-center md:justify-start">
-              <div className="flex text-warm text-sm">
-                {"★★★★★"}
-              </div>
-              <span className="text-sm text-slate">
-                Trusted by <span className="font-semibold text-heading">10,000+</span> customers
+            <div className="mt-9 flex items-center justify-center gap-3 md:justify-start">
+              <div className="text-sm tracking-[0.2em] text-gold">★★★★★</div>
+              <span className="text-sm text-foreground/60">
+                Loved by thousands of tired humans
               </span>
             </div>
           </motion.div>
 
-          {/* Desktop-only image column */}
+          {/* Desktop centerpiece */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="hidden md:flex justify-center min-w-0 order-2"
+            transition={{ duration: 1.1, delay: 0.15, ease: "easeOut" }}
+            className="order-2 hidden min-w-0 justify-center md:flex"
           >
             <FloatingElement>
-              <div className="relative">
-                <div className="absolute inset-0 bg-gold/10 rounded-3xl blur-2xl scale-110" />
-                <div className="relative w-96 h-96 rounded-3xl overflow-hidden shadow-2xl shadow-gold/15">
-                  <Image
-                    src=""
-                    alt="SleepWave Pro"
-                    width={500}
-                    height={500}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+              <WarmLight />
             </FloatingElement>
           </motion.div>
         </div>

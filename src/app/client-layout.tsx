@@ -6,6 +6,7 @@ import { CartProvider } from "@/contexts/cart-context";
 import LoadingScreen from "@/components/layout/loading-screen";
 
 import ParticleField from "@/components/ui/particle-field";
+import Atmosphere from "@/components/ui/atmosphere";
 import AnnouncementBar from "@/components/layout/announcement-bar";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
@@ -33,6 +34,7 @@ export default function ClientLayout({
       <MetaPixelPageView />
       <LoadingScreen />
 
+      <Atmosphere />
       <ParticleField />
       <div className="relative z-10">
         <AnnouncementBar />

@@ -25,13 +25,13 @@ export default function MagneticButton({
   type = "button",
 }: MagneticButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center rounded-full font-bold transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none cursor-pointer";
+    "inline-flex items-center justify-center rounded-full font-semibold tracking-[0.01em] transition-all duration-500 ease-out hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none cursor-pointer";
 
   const variants = {
     primary:
-      "bg-gradient-to-r from-gold to-[#d4a040] text-[#08080f] hover:shadow-[0_4px_24px_rgba(226,184,85,0.35)]",
+      "bg-gold text-[#0E1626] shadow-[0_6px_28px_rgba(212,165,116,0.22)] hover:bg-[#E5B889] hover:shadow-[0_10px_38px_rgba(212,165,116,0.32)]",
     secondary:
-      "border-2 border-gold/60 text-gold hover:bg-gold hover:text-[#08080f] hover:shadow-[0_4px_24px_rgba(226,184,85,0.2)]",
+      "border border-gold/50 text-gold hover:border-gold hover:bg-gold/10 hover:shadow-[0_6px_28px_rgba(212,165,116,0.14)]",
     ghost: "text-gold hover:text-gold-dark hover:bg-gold-light/50",
   };
 
