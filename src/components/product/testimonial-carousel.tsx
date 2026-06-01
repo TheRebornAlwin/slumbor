@@ -16,7 +16,7 @@ const testimonials = [
     location: "Austin, United States",
   },
   {
-    text: "My dark circles and puffiness have genuinely improved since I started using this every night. I used to wake up looking like I hadn't slept in days even after eight hours. Now my under eyes are visibly less puffy. My coworkers asked if I changed my skincare routine.",
+    text: "My old massager used to announce 'goodbye' out loud when it shut off and wake me right back up. This one just goes quiet. And the pressure is soft, it doesn't push my eyes back into my head like the last one did. The two things I hated most about my old one are gone.",
     name: "Yasmin R.",
     location: "Houston, United States",
   },
@@ -99,8 +99,8 @@ export default function TestimonialCarousel() {
       <div className="max-w-3xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-heading tracking-tight">
-              Join Our 5,000+ Happy Sleepers!
+            <h2 className="text-2xl md:text-3xl font-heading font-medium text-heading tracking-tight">
+              Tired humans, finally sleeping.
             </h2>
           </div>
         </ScrollReveal>

@@ -3,11 +3,11 @@
 import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const guaranteeBullets = [
-  "Iron-clad 30-day money back guarantee",
-  "Starts when you receive the product, not when you order",
-  "Full refund if you\u2019re not completely satisfied",
-  "Friendly customer care team ready to help",
-  "24/7/365 email support",
+  "180-night full refund, starting the day it arrives",
+  "Sleep better in 14 nights, or we make it right",
+  "No restocking fee, no questions about why",
+  "Keep The 7-Minute Wind-Down audio guide either way",
+  "Real humans answer your email within 24 hours",
 ];
 
 export default function RiskFreeGuarantee() {
@@ -16,15 +16,16 @@ export default function RiskFreeGuarantee() {
       <div className="max-w-3xl mx-auto">
         <ScrollReveal>
           <div className="text-center">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-heading tracking-tight mb-4">
-              Try It 100% Risk-Free for 30 Days
+            <h2 className="text-2xl md:text-3xl font-heading font-medium text-heading tracking-tight mb-4">
+              Try it for 180 nights. Or every cent comes back.
             </h2>
 
-            <p className="text-slate leading-relaxed mb-6">
-              Zero risk. If you don&apos;t love it, we&apos;ll make it right.
+            <p className="text-slate leading-relaxed mb-8 max-w-md mx-auto">
+              Real talk. If you&apos;ve made it this far, you&apos;re tired of being
+              sold to. So here&apos;s the deal.
             </p>
 
-            <div className="space-y-3 max-w-md mx-auto text-left mb-6">
+            <div className="space-y-3 max-w-md mx-auto text-left mb-8">
               {guaranteeBullets.map((point, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -33,9 +34,13 @@ export default function RiskFreeGuarantee() {
               ))}
             </div>
 
+            <p className="text-foreground/80 leading-relaxed mb-4 max-w-md mx-auto">
+              We built this because we needed it ourselves. We stand behind it.
+            </p>
+
             <p className="text-sm text-slate">
-              Contact us anytime at{" "}
-              <a href="mailto:shopslumbor@gmail.com" className="text-gold hover:underline font-semibold">
+              Questions? Email us anytime at{" "}
+              <a href="mailto:shopslumbor@gmail.com" className="text-gold hover:underline font-medium">
                 shopslumbor@gmail.com
               </a>
             </p>

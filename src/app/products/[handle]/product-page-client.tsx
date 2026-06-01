@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import type { Product } from "@/lib/data";
+import { type Product, reviewStats } from "@/lib/data";
 import { useCart } from "@/contexts/cart-context";
 import ProductTabs from "@/components/product/product-tabs";
 import VolumeDiscounts from "@/components/product/volume-discounts";
@@ -114,7 +114,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="absolute top-4 right-4 px-4 py-1.5 bg-gold text-navy text-sm font-bold rounded-full z-10 shadow-lg shadow-gold/20"
+                    className="absolute top-4 right-4 px-4 py-1.5 bg-gold text-navy text-sm font-medium rounded-full z-10 shadow-lg shadow-gold/20"
                   >
                     -{discountPct}% OFF
                   </motion.span>
@@ -171,7 +171,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="absolute top-5 right-5 px-4 py-1.5 bg-gold text-navy text-sm font-bold rounded-full z-10 shadow-lg shadow-gold/20"
+                    className="absolute top-5 right-5 px-4 py-1.5 bg-gold text-navy text-sm font-medium rounded-full z-10 shadow-lg shadow-gold/20"
                   >
                     -{discountPct}% OFF
                   </motion.span>
@@ -216,27 +216,27 @@ export default function ProductPageClient({ product }: { product: Product }) {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-center md:text-left min-w-0"
             >
-              <h1 className="text-3xl md:text-4xl lg:text-[42px] font-heading font-bold text-heading tracking-tight leading-tight mb-3">
+              <h1 className="text-3xl md:text-4xl lg:text-[42px] font-heading font-medium text-heading tracking-tight leading-tight mb-3">
                 <BrandName tm /> {product.title}
               </h1>
 
-              <p className="text-slate italic text-base mb-3">
+              <p className="text-foreground/70 italic text-base mb-3">
                 {product.tagline}
               </p>
 
               <div className="flex items-center gap-2 mb-5 justify-center md:justify-start">
                 <div className="flex text-gold text-sm">{"★★★★★"}</div>
-                <span className="text-sm text-slate">4.9 (5,860 reviews)</span>
+                <span className="text-sm text-slate">{reviewStats.avg} ({reviewStats.count} reviews)</span>
               </div>
 
               <div className="flex items-center gap-3 mb-5 justify-center md:justify-start flex-wrap">
-                <span className="text-3xl md:text-4xl font-bold text-gold">
+                <span className="text-3xl md:text-4xl font-medium text-gold">
                   ${product.price.toFixed(2)}
                 </span>
-                <span className="text-xl text-muted line-through">
+                <span className="text-xl text-lavender line-through">
                   ${product.compareAtPrice.toFixed(2)}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-gold-light text-gold text-xs font-bold">
+                <span className="px-3 py-1 rounded-full bg-gold-light text-gold text-xs font-medium">
                   SAVE {discountPct}%
                 </span>
               </div>
@@ -245,22 +245,22 @@ export default function ProductPageClient({ product }: { product: Product }) {
               <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-6">
                 {[
                   {
-                    label: "Fall Asleep",
-                    sublabel: "Faster",
+                    label: "Wind down",
+                    sublabel: "End the day",
                     icon: (
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                     ),
                   },
                   {
-                    label: "Reduce",
-                    sublabel: "Puffiness",
+                    label: "Ease tension",
+                    sublabel: "Behind the eyes",
                     icon: (
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
                     ),
                   },
                   {
-                    label: "Wake Up",
-                    sublabel: "Rested",
+                    label: "Fall asleep",
+                    sublabel: "Without the fight",
                     icon: (
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     ),
@@ -271,10 +271,10 @@ export default function ProductPageClient({ product }: { product: Product }) {
                     className="text-center py-4 rounded-2xl bg-gold/5 border border-gold/10"
                   >
                     <div className="flex justify-center mb-2">{badge.icon}</div>
-                    <p className="text-xs font-bold text-heading leading-tight">
+                    <p className="text-xs font-medium text-heading leading-tight">
                       {badge.label}
                     </p>
-                    <p className="text-[10px] text-gold font-semibold">{badge.sublabel}</p>
+                    <p className="text-[10px] text-gold">{badge.sublabel}</p>
                   </div>
                 ))}
               </div>
@@ -282,10 +282,10 @@ export default function ProductPageClient({ product }: { product: Product }) {
               {/* Core Benefits */}
               <div className="flex flex-col items-center md:items-start space-y-2 mb-6">
                 {[
-                  "Fall asleep in minutes instead of lying awake for hours",
-                  "Wake up with visibly less puffiness and dark circles",
-                  "Release eye strain from long days at screens",
-                  "Use it every night. No supplements, no side effects",
+                  "End the day without a tension headache stacking on top",
+                  "Loosen the strain behind your eyes from a long day at screens",
+                  "Stop reaching for your phone just to get tired enough to sleep",
+                  "Wake up without that heavy-eyed, run-over feeling",
                 ].map((benefit, i) => (
                   <div key={i} className="inline-flex items-start gap-2.5 max-w-[90%] md:max-w-none">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -294,16 +294,16 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 ))}
               </div>
 
-              {/* Struggling callout */}
+              {/* Tension-entry agitation callout */}
               <div className="border-t border-white/8 pt-6 mb-6">
-                <h3 className="text-lg font-heading font-bold text-heading mb-3 max-w-lg mx-auto md:mx-0">
-                  Struggling to Fall Asleep, Stay Asleep, or Wake Up Rested?
+                <h3 className="text-lg font-heading font-medium text-heading mb-3 max-w-lg mx-auto md:mx-0">
+                  By 11pm your eyes are fried and your head still won&apos;t switch off.
                 </h3>
                 <p className="text-[15px] text-slate leading-relaxed mb-4 max-w-lg mx-auto md:mx-0">
-                  The <span className="font-bold text-heading"><BrandName tm /> SleepWave Pro</span> combines gentle heat therapy with micro-vibration massage to relax the muscles around your eyes, signal your brain it&apos;s time to sleep, and help you drift off naturally. It works with your body&apos;s wind-down response for real, lasting results.
+                  The <span className="font-medium text-heading"><BrandName tm /> SleepWave Pro</span> wraps your eyes in gentle warmth, a slow pulse, and quiet sound. Three signals that tell your nervous system the day is over. The tension behind your eyes lets go, your brain stops rehearsing tomorrow, and you drift. No screaming voice prompt to jolt you awake. No pressure crushing your eyes.
                 </p>
                 <p className="text-[15px] text-slate leading-relaxed max-w-lg mx-auto md:mx-0">
-                  <span className="font-bold text-heading">Try it for 30 nights</span> and if you don&apos;t love it, return it for your money back. <span className="font-bold text-heading">No questions asked.</span>
+                  <span className="font-medium text-heading">Try it for 180 nights.</span> If it doesn&apos;t help you sleep better, we send every cent back. <span className="font-medium text-heading">No questions asked.</span>
                 </p>
               </div>
 
@@ -336,7 +336,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 </div>
                 <button
                   onClick={handleAddToCart}
-                  className="flex-1 h-12 rounded-full font-semibold text-base transition-all duration-300 cursor-pointer bg-gold text-navy hover:bg-gold-dark hover:shadow-[0_4px_24px_rgba(201,168,76,0.35)] hover:-translate-y-0.5 active:translate-y-0"
+                  className="flex-1 h-12 rounded-full font-semibold text-base transition-all duration-500 cursor-pointer bg-gold text-[#0E1626] hover:bg-[#E5B889] hover:shadow-[0_8px_30px_rgba(212,165,116,0.3)] hover:-translate-y-0.5 active:translate-y-0"
                 >
                   {addedToCart ? (
                     <motion.span
@@ -353,18 +353,25 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 </button>
               </div>
 
+              {/* Offer reassurance line */}
+              <p className="text-[13px] text-slate leading-relaxed mb-8 text-center md:text-left">
+                Free US shipping. 180-night guarantee. Plus{" "}
+                <span className="text-gold">The 7-Minute Wind-Down</span> audio guide
+                ($29 value), free with every order.
+              </p>
+
               {/* Trust Badges */}
               <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-8">
                 {[
                   {
-                    label: "Free Shipping",
-                    sublabel: "Worldwide",
+                    label: "Free US",
+                    sublabel: "Shipping",
                     icon: (
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
                     ),
                   },
                   {
-                    label: "30-Day",
+                    label: "180-Night",
                     sublabel: "Guarantee",
                     icon: (
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -383,7 +390,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                     className="text-center py-4 rounded-2xl bg-white/3 border border-white/8"
                   >
                     <div className="flex justify-center mb-2">{badge.icon}</div>
-                    <p className="text-xs font-bold text-heading leading-tight">
+                    <p className="text-xs font-medium text-heading leading-tight">
                       {badge.label}
                     </p>
                     <p className="text-[10px] text-muted">{badge.sublabel}</p>

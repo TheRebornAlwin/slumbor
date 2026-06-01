@@ -72,11 +72,12 @@ export default function ProductTabs({ product }: { product: Product }) {
             className="space-y-4"
           >
             <p>
-              Due to extremely high demand, orders may take 1-2 weeks to arrive. We ship
-              worldwide with tracking included on every order.
+              Free US shipping on every order. No add-ons, no shipping protection
+              upsell at checkout.
             </p>
             <p>
-              Free shipping on all orders. No minimum purchase required.
+              Orders are processed within 1-3 business days and ship with tracking.
+              You&apos;ll get a tracking number by email the moment it&apos;s on its way.
             </p>
             <p>
               Need help? Email us at{" "}
@@ -98,14 +99,13 @@ export default function ProductTabs({ product }: { product: Product }) {
             className="space-y-4"
           >
             <p>
-              We truly believe the SleepWave Pro is the best sleep tool
-              at this price, and we back that up with a risk-free, ironclad{" "}
-              <strong className="text-heading">30-day money back guarantee</strong>.
+              Sleep on it for six months. We back the SleepWave Pro with a{" "}
+              <strong className="text-heading">180-night money-back guarantee</strong>{" "}
+              that starts the day it arrives.
             </p>
             <p>
-              If you don&apos;t have a positive experience for any reason, we
-              will do whatever it takes to make sure you are 100% satisfied with
-              your purchase.
+              Sleep better within 14 nights or we make it right. No restocking fee,
+              no questions about why, and you keep the bonus audio guide either way.
             </p>
             <p>
               Contact our friendly support team at{" "}

@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { reviewsData } from "@/lib/data";
+import { reviewsData, reviewStats } from "@/lib/data";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import TextGradient from "@/components/ui/text-gradient";
 
 const REVIEWS_PER_PAGE = 12;
-const MAX_DISPLAY = 36;
 
 function ReviewAvatar({ name }: { name: string }) {
   const initial = name.charAt(0).toUpperCase();
@@ -44,22 +43,14 @@ function StarRating({ rating }: { rating: number }) {
 export default function ProductReviews() {
   const [shown, setShown] = useState(REVIEWS_PER_PAGE);
   const reviews = reviewsData;
-  const totalReviews = 5860;
-  const avgRating = 4.9;
+  const totalReviews = reviewStats.count;
+  const avgRating = reviewStats.avg;
 
-  const ratingDist = [
-    { stars: 5, count: 4738 },
-    { stars: 4, count: 916 },
-    { stars: 3, count: 196 },
-    { stars: 2, count: 8 },
-    { stars: 1, count: 2 },
-  ];
-  const totalRatings = ratingDist.reduce((sum, r) => sum + r.count, 0);
+  const ratingDist = reviewStats.dist;
+  const totalRatings = totalReviews;
 
-  const displayedReviews = reviews.slice(0, Math.min(shown, MAX_DISPLAY));
-  const remaining = totalReviews - MAX_DISPLAY;
-  const canShowMore = shown < reviews.length && shown < MAX_DISPLAY;
-  const atMax = shown >= MAX_DISPLAY || shown >= reviews.length;
+  const displayedReviews = reviews.slice(0, shown);
+  const canShowMore = shown < reviews.length;
 
   return (
     <section className="py-24 md:py-36 px-6 bg-background">
@@ -181,21 +172,11 @@ export default function ProductReviews() {
           <div className="text-center mt-10">
             <button
               onClick={() => setShown((prev) => prev + REVIEWS_PER_PAGE)}
-              className="px-8 py-3.5 rounded-full border-2 border-gold text-gold font-semibold text-sm hover:bg-gold hover:text-navy transition-all duration-300 cursor-pointer hover:shadow-[0_4px_24px_rgba(201,168,76,0.25)]"
+              className="px-8 py-3.5 rounded-full border border-gold/60 text-gold font-medium text-sm hover:bg-gold/10 hover:border-gold transition-all duration-500 cursor-pointer"
             >
-              Show More Reviews
+              Read more reviews
             </button>
           </div>
-        )}
-
-        {atMax && remaining > 0 && (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center mt-8 text-sm font-semibold text-gold"
-          >
-            + {remaining.toLocaleString()} more reviews
-          </motion.p>
         )}
       </div>
     </section>
