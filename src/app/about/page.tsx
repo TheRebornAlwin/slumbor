@@ -20,7 +20,7 @@ const values = [
   {
     title: "Customer First",
     description:
-      "30-day money-back guarantee, free shipping, and a support team that actually responds. We built the experience we wanted as customers.",
+      "180-night money-back guarantee, free US shipping, and a support team that actually responds. We built the experience we wanted as customers.",
   },
 ];
 

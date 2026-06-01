@@ -6,44 +6,34 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const faqItems = [
   {
-    question: "How does the heat and vibration help me sleep?",
+    question: "Will the shutdown noise wake me back up?",
     answer:
-      "The gentle warmth relaxes the muscles around your eyes, temples, and forehead, while micro-vibrations release built-up tension from the day. Together, they activate your parasympathetic nervous system (your body's natural wind-down response), helping you fall asleep faster and more deeply.",
+      "No. This was the single biggest complaint people had about other masks, the cheerful voice announcing 'goodbye' right as they drifted off. The SleepWave Pro just goes quiet. It powers down silently after 15 minutes.",
   },
   {
-    question: "Is it safe to fall asleep wearing it?",
+    question: "Is the pressure going to hurt my eyes?",
     answer:
-      "Absolutely. The SleepWave Pro has a 15-minute auto-shutoff feature, so it gently powers down once you've drifted off. The materials are hypoallergenic and breathable, and the heat stays within a safe, comfortable range at all times.",
+      "No. The pulse is designed to wrap your sinuses and temples, not press your eyeballs back into your head. It's soft on purpose. Most people describe it as a hand resting gently over their eyes.",
   },
   {
-    question: "How long should I use it before bed?",
+    question: "Does it actually help with headaches, or just sleep?",
     answer:
-      "Most people put it on as they lie down to sleep and are asleep before the 15-minute auto-shutoff even kicks in. You can also use it earlier in your wind-down routine, while reading, meditating, or just relaxing. There's no wrong time to use it.",
+      "Both. The warmth and slow pulse loosen the tension that stacks up behind your eyes and temples after a long day at screens. A lot of people reach for it the moment a tension headache starts, not just at bedtime.",
   },
   {
-    question: "Will it help with dark circles and puffiness?",
+    question: "How long does it last on a charge?",
     answer:
-      "Yes. The gentle heat increases blood circulation around the eyes, which helps reduce fluid retention and puffiness. Many customers notice visibly less puffiness and lighter dark circles within the first week of nightly use.",
+      "Up to 4 sessions per charge. It tops up in about 1.5 hours over USB-C, so it's always ready on your nightstand.",
   },
   {
-    question: "How is this different from a regular sleep mask?",
+    question: "Can I use my own music, or am I stuck with the built-in tracks?",
     answer:
-      "A regular sleep mask just blocks light. The SleepWave Pro actively helps you fall asleep through controlled heat therapy and micro-vibration massage. It relaxes your muscles, reduces eye strain, and triggers your body's natural sleep response, something a fabric mask simply cannot do.",
+      "Either. There are quiet wind-down tracks built in, or you can pair it over Bluetooth and play whatever puts you under. The motor is quieter than the music, so the music is what you hear.",
   },
   {
     question: "What if it doesn't work for me?",
     answer:
-      "We offer a 30-day money-back guarantee. If you are not satisfied for any reason, just email us at shopslumbor@gmail.com within 30 days of delivery and we will give you a full refund. No hassle, no questions.",
-  },
-  {
-    question: "How long until I notice a difference?",
-    answer:
-      "Most people notice they fall asleep faster from the very first use. The relaxation effect is immediate. The warmth and vibration begin working the moment you put it on. For puffiness and dark circles, most customers see visible improvement within 5-7 days of nightly use.",
-  },
-  {
-    question: "Can I adjust the intensity?",
-    answer:
-      "Yes. The SleepWave Pro has 5 heat levels (from gentle warmth to deep soothing heat) and 3 vibration modes (constant, pulsing, and wave). You can mix and match to find the exact combination that works best for you.",
+      "You have 180 nights. Sleep better within 14 of them or email us at shopslumbor@gmail.com for a full refund. Keep the bonus audio guide either way. No restocking fee, no questions about why.",
   },
 ];
 
@@ -59,11 +49,11 @@ export default function ProductFAQ() {
       <div className="max-w-3xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-14">
-            <p className="text-xs font-bold tracking-[0.2em] uppercase text-gold mb-3">
+            <p className="text-xs font-medium tracking-[0.22em] uppercase text-gold mb-3">
               Common Questions
             </p>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-heading tracking-tight">
-              Frequently Asked Questions
+            <h2 className="text-3xl md:text-4xl font-heading font-medium text-heading tracking-tight">
+              Frequently asked questions
             </h2>
           </div>
         </ScrollReveal>

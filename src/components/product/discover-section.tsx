@@ -5,10 +5,10 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 import BrandName from "@/components/ui/brand-name";
 
 const discoveryBullets = [
-  "Combines heat therapy and micro-vibration for deep relaxation",
-  "Signals your brain it's time to wind down and sleep",
-  "Reduces puffiness and dark circles while you rest",
-  "Compact and rechargeable, use it every single night",
+  "Made for screen-fried eyes and stressed-out nervous systems",
+  "Uses warmth, a soft pulse, and quiet sound the body responds to",
+  "Works in minutes, not weeks",
+  "Compact enough to live on your nightstand forever",
 ];
 
 export default function DiscoverSection() {
@@ -57,13 +57,13 @@ export default function DiscoverSection() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.15} className="min-w-0 text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-gold tracking-tight mb-6">
-              Discover the Easiest Way to Fall Asleep Faster
+            <h2 className="text-2xl md:text-3xl font-heading font-medium text-gold tracking-tight mb-6">
+              The cycle ends tonight.
             </h2>
             <p className="text-slate leading-relaxed mb-5">
-              <span className="font-bold text-heading">Introducing</span>{" "}<BrandName tm className="text-heading" />,
-              a premium heated eye mask for people who are done lying awake at night
-              and waking up exhausted.
+              <span className="font-medium text-heading">Meet</span>{" "}<BrandName tm className="text-heading" />,
+              a heated eye mask for people who are done staring at the ceiling with a
+              fried head and a brain that won&apos;t quit.
             </p>
             <div className="flex flex-col items-center md:items-start space-y-3">
               {discoveryBullets.map((point, i) => (

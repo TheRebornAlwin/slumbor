@@ -4,10 +4,10 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 import BrandName from "@/components/ui/brand-name";
 
 const painPoints = [
-  "Lying awake for hours no matter how tired you are",
-  "Waking up with puffy eyes and dark circles every morning",
-  "Never feeling truly rested even after a full night",
-  "Relying on sleep aids and supplements that leave you groggy",
+  "Eyes burning by 4pm, headache by 7pm, can't switch off by 11pm",
+  "Lying there exhausted but somehow wide awake",
+  "Tried melatonin, tried supplements, tried apps, still here",
+  "Waking up feeling like a truck ran over you",
 ];
 
 export default function ReliefIntro() {
@@ -15,8 +15,8 @@ export default function ReliefIntro() {
     <section className="py-20 md:py-28 px-6 bg-surface section-glow-purple">
       <div className="max-w-3xl mx-auto text-center">
         <ScrollReveal>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-heading tracking-tight mb-4">
-            Give Yourself the Rest You Deserve
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-medium text-heading tracking-tight mb-4">
+            Give your nervous system the off-switch it&apos;s been begging for.
           </h2>
         </ScrollReveal>
 
@@ -36,9 +36,9 @@ export default function ReliefIntro() {
 
         <ScrollReveal delay={0.2}>
           <p className="text-slate leading-relaxed">
-            <span className="font-bold text-heading">Tonight can be different.</span>{" "}
-            <BrandName tm /> helps you wind down naturally and wake up feeling like
-            you actually slept.
+            <span className="font-medium text-heading">You don&apos;t have to keep grinding through it.</span>{" "}
+            <BrandName tm /> is built for exactly this. Warmth, a slow pulse, and quiet
+            sound that walk your body down into sleep.
           </p>
         </ScrollReveal>
       </div>

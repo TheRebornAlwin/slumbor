@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 /**
  * Lamplight dust. Sparse, slow warm motes that drift upward and sway,
- * the way dust catches a bedside lamp. Calm by design — low count, low
+ * the way dust catches a bedside lamp. Calm by design, low count, low
  * speed, low opacity. Frozen for anyone who prefers reduced motion.
  */
 export default function ParticleField() {

@@ -2,23 +2,22 @@
 
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import BrandName from "@/components/ui/brand-name";
 
 const steps = [
   {
     step: 1,
     image: "",
-    description: "Place the SleepWave Pro over your eyes and lie back",
+    description: "Slip the mask on. Adjust the strap until it feels held, not tight.",
   },
   {
     step: 2,
     image: "",
-    description: "Select your heat and vibration intensity",
+    description: "Press the button. Choose warmth, or pulse, or sound. Or all three.",
   },
   {
     step: 3,
     image: "",
-    description: "Feel the tension melt away as you drift into deep sleep...",
+    description: "Lie back. Breathe out. Most people are asleep before the timer ends.",
   },
 ];
 
@@ -28,8 +27,8 @@ export default function HowItWorks() {
       <div className="max-w-4xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-14">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-heading tracking-tight">
-              How to Use <BrandName tm />
+            <h2 className="text-2xl md:text-3xl font-heading font-medium text-heading tracking-tight">
+              The 7-minute wind-down ritual.
             </h2>
           </div>
         </ScrollReveal>
@@ -48,7 +47,7 @@ export default function HowItWorks() {
                   />
                 </div>
 
-                <p className="text-sm sm:text-base font-black text-heading uppercase tracking-wide mt-5 mb-2">
+                <p className="text-sm sm:text-base font-medium text-gold uppercase tracking-[0.18em] mt-5 mb-2">
                   Step {s.step}
                 </p>
 

@@ -2,25 +2,32 @@
 
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import BrandName from "@/components/ui/brand-name";
 
-const scienceBullets = [
-  "Gentle heat relaxes the muscles around your eyes and temples",
-  "Micro-vibrations release tension carried from the day",
-  "Together they activate your parasympathetic nervous system",
-  "Same heat therapy principles used in professional spa treatments",
+const signals = [
+  {
+    name: "Warmth",
+    body: "Gentle heat around the eyes opens the blood vessels and tells your parasympathetic nervous system the body is safe to wind down. The tension behind your eyes starts to let go.",
+  },
+  {
+    name: "Pulse",
+    body: "A slow, rhythmic pressure that mimics the pace of a human touch. Your body reads that rhythm as a calming signal, the same way a swaddled baby settles.",
+  },
+  {
+    name: "Sound",
+    body: "Quiet, meditative tones mask the motor and give your racing mind one simple thing to follow. Instead of rehearsing tomorrow, it just listens until it stops.",
+  },
 ];
 
 export default function ScienceSection() {
   return (
-    <section className="py-20 md:py-28 px-6 bg-surface">
+    <section className="py-20 md:py-28 px-6 bg-surface section-glow-gold">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <ScrollReveal className="min-w-0">
             <div className="text-center">
               <Image
                 src=""
-                alt="The science behind the SleepWave Pro"
+                alt="The SlowWave Method: warmth, pulse, and sound"
                 width={500}
                 height={500}
                 className="w-full h-auto object-contain mx-auto"
@@ -29,21 +36,32 @@ export default function ScienceSection() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.15} className="min-w-0 text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-heading tracking-tight mb-4">
-              How Does It Work?
-            </h2>
-            <p className="text-slate leading-relaxed mb-6">
-              <BrandName tm className="text-heading" /> uses{" "}
-              <span className="font-bold text-heading">heat therapy combined with micro-vibration massage</span>{" "}
-              to trigger your body&apos;s natural wind-down response and help you drift into deep sleep.
+            <p className="text-xs font-medium tracking-[0.22em] uppercase text-gold mb-3">
+              The SlowWave Method
             </p>
-            <div className="flex flex-col items-center md:items-start space-y-3">
-              {scienceBullets.map((point, i) => (
-                <p key={i} className="text-sm text-foreground max-w-[90%] md:max-w-none">
-                  <span className="text-gold mr-2">&#8226;</span>{point}
-                </p>
+            <h2 className="text-2xl md:text-3xl font-heading font-medium text-heading tracking-tight mb-4">
+              How warmth, pulse, and quiet sound walk your nervous system to sleep.
+            </h2>
+            <p className="text-slate leading-relaxed mb-8">
+              Stage 3 buyers don&apos;t take claims on faith, so here&apos;s the
+              honest version. Three signals, delivered together, that your body was
+              built to respond to.
+            </p>
+            <div className="space-y-5">
+              {signals.map((s, i) => (
+                <div key={i} className="flex gap-4 text-left">
+                  <span className="flex-shrink-0 mt-1 text-gold">&#8226;</span>
+                  <p className="text-[15px] text-foreground leading-relaxed">
+                    <span className="font-medium text-heading">{s.name}.</span>{" "}
+                    {s.body}
+                  </p>
+                </div>
               ))}
             </div>
+            <p className="text-foreground/80 leading-relaxed mt-8 italic">
+              It&apos;s not about forcing sleep. It&apos;s about giving your body
+              permission.
+            </p>
           </ScrollReveal>
         </div>
       </div>

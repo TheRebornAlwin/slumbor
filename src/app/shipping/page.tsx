@@ -12,17 +12,17 @@ const cards = [
   },
   {
     title: "Delivery Time",
-    description: "Standard shipping takes 7-15 business days worldwide. Delivery times vary by location.",
+    description: "Most US orders arrive within 3-7 business days. You'll get a tracking number by email the moment it ships.",
     icon: "🚚",
   },
   {
-    title: "Free Shipping",
-    description: "All orders ship free with tracking. No minimum purchase required.",
+    title: "Free US Shipping",
+    description: "Every US order ships free with tracking. No minimum, no surprise add-ons or shipping protection at checkout.",
     icon: "✨",
   },
   {
-    title: "Shipping Issues",
-    description: "If your package is lost or delayed beyond 30 days, contact us for a full refund or replacement.",
+    title: "If Something Goes Wrong",
+    description: "If your package is lost or badly delayed, email us and we'll send a replacement or refund you in full.",
     icon: "🛡",
   },
 ];
@@ -40,7 +40,7 @@ export default function ShippingPage() {
               Shipping <TextGradient variant="gold">Information</TextGradient>
             </h1>
             <p className="text-foreground max-w-2xl mx-auto">
-              We ship worldwide with full tracking on every order.
+              Free US shipping with full tracking on every order.
             </p>
           </div>
         </ScrollReveal>

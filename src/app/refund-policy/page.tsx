@@ -12,18 +12,18 @@ export default function RefundPolicyPage() {
           </h1>
           <div className="space-y-6 text-sm text-foreground leading-relaxed">
             <p>
-              We want you to be completely satisfied with your purchase. If
-              you&apos;re not happy with your SleepWave Pro, we offer a
-              30-day money-back guarantee.
+              We want you to sleep better, not feel stuck with a purchase. If the
+              SleepWave Pro isn&apos;t working for you, we offer a 180-night
+              money-back guarantee.
             </p>
 
             <h2 className="text-lg font-bold font-heading text-heading mt-8 mb-3">
-              30-Day Money-Back Guarantee
+              180-Night Money-Back Guarantee
             </h2>
             <p>
-              You have 30 days from the date of delivery to request a return
-              and full refund. To be eligible, the item must be in its original
-              condition and packaging.
+              You have 180 days from the date of delivery to request a return and
+              full refund. Sleep better within 14 nights or we make it right, and
+              you keep the bonus 7-Minute Wind-Down audio guide either way.
             </p>
 
             <h2 className="text-lg font-bold font-heading text-heading mt-8 mb-3">
@@ -45,9 +45,9 @@ export default function RefundPolicyPage() {
               Conditions
             </h2>
             <ul className="list-disc list-inside space-y-2">
-              <li>Item must be returned within 30 days of delivery</li>
-              <li>Item must be in original condition and packaging</li>
-              <li>Return shipping costs are the responsibility of the buyer</li>
+              <li>Item must be returned within 180 days of delivery</li>
+              <li>No restocking fee, and no questions about why</li>
+              <li>Keep the bonus 7-Minute Wind-Down audio guide either way</li>
               <li>
                 Damaged or defective items qualify for free return shipping
               </li>

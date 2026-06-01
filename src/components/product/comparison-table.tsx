@@ -10,14 +10,14 @@ const Cross = () => (
 );
 
 const rows = [
-  { label: "Price", sleepwave: "$69.99 one-time", supplements: "$30-60/month", mask: "$10-20" },
-  { label: "Actually relaxes the muscles", sleepwave: true, supplements: false, mask: false },
-  { label: "No recurring cost", sleepwave: true, supplements: false, mask: true },
+  { label: "Price", sleepwave: "$69.99 once", supplements: "$30-60/month", mask: "$10-20" },
+  { label: "Tells your nervous system to wind down", sleepwave: true, supplements: false, mask: false },
+  { label: "Warmth, pulse, and sound in one", sleepwave: true, supplements: false, mask: false },
+  { label: "Works in minutes, not weeks", sleepwave: true, supplements: false, mask: false },
+  { label: "No subscription, no refills", sleepwave: true, supplements: false, mask: true },
+  { label: "Doesn't leave you groggy in the morning", sleepwave: true, supplements: false, mask: true },
   { label: "Drug-free", sleepwave: true, supplements: false, mask: true },
-  { label: "Reduces puffiness and dark circles", sleepwave: true, supplements: false, mask: false },
-  { label: "Usable every single night", sleepwave: true, supplements: true, mask: true },
-  { label: "Heat and vibration therapy", sleepwave: true, supplements: false, mask: false },
-  { label: "Works in 15 minutes", sleepwave: true, supplements: false, mask: false },
+  { label: "Easy to use right before bed without your phone", sleepwave: true, supplements: false, mask: true },
 ];
 
 export default function ComparisonTable() {
@@ -26,9 +26,9 @@ export default function ComparisonTable() {
       <div className="max-w-3xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-14">
-            <p className="text-xs font-bold tracking-[0.2em] uppercase text-gold mb-3">Compare</p>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-heading tracking-tight">
-              SleepWave Pro vs The Rest
+            <p className="text-xs font-medium tracking-[0.22em] uppercase text-gold mb-3">Compare</p>
+            <h2 className="text-3xl md:text-4xl font-heading font-medium text-heading tracking-tight">
+              SleepWave Pro vs the alternatives
             </h2>
           </div>
         </ScrollReveal>
@@ -37,14 +37,14 @@ export default function ComparisonTable() {
           <div className="rounded-2xl border border-white/8 overflow-hidden shadow-sm">
             <div className="grid grid-cols-[1fr_1fr_1fr_1fr]">
               <div className="p-3 sm:p-4" />
-              <div className="p-3 sm:p-4 bg-gold text-navy text-center text-xs sm:text-sm font-bold">
+              <div className="p-3 sm:p-4 bg-gold text-[#0E1626] text-center text-xs sm:text-sm font-medium">
                 SleepWave Pro
               </div>
-              <div className="p-3 sm:p-4 text-center text-xs sm:text-sm font-bold text-heading">
-                Sleep Supplements
+              <div className="p-3 sm:p-4 text-center text-xs sm:text-sm font-medium text-heading">
+                Pills &amp; supplements
               </div>
-              <div className="p-3 sm:p-4 text-center text-xs sm:text-sm font-bold text-heading">
-                Regular Eye Mask
+              <div className="p-3 sm:p-4 text-center text-xs sm:text-sm font-medium text-heading">
+                Regular eye mask
               </div>
             </div>
 
@@ -60,7 +60,7 @@ export default function ComparisonTable() {
                   {typeof row.sleepwave === "boolean" ? (
                     row.sleepwave ? <Check /> : <Cross />
                   ) : (
-                    <span className="text-gold font-bold text-[11px] sm:text-sm text-center">{row.sleepwave}</span>
+                    <span className="text-gold font-medium text-[11px] sm:text-sm text-center">{row.sleepwave}</span>
                   )}
                 </div>
                 <div className="p-2.5 sm:p-4 flex items-center justify-center">
