@@ -303,7 +303,9 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   The <span className="font-medium text-heading"><BrandName tm /> SleepWave Pro</span> wraps your eyes in gentle warmth, a slow pulse, and quiet sound. Three signals that tell your nervous system the day is over. The tension behind your eyes lets go, your brain stops rehearsing tomorrow, and you drift. No screaming voice prompt to jolt you awake. No pressure crushing your eyes.
                 </p>
                 <p className="text-[15px] text-slate leading-relaxed max-w-lg mx-auto md:mx-0">
-                  <span className="font-medium text-heading">Try it for 180 nights.</span> If it doesn&apos;t help you sleep better, we send every cent back. <span className="font-medium text-heading">No questions asked.</span>
+                  Not sleeping better in two weeks? You&apos;ve got a full{" "}
+                  <span className="font-medium text-heading">six months</span> to send it
+                  back for every cent. Keep the bonus audio guide either way.
                 </p>
               </div>
 

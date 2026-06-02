@@ -67,8 +67,9 @@ export default function SpecialOffer() {
                 <span className="text-2xl text-lavender line-through">$139.99</span>
                 <span className="text-4xl md:text-5xl font-medium text-gold">$69.99</span>
               </div>
-              <p className="text-sm text-slate mt-3 text-center md:text-left">
-                Free US shipping. <BrandName tm /> ships with tracking, no add-ons.
+              <p className="text-sm text-foreground/80 mt-3 text-center md:text-left">
+                That&apos;s <span className="text-heading">$178 of mask, audio guide, and
+                shipping</span> for $69.99. <BrandName tm /> ships with tracking, no add-ons.
               </p>
             </div>
 

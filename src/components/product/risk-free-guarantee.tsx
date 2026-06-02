@@ -17,12 +17,13 @@ export default function RiskFreeGuarantee() {
         <ScrollReveal>
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl font-heading font-medium text-heading tracking-tight mb-4">
-              Try it for 180 nights. Or every cent comes back.
+              The worst that happens? You sleep on it for six months.
             </h2>
 
             <p className="text-slate leading-relaxed mb-8 max-w-md mx-auto">
-              Real talk. If you&apos;ve made it this far, you&apos;re tired of being
-              sold to. So here&apos;s the deal.
+              Then you send it back and we refund every cent, and you still keep the
+              bonus. If you&apos;ve made it this far, you&apos;re tired of being sold to,
+              so here&apos;s the honest version.
             </p>
 
             <div className="space-y-3 max-w-md mx-auto text-left mb-8">
