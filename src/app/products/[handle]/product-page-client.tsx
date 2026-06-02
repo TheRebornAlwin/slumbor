@@ -357,9 +357,9 @@ export default function ProductPageClient({ product }: { product: Product }) {
 
               {/* Offer reassurance line */}
               <p className="text-[13px] text-slate leading-relaxed mb-8 text-center md:text-left">
-                Free US shipping. 180-night guarantee. Plus{" "}
-                <span className="text-gold">The 7-Minute Wind-Down</span> audio guide
-                ($29 value), free with every order.
+                Free US shipping. 180-night guarantee + 2-year warranty. Plus{" "}
+                <span className="text-gold">two free wind-down guides</span> ($53 value)
+                with every order.
               </p>
 
               {/* Trust Badges */}

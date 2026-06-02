@@ -18,14 +18,20 @@ const included = [
     now: "Free",
   },
   {
+    name: "The 14-Night Reset",
+    detail: "a night-by-night plan that gets you sleeping better inside your guarantee",
+    was: "$24",
+    now: "Free",
+  },
+  {
     name: "Free US shipping",
     detail: "no surprise add-ons at checkout",
     was: "$9.99",
     now: "Free",
   },
   {
-    name: "180-night sleep guarantee",
-    detail: "sleep better in 14 nights or every cent back",
+    name: "180-night guarantee + 2-year warranty",
+    detail: "sleep better in 14 nights or every cent back, and free replacement if it ever breaks",
     was: "",
     now: "Included",
   },
@@ -56,7 +62,7 @@ export default function SpecialOffer() {
               <div className="w-full rounded-2xl overflow-hidden mb-8 border border-white/8 bg-gradient-to-br from-gold-light via-surface to-gold-light aspect-[4/3]">
                 <Image
                   src=""
-                  alt="The SleepWave Pro with the 7-Minute Wind-Down audio guide"
+                  alt="The SleepWave Pro with its two free wind-down guides"
                   width={600}
                   height={450}
                   className="w-full h-full object-cover"
@@ -68,7 +74,7 @@ export default function SpecialOffer() {
                 <span className="text-4xl md:text-5xl font-medium text-gold">$69.99</span>
               </div>
               <p className="text-sm text-foreground/80 mt-3 text-center md:text-left">
-                That&apos;s <span className="text-heading">$178 of mask, audio guide, and
+                That&apos;s <span className="text-heading">over $200 of mask, two guides, and
                 shipping</span> for $69.99. <BrandName tm /> ships with tracking, no add-ons.
               </p>
             </div>

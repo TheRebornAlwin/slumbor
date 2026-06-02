@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import ScrollReveal from "@/components/ui/scroll-reveal";
+import SlowWaveDiagram from "@/components/product/slowwave-diagram";
 
 const signals = [
   {
@@ -24,15 +24,7 @@ export default function ScienceSection() {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <ScrollReveal className="min-w-0">
-            <div className="text-center">
-              <Image
-                src=""
-                alt="The SlowWave Method: warmth, pulse, and sound"
-                width={500}
-                height={500}
-                className="w-full h-auto object-contain mx-auto"
-              />
-            </div>
+            <SlowWaveDiagram />
           </ScrollReveal>
 
           <ScrollReveal delay={0.15} className="min-w-0 text-center md:text-left">

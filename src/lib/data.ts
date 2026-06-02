@@ -22,9 +22,13 @@ export const offer = {
   compareAtPrice: 139.99,
   guaranteeDays: 180,
   outcomeDays: 14,
+  warrantyYears: 2,
   bonusName: "The 7-Minute Wind-Down",
   bonusBlurb: "a guided audio session that walks you into sleep",
   bonusValue: 29,
+  bonus2Name: "The 14-Night Reset",
+  bonus2Blurb: "a night-by-night plan that gets you to better sleep inside your guarantee",
+  bonus2Value: 24,
   shipping: "Free US shipping",
 };
 
@@ -89,7 +93,8 @@ export const heroProduct: Product = {
     "Run time: Up to 4 sessions per charge",
     "Weight: 120g (ultra-light)",
     "Shutdown: Silent auto-off after 15 minutes, no voice prompts",
-    "In the box: SleepWave Pro, USB-C cable, travel pouch, and The 7-Minute Wind-Down audio guide",
+    "Warranty: 2-year free replacement if it ever stops working",
+    "In the box: SleepWave Pro, USB-C cable, travel pouch, plus two free guides (The 7-Minute Wind-Down + The 14-Night Reset)",
   ],
   category: "Sleep & Wellness",
 };
@@ -140,7 +145,12 @@ export const faqData: FAQItem[] = [
   {
     question: "What if it doesn't work for me?",
     answer:
-      "You have 180 nights. Sleep better within 14 of them or email us at shopslumbor@gmail.com for a full refund. Keep the bonus audio guide either way. No restocking fee, no questions about why.",
+      "You have 180 nights. Sleep better within 14 of them or email us at shopslumbor@gmail.com for a full refund. Keep both bonus guides either way. No restocking fee, no questions about why.",
+  },
+  {
+    question: "What if it breaks?",
+    answer:
+      "It's covered by a 2-year warranty. If it ever stops working, email us at shopslumbor@gmail.com and we'll send a free replacement.",
   },
   {
     question: "How does the shipping work?",

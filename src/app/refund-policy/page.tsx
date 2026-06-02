@@ -23,7 +23,9 @@ export default function RefundPolicyPage() {
             <p>
               You have 180 days from the date of delivery to request a return and
               full refund. Sleep better within 14 nights or we make it right, and
-              you keep the bonus 7-Minute Wind-Down audio guide either way.
+              you keep both bonus guides either way. The SleepWave Pro is also
+              covered by a 2-year warranty, so if it ever stops working we replace
+              it free.
             </p>
 
             <h2 className="text-lg font-bold font-heading text-heading mt-8 mb-3">

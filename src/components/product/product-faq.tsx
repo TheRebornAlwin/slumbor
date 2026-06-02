@@ -31,9 +31,14 @@ const faqItems = [
       "Either. There are quiet wind-down tracks built in, or you can pair it over Bluetooth and play whatever puts you under. The motor is quieter than the music, so the music is what you hear.",
   },
   {
+    question: "What if it breaks?",
+    answer:
+      "It's covered by a 2-year warranty. If it ever stops working, email us at shopslumbor@gmail.com and we'll send a free replacement. No fighting, no fine print.",
+  },
+  {
     question: "What if it doesn't work for me?",
     answer:
-      "You have 180 nights. Sleep better within 14 of them or email us at shopslumbor@gmail.com for a full refund. Keep the bonus audio guide either way. No restocking fee, no questions about why.",
+      "You have 180 nights. Sleep better within 14 of them or email us at shopslumbor@gmail.com for a full refund. Keep both bonus guides either way. No restocking fee, no questions about why.",
   },
 ];
 

@@ -105,7 +105,11 @@ export default function ProductTabs({ product }: { product: Product }) {
             </p>
             <p>
               Sleep better within 14 nights or we make it right. No restocking fee,
-              no questions about why, and you keep the bonus audio guide either way.
+              no questions about why, and you keep both bonus guides either way.
+            </p>
+            <p>
+              It&apos;s also covered by a 2-year warranty. If it ever stops working,
+              we replace it free.
             </p>
             <p>
               Contact our friendly support team at{" "}

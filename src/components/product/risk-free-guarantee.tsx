@@ -5,8 +5,9 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 const guaranteeBullets = [
   "180-night full refund, starting the day it arrives",
   "Sleep better in 14 nights, or we make it right",
+  "2-year warranty: free replacement if it ever stops working",
   "No restocking fee, no questions about why",
-  "Keep The 7-Minute Wind-Down audio guide either way",
+  "Keep both bonus guides either way",
   "Real humans answer your email within 24 hours",
 ];
 
