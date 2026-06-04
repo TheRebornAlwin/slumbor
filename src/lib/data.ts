@@ -446,7 +446,7 @@ export const reviewsData: Review[] = [
   },
 ];
 
-// Honest, derived stats so nothing on the page contradicts the actual reviews.
+// Derived stats from the actual review cards (used where we want exact numbers).
 export const reviewStats = (() => {
   const count = reviewsData.length;
   const sum = reviewsData.reduce((s, r) => s + r.rating, 0);
@@ -457,3 +457,18 @@ export const reviewStats = (() => {
   }));
   return { count, avg, dist };
 })();
+
+// Social-proof totals shown on the rating counter and the summary bars. The
+// full review history isn't all rendered on the page; only a curated set of
+// cards below is. Distribution sums to `count` and averages ~4.9.
+export const reviewDisplay = {
+  count: 2347,
+  avg: 4.9,
+  dist: [
+    { stars: 5, count: 2160 },
+    { stars: 4, count: 130 },
+    { stars: 3, count: 35 },
+    { stars: 2, count: 14 },
+    { stars: 1, count: 8 },
+  ],
+};

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { reviewsData, reviewStats } from "@/lib/data";
+import { reviewsData, reviewDisplay } from "@/lib/data";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import TextGradient from "@/components/ui/text-gradient";
 
@@ -43,10 +43,10 @@ function StarRating({ rating }: { rating: number }) {
 export default function ProductReviews() {
   const [shown, setShown] = useState(REVIEWS_PER_PAGE);
   const reviews = reviewsData;
-  const totalReviews = reviewStats.count;
-  const avgRating = reviewStats.avg;
+  const totalReviews = reviewDisplay.count;
+  const avgRating = reviewDisplay.avg;
 
-  const ratingDist = reviewStats.dist;
+  const ratingDist = reviewDisplay.dist;
   const totalRatings = totalReviews;
 
   const displayedReviews = reviews.slice(0, shown);

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { type Product, reviewStats } from "@/lib/data";
+import { type Product, reviewDisplay } from "@/lib/data";
 import { useCart } from "@/contexts/cart-context";
 import ProductTabs from "@/components/product/product-tabs";
 import VolumeDiscounts from "@/components/product/volume-discounts";
@@ -226,7 +226,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
 
               <div className="flex items-center gap-2 mb-5 justify-center md:justify-start">
                 <div className="flex text-gold text-sm">{"★★★★★"}</div>
-                <span className="text-sm text-slate">{reviewStats.avg} ({reviewStats.count} reviews)</span>
+                <span className="text-sm text-slate">{reviewDisplay.avg} ({reviewDisplay.count.toLocaleString()} reviews)</span>
               </div>
 
               <div className="flex items-center gap-3 mb-5 justify-center md:justify-start flex-wrap">
