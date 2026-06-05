@@ -6,7 +6,19 @@ import { reviewsData, reviewDisplay } from "@/lib/data";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import TextGradient from "@/components/ui/text-gradient";
 
-const REVIEWS_PER_PAGE = 12;
+const REVIEWS_PER_PAGE = 16;
+
+// Photo placeholder for ~30% of reviews. Real customer photos drop in here
+// later; until then we show a tasteful branded square, never an AI "customer
+// holding the product" image (that would trigger the fake-flag).
+function ReviewPhoto({ name }: { name: string }) {
+  const initial = name.charAt(0).toUpperCase();
+  return (
+    <div className="mt-3 flex h-20 w-20 items-center justify-center rounded-lg border border-white/8 bg-gradient-to-br from-gold-light via-surface-raised to-surface text-gold">
+      <span className="font-heading text-lg">{initial}</span>
+    </div>
+  );
+}
 
 function ReviewAvatar({ name }: { name: string }) {
   const initial = name.charAt(0).toUpperCase();
@@ -162,6 +174,7 @@ export default function ProductReviews() {
                   <p className="text-sm text-slate leading-relaxed">
                     {review.text}
                   </p>
+                  {i % 3 === 0 && <ReviewPhoto name={review.name} />}
                 </div>
               </motion.div>
             ))}

@@ -16,6 +16,8 @@ import TestimonialCarousel from "@/components/product/testimonial-carousel";
 import PurchaseNotification from "@/components/product/purchase-notification";
 import CostCallout from "@/components/product/cost-callout";
 import BenefitsHero from "@/components/product/benefits-hero";
+import EffectiveFor from "@/components/product/effective-for";
+import MidPageCTA from "@/components/product/mid-page-cta";
 import ReliefIntro from "@/components/product/relief-intro";
 import DiscoverSection from "@/components/product/discover-section";
 import PerfectFor from "@/components/product/perfect-for";
@@ -99,7 +101,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
 
   return (
     <>
-      <div className="py-6 md:py-12 px-6">
+      <div id="buy" className="scroll-mt-24 py-6 md:py-12 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-start">
             {/* Mobile Gallery */}
@@ -218,6 +220,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
             >
               <h1 className="text-3xl md:text-4xl lg:text-[42px] font-heading font-medium text-heading tracking-tight leading-tight mb-3">
                 <BrandName tm /> {product.title}
+                <span className="align-super text-[0.5em] text-gold">™</span>
               </h1>
 
               <p className="text-foreground/70 italic text-base mb-3">
@@ -300,12 +303,12 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   By 11pm your eyes are fried and your head still won&apos;t switch off.
                 </h3>
                 <p className="text-[15px] text-slate leading-relaxed mb-4 max-w-lg mx-auto md:mx-0">
-                  The <span className="font-medium text-heading"><BrandName tm /> SleepWave Pro</span> wraps your eyes in gentle warmth, a slow pulse, and quiet sound. Three signals that tell your nervous system the day is over. The tension behind your eyes lets go, your brain stops rehearsing tomorrow, and you drift. No screaming voice prompt to jolt you awake. No pressure crushing your eyes.
+                  The <span className="font-medium text-heading"><BrandName tm /> SleepWave Pro</span> wraps your eyes in gentle warmth and a slow pulse. Two signals that tell your nervous system the day is over. The tension behind your eyes lets go, your brain stops rehearsing tomorrow, and you drift. No music, no beeps, no robot voice jolting you awake. No pressure crushing your eyes. Just quiet.
                 </p>
                 <p className="text-[15px] text-slate leading-relaxed max-w-lg mx-auto md:mx-0">
                   Not sleeping better in two weeks? You&apos;ve got a full{" "}
                   <span className="font-medium text-heading">six months</span> to send it
-                  back for every cent. Keep the bonus audio guide either way.
+                  back for every cent. Keep the bonus workbook either way.
                 </p>
               </div>
 
@@ -358,8 +361,8 @@ export default function ProductPageClient({ product }: { product: Product }) {
               {/* Offer reassurance line */}
               <p className="text-[13px] text-slate leading-relaxed mb-8 text-center md:text-left">
                 Free US shipping. 180-night guarantee + 2-year warranty. Plus{" "}
-                <span className="text-gold">two free wind-down guides</span> ($53 value)
-                with every order.
+                <span className="text-gold">The 14-Night Sleep Reset Workbook</span>{" "}
+                ($29 value), free with every order.
               </p>
 
               {/* Trust Badges */}
@@ -407,6 +410,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
       </div>
 
       <BenefitsHero />
+      <EffectiveFor />
       <ReliefIntro />
       <DiscoverSection />
       <ScienceSection />
@@ -417,6 +421,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
       <ComparisonTable />
       <CostCallout />
       <SpecialOffer />
+      <MidPageCTA />
       <TestimonialCarousel />
       <ProductFAQ />
       <RiskFreeGuarantee />

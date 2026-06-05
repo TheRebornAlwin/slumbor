@@ -13,8 +13,8 @@ const signals = [
     body: "A slow, rhythmic pressure that mimics the pace of a human touch. Your body reads that rhythm as a calming signal, the same way a swaddled baby settles.",
   },
   {
-    name: "Sound",
-    body: "Quiet, meditative tones mask the motor and give your racing mind one simple thing to follow. Instead of rehearsing tomorrow, it just listens until it stops.",
+    name: "Silence",
+    body: "No music, no beeps, no robot voice jolting you awake when it's done. Just warmth, a soft pulse, and a room quiet enough to actually drift off in. The silence is the third thing your nervous system needs.",
   },
 ];
 
@@ -32,12 +32,12 @@ export default function ScienceSection() {
               The SlowWave Method
             </p>
             <h2 className="text-2xl md:text-3xl font-heading font-medium text-heading tracking-tight mb-4">
-              How warmth, pulse, and quiet sound walk your nervous system to sleep.
+              How warmth and a slow pulse walk your nervous system to sleep.
             </h2>
             <p className="text-slate leading-relaxed mb-8">
-              Stage 3 buyers don&apos;t take claims on faith, so here&apos;s the
-              honest version. Three signals, delivered together, that your body was
-              built to respond to.
+              No gimmicks, no spec sheet to take on faith. Two signals your body was
+              built to respond to, delivered in the kind of quiet that lets them
+              actually work.
             </p>
             <div className="space-y-5">
               {signals.map((s, i) => (

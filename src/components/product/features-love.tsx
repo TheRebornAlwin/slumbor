@@ -5,55 +5,106 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const features = [
   {
-    title: "15 adjustable settings",
-    description: "dial the warmth, pulse, and sound to exactly what your nervous system needs tonight",
+    title: "Contoured 3D cups",
+    body: "Soft cups that wrap your eyes without pressing into them. For the people who feel crushed by other masks.",
   },
   {
-    title: "3 designed modes",
-    description: "Wind Down, Migraine Relief, and Deep Sleep, each tuned for a different end-of-day need",
+    title: "Five heat settings",
+    body: "From a gentle 35°C warmth to a deep 55°C heat. Dial in exactly what your nervous system needs tonight.",
   },
   {
-    title: "Built-in sound, or your own",
-    description: "quiet wind-down tracks over a Bluetooth speaker, or stream whatever puts you under",
+    title: "Adjustable strap",
+    body: "Sits lightly on your hair without pulling. Doesn't slip when you turn over in the night.",
   },
   {
-    title: "A motor quieter than the music",
-    description: "so the music is what you hear, not the device. And it shuts down silently, no voice prompts",
+    title: "Six pulse modes",
+    body: "Soft rhythmic pressure that mimics human touch. Your body recognizes the rhythm and starts to let go.",
   },
 ];
 
+function Callout({ title, body }: { title: string; body: string }) {
+  return (
+    <div className="max-w-xs">
+      <h3 className="font-heading text-[22px] font-medium text-heading leading-snug mb-1.5">
+        {title}
+      </h3>
+      <p className="text-[15px] text-foreground/80 leading-relaxed">{body}</p>
+    </div>
+  );
+}
+
 export default function FeaturesLove() {
   return (
-    <section className="py-20 md:py-28 px-6 bg-surface">
+    <section className="py-20 md:py-28 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-          <ScrollReveal className="min-w-0 text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-heading font-medium text-gold tracking-tight mb-8">
-              Features you&apos;ll love
+        <ScrollReveal>
+          <div className="text-center mb-14">
+            <p className="text-xs font-medium tracking-[0.22em] uppercase text-gold mb-3">
+              The details
+            </p>
+            <h2 className="text-3xl md:text-4xl font-heading font-medium text-heading tracking-tight">
+              Every part of it earns its place.
             </h2>
-            <div className="flex flex-col items-center md:items-start space-y-5">
-              {features.map((f, i) => (
-                <div key={i} className="inline-flex items-start gap-3 max-w-[90%] md:max-w-none">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <p className="text-[15px] text-slate leading-relaxed">
-                    <span className="font-medium text-heading">{f.title}</span>: {f.description}
-                  </p>
-                </div>
-              ))}
+          </div>
+        </ScrollReveal>
+
+        {/* Desktop: callouts flanking the product, lines pointing in */}
+        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center gap-8">
+          <ScrollReveal className="flex flex-col items-end gap-16 text-right">
+            <div className="flex items-start gap-4">
+              <Callout {...features[0]} />
+              <span className="mt-3 h-px w-10 bg-gold/40" />
+            </div>
+            <div className="flex items-start gap-4">
+              <Callout {...features[1]} />
+              <span className="mt-3 h-px w-10 bg-gold/40" />
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.15} className="min-w-0">
-            <div className="rounded-2xl overflow-hidden">
+          <ScrollReveal delay={0.1}>
+            <div className="relative h-80 w-80 overflow-hidden rounded-3xl border border-white/8 bg-gradient-to-br from-gold-light via-surface to-gold-light">
               <Image
                 src=""
-                alt="SleepWave Pro features"
-                width={600}
+                alt="The SleepWave Pro eye mask"
+                width={500}
                 height={500}
-                className="w-full h-auto object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
           </ScrollReveal>
+
+          <ScrollReveal delay={0.15} className="flex flex-col items-start gap-16 text-left">
+            <div className="flex items-start gap-4">
+              <span className="mt-3 h-px w-10 bg-gold/40" />
+              <Callout {...features[2]} />
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="mt-3 h-px w-10 bg-gold/40" />
+              <Callout {...features[3]} />
+            </div>
+          </ScrollReveal>
+        </div>
+
+        {/* Mobile: product, then 2x2 callout grid below */}
+        <div className="md:hidden">
+          <ScrollReveal>
+            <div className="relative mx-auto mb-10 aspect-square w-full max-w-sm overflow-hidden rounded-3xl border border-white/8 bg-gradient-to-br from-gold-light via-surface to-gold-light">
+              <Image
+                src=""
+                alt="The SleepWave Pro eye mask"
+                width={500}
+                height={500}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </ScrollReveal>
+          <div className="grid grid-cols-2 gap-6">
+            {features.map((f, i) => (
+              <ScrollReveal key={f.title} delay={i * 0.05}>
+                <Callout {...f} />
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>

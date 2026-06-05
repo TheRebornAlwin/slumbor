@@ -6,7 +6,7 @@ import BrandName from "@/components/ui/brand-name";
 
 const discoveryBullets = [
   "Made for screen-fried eyes and stressed-out nervous systems",
-  "Uses warmth, a soft pulse, and quiet sound the body responds to",
+  "Uses warmth and a soft pulse the body responds to, in total silence",
   "Works in minutes, not weeks",
   "Compact enough to live on your nightstand forever",
 ];

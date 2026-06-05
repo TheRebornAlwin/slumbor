@@ -23,12 +23,9 @@ export const offer = {
   guaranteeDays: 180,
   outcomeDays: 14,
   warrantyYears: 2,
-  bonusName: "The 7-Minute Wind-Down",
-  bonusBlurb: "a guided audio session that walks you into sleep",
+  bonusName: "The 14-Night Sleep Reset Workbook",
+  bonusBlurb: "a night-by-night plan that gets you sleeping better inside your guarantee",
   bonusValue: 29,
-  bonus2Name: "The 14-Night Reset",
-  bonus2Blurb: "a night-by-night plan that gets you to better sleep inside your guarantee",
-  bonus2Value: 24,
   shipping: "Free US shipping",
 };
 
@@ -38,7 +35,7 @@ export const heroProduct: Product = {
   title: "SleepWave Pro",
   tagline: "The kind of quiet your body has been waiting for.",
   description:
-    "By the end of the day your eyes are fried from screens and your head won't switch off. The SleepWave Pro wraps your eyes in gentle warmth, a slow pulse, and quiet sound. Three signals that tell your nervous system the day is over and it's safe to let go. No screaming voice prompts. No pressure crushing your eyes. Just the quiet your body has been waiting for.",
+    "By the end of the day your eyes are fried from screens and your head won't switch off. The SleepWave Pro wraps your eyes in gentle warmth and a slow pulse. Two signals that tell your nervous system the day is over and it's safe to let go. No music, no beeps, no robot voice announcing it's done. No pressure crushing your eyes. Just the quiet your body has been waiting for.",
   price: 69.99,
   compareAtPrice: 139.99,
   images: [
@@ -64,19 +61,19 @@ export const heroProduct: Product = {
         "A slow rhythm that wraps your sinuses and temples the way a hand would. Designed to never press your eyes back into your head.",
     },
     {
-      title: "The sound carries you off",
+      title: "It stays silent",
       description:
-        "Quiet built-in wind-down tracks (or stream your own over Bluetooth) give your racing mind one simple thing to follow until it stops.",
+        "No music, no beeps, no cheerful voice announcing it's done. It powers down quietly after 15 minutes, the way sleep actually starts.",
     },
     {
-      title: "The shutdown is silent",
+      title: "Gentle on your eyes",
       description:
-        "No cheerful voice announcing it's done. It powers down quietly after 15 minutes, the way sleep actually starts.",
+        "Contoured cups wrap your eyes and sinuses without pressing your eyeballs back into your head. For the people who feel crushed by other masks.",
     },
     {
       title: "One button, no fuss",
       description:
-        "Warmth, pulse, sound. Adjust it without your phone, in the dark, half-asleep. It just works.",
+        "Warmth and pulse. Adjust it without your phone, in the dark, half-asleep. It just works.",
     },
     {
       title: "Lives on your nightstand",
@@ -85,16 +82,15 @@ export const heroProduct: Product = {
     },
   ],
   specs: [
-    "Method: Warmth + pulse + sound (the SlowWave Method)",
-    "Heat: 5 adjustable levels (38°C-45°C)",
-    "Pulse: 3 rhythms (steady, pulse, wave)",
-    "Sound: Bluetooth speaker with built-in wind-down tracks, or play your own",
+    "Method: Warmth + pulse (the SlowWave Method)",
+    "Heat: 5 adjustable levels (35°C-55°C)",
+    "Pulse: 6 modes (steady, pulse, wave, and more)",
     "Battery: 1200mAh rechargeable lithium (USB-C)",
     "Run time: Up to 4 sessions per charge",
     "Weight: 120g (ultra-light)",
-    "Shutdown: Silent auto-off after 15 minutes, no voice prompts",
+    "Silence: No music, no Bluetooth, no voice prompts, silent auto-off after 15 minutes",
     "Warranty: 2-year free replacement if it ever stops working",
-    "In the box: SleepWave Pro, USB-C cable, travel pouch, plus two free guides (The 7-Minute Wind-Down + The 14-Night Reset)",
+    "In the box: SleepWave Pro, USB-C cable, travel pouch, plus The 14-Night Sleep Reset Workbook (digital)",
   ],
   category: "Sleep & Wellness",
 };
@@ -133,9 +129,9 @@ export const faqData: FAQItem[] = [
       "Absolutely. It powers down on its own after 15 minutes, the materials are breathable and hypoallergenic, and the heat stays in a safe, comfortable range the whole time.",
   },
   {
-    question: "Can I use my own music, or am I stuck with the built-in tracks?",
+    question: "Does it play music or make any sound?",
     answer:
-      "Either. There are quiet wind-down tracks built in, or you can pair it over Bluetooth and play whatever puts you under. The motor is quieter than the music, so the music is what you hear.",
+      "No, and that's on purpose. There's no music, no Bluetooth, no beeps. Just warmth and a soft pulse, and a room that stays quiet enough to actually fall asleep in. The silence is the point.",
   },
   {
     question: "How long does the battery last?",
@@ -145,7 +141,7 @@ export const faqData: FAQItem[] = [
   {
     question: "What if it doesn't work for me?",
     answer:
-      "You have 180 nights. Sleep better within 14 of them or email us at shopslumbor@gmail.com for a full refund. Keep both bonus guides either way. No restocking fee, no questions about why.",
+      "You have 180 nights. Sleep better within 14 of them or email us at shopslumbor@gmail.com for a full refund. Keep the bonus workbook either way. No restocking fee, no questions about why.",
   },
   {
     question: "What if it breaks?",
@@ -238,7 +234,7 @@ export const reviewsData: Review[] = [
     name: "Devon M.",
     rating: 4,
     date: "Apr 4, 2026",
-    text: "was worried the motor would be louder than the little sleep sounds but its actually quieter than the music, you barely notice it. only reason for 4 stars is i wish the strap was a touch longer. play the built in tracks low and im gone",
+    text: "my old one had this loud voice that announced silent mode and woke me up every time, drove me insane. this one is dead silent, no beeps no nothing. only reason for 4 stars is i wish the strap was a touch longer. warm, quiet, and im gone",
   },
   {
     name: "Renee K.",
@@ -268,7 +264,7 @@ export const reviewsData: Review[] = [
     name: "Wade B.",
     rating: 5,
     date: "Mar 5, 2026",
-    text: "i drive long haul and sleep in weird places at weird times. this is the only thing that gets me down fast in a loud truck stop. heat on, sound low, out cold",
+    text: "i drive long haul and sleep in weird places at weird times. this is the only thing that gets me down fast in a loud truck stop. heat on, eyes covered, out cold",
   },
   {
     name: "Olivia D.",

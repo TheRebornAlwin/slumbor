@@ -24,11 +24,11 @@ const values = [
   },
   {
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
     ),
-    title: "Sound that fills the noise",
+    title: "Silence that doesn't jolt you",
     description:
-      "Quiet, meditative tones give your racing mind one simple thing to follow. Instead of rehearsing tomorrow, it just listens until it stops.",
+      "No music, no beeps, no robot voice announcing it's done. It just goes quiet, so the only thing left to do is drift.",
   },
   {
     icon: (

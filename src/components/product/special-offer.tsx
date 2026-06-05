@@ -4,36 +4,23 @@ import Image from "next/image";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import BrandName from "@/components/ui/brand-name";
 
-const included = [
+const bonuses = [
   {
-    name: "The SleepWave Pro",
-    detail: "warmth, pulse, and sound, in one mask",
-    was: "$139.99",
-    now: "$69.99",
-  },
-  {
-    name: "The 7-Minute Wind-Down",
-    detail: "a guided audio session that walks you into sleep",
+    title: "The 14-Night Sleep Reset Workbook",
+    detail:
+      "A guided 14-night tracking system to prove the guarantee to yourself, night by night.",
     was: "$29",
-    now: "Free",
   },
   {
-    name: "The 14-Night Reset",
-    detail: "a night-by-night plan that gets you sleeping better inside your guarantee",
-    was: "$24",
-    now: "Free",
-  },
-  {
-    name: "Free US shipping",
-    detail: "no surprise add-ons at checkout",
+    title: "Free US Shipping",
+    detail: "Ships free across the US. No hidden protection upsell at checkout.",
     was: "$9.99",
-    now: "Free",
   },
   {
-    name: "180-night guarantee + 2-year warranty",
-    detail: "sleep better in 14 nights or every cent back, and free replacement if it ever breaks",
-    was: "",
-    now: "Included",
+    title: "180-Night Guarantee + 2-Year Warranty",
+    detail:
+      "180 nights to send it back, and a free replacement if it ever stops working.",
+    was: "$19",
   },
 ];
 
@@ -58,49 +45,57 @@ export default function SpecialOffer() {
 
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div>
-              <div className="w-full rounded-2xl overflow-hidden mb-8 border border-white/8 bg-gradient-to-br from-gold-light via-surface to-gold-light aspect-[4/3]">
-                <Image
-                  src=""
-                  alt="The SleepWave Pro with its two free wind-down guides"
-                  width={600}
-                  height={450}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              <div className="flex items-center gap-4 justify-center md:justify-start">
-                <span className="text-2xl text-lavender line-through">$139.99</span>
-                <span className="text-4xl md:text-5xl font-medium text-gold">$69.99</span>
-              </div>
-              <p className="text-sm text-foreground/80 mt-3 text-center md:text-left">
-                That&apos;s <span className="text-heading">over $200 of mask, two guides, and
-                shipping</span> for $69.99. <BrandName tm /> ships with tracking, no add-ons.
-              </p>
+            {/* Left: product + workbook bundle visual */}
+            <div className="w-full rounded-2xl overflow-hidden border border-white/8 bg-gradient-to-br from-gold-light via-surface to-gold-light aspect-[4/3]">
+              <Image
+                src=""
+                alt="The SleepWave Pro with the 14-Night Sleep Reset Workbook"
+                width={600}
+                height={450}
+                className="w-full h-full object-cover"
+              />
             </div>
 
+            {/* Right: bonus cards */}
             <div className="space-y-3">
-              {included.map((item, i) => (
+              {bonuses.map((b, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-4 p-4 rounded-2xl bg-surface-raised border border-white/8"
+                  className="glass-card rounded-2xl p-5 flex items-start gap-4"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12" /></svg>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-baseline justify-between gap-3">
-                      <p className="text-[15px] font-medium text-heading">{item.name}</p>
+                      <p className="text-[15px] font-medium text-heading">{b.title}</p>
                       <span className="flex items-baseline gap-2 flex-shrink-0">
-                        {item.was && (
-                          <span className="text-xs text-lavender line-through">{item.was}</span>
-                        )}
-                        <span className="text-sm font-medium text-gold">{item.now}</span>
+                        <span className="text-xs text-lavender line-through">{b.was}</span>
+                        <span className="rounded-full bg-gold/15 px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-gold">
+                          Free
+                        </span>
                       </span>
                     </div>
-                    <p className="text-[13px] text-slate mt-0.5">{item.detail}</p>
+                    <p className="text-[13px] text-slate mt-1">{b.detail}</p>
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Price reveal */}
+        <ScrollReveal>
+          <div className="mt-14 text-center">
+            <div className="flex items-end justify-center gap-4">
+              <span className="text-2xl text-lavender line-through leading-none mb-1">
+                $197.98
+              </span>
+              <span className="font-heading text-5xl md:text-6xl font-medium text-gold leading-none">
+                $69.99
+              </span>
+            </div>
+            <p className="mt-4 text-[15px] text-foreground/80">
+              Everything above. One charge. One mask. <BrandName tm /> ships it free.
+            </p>
           </div>
         </ScrollReveal>
       </div>

@@ -2,9 +2,9 @@
 
 /**
  * The SlowWave Method, drawn. A warm glow (heat) sitting behind an eye-mask
- * band, pulse rings emanating from the center, and sound arcs from the temples.
- * Pure SVG so it needs no photography, and it makes the three-signal mechanism
- * a thing you can see, not just read.
+ * band, pulse rings emanating from the center, and a quiet room around it.
+ * Pure SVG so it needs no photography, and it makes the mechanism a thing you
+ * can see, not just read.
  */
 export default function SlowWaveDiagram() {
   return (
@@ -15,7 +15,7 @@ export default function SlowWaveDiagram() {
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-auto"
         role="img"
-        aria-label="The SlowWave Method: warmth, pulse, and sound around the eyes"
+        aria-label="The SlowWave Method: warmth and a slow pulse around the eyes, in silence"
       >
         <defs>
           <radialGradient id="sw-warm" cx="50%" cy="50%" r="50%">
@@ -41,14 +41,6 @@ export default function SlowWaveDiagram() {
         <circle cx="180" cy="150" r="128" stroke="#D4A574" strokeOpacity="0.16" strokeWidth="1.5" />
         <circle cx="180" cy="150" r="104" stroke="#D4A574" strokeOpacity="0.28" strokeWidth="1.5" />
         <circle cx="180" cy="150" r="80" stroke="#D4A574" strokeOpacity="0.45" strokeWidth="1.5" />
-
-        {/* Sound: arcs from the temples */}
-        <g stroke="#D4A574" fill="none" strokeLinecap="round">
-          <path d="M296 124 Q322 150 296 176" strokeOpacity="0.5" strokeWidth="1.5" />
-          <path d="M308 108 Q346 150 308 192" strokeOpacity="0.28" strokeWidth="1.5" />
-          <path d="M64 124 Q38 150 64 176" strokeOpacity="0.5" strokeWidth="1.5" />
-          <path d="M52 108 Q14 150 52 192" strokeOpacity="0.28" strokeWidth="1.5" />
-        </g>
 
         {/* Heat rising off the top of the mask */}
         <g stroke="#D4A574" strokeOpacity="0.5" fill="none" strokeLinecap="round" strokeWidth="1.5">
@@ -77,7 +69,7 @@ export default function SlowWaveDiagram() {
 
       {/* Legend */}
       <div className="mt-6 flex items-center justify-center gap-5 text-xs tracking-[0.15em] uppercase text-foreground/70">
-        {["Warmth", "Pulse", "Sound"].map((label) => (
+        {["Warmth", "Pulse", "Silence"].map((label) => (
           <span key={label} className="inline-flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             {label}

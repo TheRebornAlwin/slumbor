@@ -57,7 +57,7 @@ export default function EMSComparison() {
               <div className="mb-6 mt-4">
                 <div className="w-full h-40 rounded-xl bg-gold/5 flex items-center justify-center relative overflow-hidden">
                   <div className="relative w-48">
-                    <div className="text-center text-[10px] text-gold font-medium mb-3">WARMTH + PULSE + SOUND</div>
+                    <div className="text-center text-[10px] text-gold font-medium mb-3">WARMTH + PULSE</div>
                     <div className="space-y-2">
                       <div className="h-4 bg-gold/15 rounded" />
                       <div className="h-4 bg-gold/20 rounded" />
@@ -70,9 +70,9 @@ export default function EMSComparison() {
                   </div>
                 </div>
               </div>
-              <h3 className="text-xl font-heading font-medium text-heading mb-2 text-center md:text-left">Warmth + pulse + sound, working together</h3>
+              <h3 className="text-xl font-heading font-medium text-heading mb-2 text-center md:text-left">Warmth and a slow pulse, in silence</h3>
               <p className="text-sm text-slate leading-relaxed mb-4 text-center md:text-left">
-                Three signals your nervous system was built to respond to, delivered in 15 quiet minutes a night. The last thing you do before sleep, instead of the thing you lie there fighting.
+                Two signals your nervous system was built to respond to, delivered in 15 silent minutes a night. The last thing you do before sleep, instead of the thing you lie there fighting.
               </p>
               <div className="flex items-center gap-2 text-gold justify-center md:justify-start">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>

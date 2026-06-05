@@ -37,8 +37,8 @@ export default function ReliefIntro() {
         <ScrollReveal delay={0.2}>
           <p className="text-slate leading-relaxed">
             <span className="font-medium text-heading">You don&apos;t have to keep grinding through it.</span>{" "}
-            <BrandName tm /> is built for exactly this. Warmth, a slow pulse, and quiet
-            sound that walk your body down into sleep.
+            <BrandName tm /> is built for exactly this. Warmth and a slow pulse that
+            walk your body down into sleep, in the kind of quiet that lets it work.
           </p>
         </ScrollReveal>
       </div>

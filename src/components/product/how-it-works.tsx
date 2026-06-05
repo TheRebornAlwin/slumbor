@@ -12,7 +12,7 @@ const steps = [
   {
     step: 2,
     image: "",
-    description: "Press the button. Choose warmth, or pulse, or sound. Or all three.",
+    description: "Press the button. Choose warmth, or pulse, or both. Dial it to what tonight needs.",
   },
   {
     step: 3,

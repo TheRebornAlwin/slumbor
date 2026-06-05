@@ -23,7 +23,7 @@ export default function RefundPolicyPage() {
             <p>
               You have 180 days from the date of delivery to request a return and
               full refund. Sleep better within 14 nights or we make it right, and
-              you keep both bonus guides either way. The SleepWave Pro is also
+              you keep the bonus workbook either way. The SleepWave Pro is also
               covered by a 2-year warranty, so if it ever stops working we replace
               it free.
             </p>
@@ -49,7 +49,7 @@ export default function RefundPolicyPage() {
             <ul className="list-disc list-inside space-y-2">
               <li>Item must be returned within 180 days of delivery</li>
               <li>No restocking fee, and no questions about why</li>
-              <li>Keep the bonus 7-Minute Wind-Down audio guide either way</li>
+              <li>Keep the bonus 14-Night Sleep Reset Workbook either way</li>
               <li>
                 Damaged or defective items qualify for free return shipping
               </li>

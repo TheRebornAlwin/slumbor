@@ -26,9 +26,9 @@ const faqItems = [
       "Up to 4 sessions per charge. It tops up in about 1.5 hours over USB-C, so it's always ready on your nightstand.",
   },
   {
-    question: "Can I use my own music, or am I stuck with the built-in tracks?",
+    question: "Does it play music or make any sound?",
     answer:
-      "Either. There are quiet wind-down tracks built in, or you can pair it over Bluetooth and play whatever puts you under. The motor is quieter than the music, so the music is what you hear.",
+      "No, and that's on purpose. No music, no Bluetooth, no beeps. Just warmth and a soft pulse, and a room that stays quiet enough to actually fall asleep in. The silence is the point.",
   },
   {
     question: "What if it breaks?",
@@ -38,7 +38,7 @@ const faqItems = [
   {
     question: "What if it doesn't work for me?",
     answer:
-      "You have 180 nights. Sleep better within 14 of them or email us at shopslumbor@gmail.com for a full refund. Keep both bonus guides either way. No restocking fee, no questions about why.",
+      "You have 180 nights. Sleep better within 14 of them or email us at shopslumbor@gmail.com for a full refund. Keep the bonus workbook either way. No restocking fee, no questions about why.",
   },
 ];
 
