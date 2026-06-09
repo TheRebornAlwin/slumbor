@@ -24,6 +24,17 @@ function MetaPixelPageView() {
   return null;
 }
 
+function ScrollToTopOnLoad() {
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
+  return null;
+}
+
 export default function ClientLayout({
   children,
 }: {
@@ -32,6 +43,7 @@ export default function ClientLayout({
   return (
     <CartProvider>
       <MetaPixelPageView />
+      <ScrollToTopOnLoad />
       <LoadingScreen />
 
       <Atmosphere />

@@ -33,7 +33,7 @@ export default function HowItWorks() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-3 gap-4 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-8">
           {steps.map((s, i) => (
             <ScrollReveal key={i} delay={i * 0.1} className="min-w-0">
               <div className="text-center">

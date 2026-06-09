@@ -56,14 +56,13 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className={cn(
-          "fixed top-[36px] left-0 right-0 z-40 transition-all duration-300",
-          scrolled
-            ? "bg-[#0E1626]/85 backdrop-blur-xl border-b border-white/[0.04] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
-            : "bg-transparent"
-        )}
-      >
+      <header className="fixed top-[36px] left-0 right-0 z-40">
+        <div
+          className={cn(
+            "absolute inset-0 -z-10 bg-[#0E1626]/85 backdrop-blur-xl border-b border-white/[0.04] shadow-[0_4px_30px_rgba(0,0,0,0.4)] transition-opacity duration-300",
+            scrolled ? "opacity-100" : "opacity-0"
+          )}
+        />
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           <Link href="/home/" className="flex items-center gap-2">
             <span className="text-xl text-gold">
