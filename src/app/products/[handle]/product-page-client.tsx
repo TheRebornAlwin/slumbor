@@ -203,7 +203,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   <button
                     onClick={() => setSelectedImage((i) => i - 1)}
                     aria-label="Previous image"
-                    className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-navy/80 hover:text-navy opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer drop-shadow-sm"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white/90 hover:text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)]"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
                   </button>
@@ -212,7 +212,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   <button
                     onClick={() => setSelectedImage((i) => i + 1)}
                     aria-label="Next image"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-navy/80 hover:text-navy opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer drop-shadow-sm"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white/90 hover:text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)]"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
                   </button>
