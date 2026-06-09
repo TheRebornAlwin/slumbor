@@ -137,6 +137,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                           height={600}
                           className="w-full h-full object-cover"
                           priority={i === 0}
+                          loading="eager"
                         />
                       </div>
                     </div>
@@ -205,6 +206,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                       width={72}
                       height={72}
                       className="w-full h-full object-cover"
+                      loading="eager"
                     />
                   </button>
                 ))}
