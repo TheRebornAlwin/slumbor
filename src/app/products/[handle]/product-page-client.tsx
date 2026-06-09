@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { type Product, reviewDisplay } from "@/lib/data";
 import { useCart } from "@/contexts/cart-context";
 import ProductTabs from "@/components/product/product-tabs";
@@ -169,7 +169,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               transition={{ duration: 0.6 }}
               className="hidden md:block space-y-4 min-w-0"
             >
-              <div className="relative aspect-square rounded-3xl bg-gradient-to-br from-gold-light via-surface to-gold-light border border-white/8 overflow-hidden shadow-lg">
+              <div className="group relative aspect-square rounded-3xl bg-gradient-to-br from-gold-light via-surface to-gold-light border border-white/8 overflow-hidden shadow-lg">
                 {discountPct > 0 && (
                   <motion.span
                     initial={{ scale: 0 }}
@@ -179,14 +179,44 @@ export default function ProductPageClient({ product }: { product: Product }) {
                     -{discountPct}% OFF
                   </motion.span>
                 )}
-                <Image
-                  src={product.images[selectedImage]}
-                  alt={`${product.title} - Image ${selectedImage + 1}`}
-                  width={600}
-                  height={600}
-                  className="w-full h-full object-cover"
-                  priority
-                />
+                <AnimatePresence initial={false}>
+                  <motion.div
+                    key={selectedImage}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.18, ease: "easeInOut" }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={product.images[selectedImage]}
+                      alt={`${product.title} - Image ${selectedImage + 1}`}
+                      width={600}
+                      height={600}
+                      className="w-full h-full object-cover"
+                      priority
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {selectedImage > 0 && (
+                  <button
+                    onClick={() => setSelectedImage((i) => i - 1)}
+                    aria-label="Previous image"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-navy/80 hover:text-navy opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer drop-shadow-sm"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+                  </button>
+                )}
+                {selectedImage < product.images.length - 1 && (
+                  <button
+                    onClick={() => setSelectedImage((i) => i + 1)}
+                    aria-label="Next image"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-navy/80 hover:text-navy opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer drop-shadow-sm"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+                  </button>
+                )}
               </div>
 
               <div className="flex gap-3 overflow-x-auto max-w-full pb-1">
