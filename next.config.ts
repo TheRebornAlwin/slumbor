@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true,
+    remotePatterns: [{ protocol: "https", hostname: "5jmyzbx4u2.ufs.sh" }],
   },
 };
 
