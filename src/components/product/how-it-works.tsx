@@ -6,7 +6,7 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 const steps = [
   {
     step: 1,
-    image: "https://5jmyzbx4u2.ufs.sh/f/L6n7pVDecsTr6e3ihWxU8chn5GMEuj1fatpV2ABrdT9zw7IP",
+    image: "/products/step1.webp",
     description: "Slip the mask on. Adjust the strap until it feels held, not tight.",
   },
   {
@@ -43,7 +43,7 @@ export default function HowItWorks() {
                     alt={`Step ${s.step}`}
                     width={250}
                     height={250}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover scale-[1.18]"
                   />
                 </div>
 

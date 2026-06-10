@@ -41,8 +41,6 @@ export default function ProductPageClient({ product }: { product: Product }) {
       const img = new window.Image();
       img.src = src;
     });
-    const cartImg = new window.Image();
-    cartImg.src = "";
   }, [product.images]);
 
   const tierDiscounts = [0, 10, 20];
