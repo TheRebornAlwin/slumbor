@@ -37,7 +37,7 @@ export default function HowItWorks() {
           {steps.map((s, i) => (
             <ScrollReveal key={i} delay={i * 0.1} className="min-w-0">
               <div className="text-center">
-                <div className="w-28 h-28 sm:w-40 sm:h-40 md:w-52 md:h-52 rounded-full overflow-hidden mx-auto border-2 border-white/10 shadow-sm">
+                <div className="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-full overflow-hidden mx-auto border-2 border-white/10 shadow-sm">
                   <Image
                     src={s.image}
                     alt={`Step ${s.step}`}
