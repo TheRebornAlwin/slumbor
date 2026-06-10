@@ -48,7 +48,7 @@ pages.push(`
     <div class="wordmark">SLUMBOR</div>
     <div class="cover-mid">
       <div class="hair"></div>
-      <h1 class="cover-title">the fourteen-<br>night reset</h1>
+      <h1 class="cover-title">The Fourteen-<br>Night Reset</h1>
       <div class="hair"></div>
     </div>
     <p class="cover-sub">a quiet workbook<br>for the people who haven't slept right<br>in a while</p>
@@ -291,8 +291,8 @@ for (let n = 1; n <= 14; n++) {
 </section>`);
 }
 
-// P21 — HALFWAY (light, fillable) ------------------------------------------
-pages.push(`
+// HALFWAY (light, fillable) — inserted after the Night 7 diary page above ---
+const halfwayPage = `
 <section class="page light halfway">
   <div class="pad">
     <p class="eyebrow">halfway</p>
@@ -316,7 +316,9 @@ pages.push(`
 
     <p class="footnote">if you've found a combination that's working, don't keep changing it just to see what else is there. consistency is what moves the needle from here, not novelty. and if nothing has shifted yet, that's still normal &mdash; about a third of people in CBT-I programs don't see real change until well into the second week. the second week is where most of the real settling happens. don't quit on night seven.</p>
   </div>
-</section>`);
+</section>`;
+// place it directly after the Night 7 diary page (last 14 entries are the nights)
+pages.splice(pages.length - 7, 0, halfwayPage);
 
 // P22 — NIGHT 14 (light, fillable) -----------------------------------------
 pages.push(`
