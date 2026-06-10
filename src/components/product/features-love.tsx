@@ -1,42 +1,59 @@
 "use client";
 
-import Image from "next/image";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const features = [
   {
     title: "Contoured 3D cups",
-    body: "Soft cups that wrap your eyes without pressing into them. For the people who feel crushed by other masks.",
+    body: "The cups arch over your eyes instead of pressing on them. No weight on your eyelids, so it stays comfortable the whole time you wear it.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+    ),
   },
   {
     title: "Five heat settings",
-    body: "From a gentle 35°C warmth to a deep 55°C heat. Dial in exactly what your nervous system needs tonight.",
+    body: "Choose a light warmth or a deeper heat, whatever your face needs that night. The warmth is what tells your body it is safe to wind down.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
+      </svg>
+    ),
   },
   {
     title: "Adjustable strap",
-    body: "Sits lightly on your hair without pulling. Doesn't slip when you turn over in the night.",
+    body: "Loosen or tighten it to your head in seconds. It stays put when you roll over and never pulls at your hair.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="4" y1="21" x2="4" y2="14" />
+        <line x1="4" y1="10" x2="4" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="12" />
+        <line x1="12" y1="8" x2="12" y2="3" />
+        <line x1="20" y1="21" x2="20" y2="16" />
+        <line x1="20" y1="12" x2="20" y2="3" />
+        <line x1="1" y1="14" x2="7" y2="14" />
+        <line x1="9" y1="8" x2="15" y2="8" />
+        <line x1="17" y1="16" x2="23" y2="16" />
+      </svg>
+    ),
   },
   {
     title: "Six pulse modes",
-    body: "Soft rhythmic pressure that mimics human touch. Your body recognizes the rhythm and starts to let go.",
+    body: "A soft, steady pulse around your eyes, like a slow massage. Your body reads the rhythm as a cue to calm down.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+      </svg>
+    ),
   },
 ];
-
-function Callout({ title, body }: { title: string; body: string }) {
-  return (
-    <div className="max-w-xs">
-      <h3 className="font-heading text-[22px] font-medium text-heading leading-snug mb-1.5">
-        {title}
-      </h3>
-      <p className="text-[15px] text-foreground/80 leading-relaxed">{body}</p>
-    </div>
-  );
-}
 
 export default function FeaturesLove() {
   return (
     <section className="py-20 md:py-28 px-6 bg-background">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-14">
             <p className="text-xs font-medium tracking-[0.22em] uppercase text-gold mb-3">
@@ -48,63 +65,22 @@ export default function FeaturesLove() {
           </div>
         </ScrollReveal>
 
-        {/* Desktop: callouts flanking the product, lines pointing in */}
-        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center gap-8">
-          <ScrollReveal className="flex flex-col items-end gap-16 text-right">
-            <div className="flex items-start gap-4">
-              <Callout {...features[0]} />
-              <span className="mt-3 h-px w-10 bg-gold/40" />
-            </div>
-            <div className="flex items-start gap-4">
-              <Callout {...features[1]} />
-              <span className="mt-3 h-px w-10 bg-gold/40" />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.1}>
-            <div className="relative h-80 w-80 overflow-hidden rounded-3xl border border-white/8 bg-gradient-to-br from-gold-light via-surface to-gold-light">
-              <Image
-                src=""
-                alt="The SleepWave Pro eye mask"
-                width={500}
-                height={500}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.15} className="flex flex-col items-start gap-16 text-left">
-            <div className="flex items-start gap-4">
-              <span className="mt-3 h-px w-10 bg-gold/40" />
-              <Callout {...features[2]} />
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="mt-3 h-px w-10 bg-gold/40" />
-              <Callout {...features[3]} />
-            </div>
-          </ScrollReveal>
-        </div>
-
-        {/* Mobile: product, then 2x2 callout grid below */}
-        <div className="md:hidden">
-          <ScrollReveal>
-            <div className="relative mx-auto mb-10 aspect-square w-full max-w-sm overflow-hidden rounded-3xl border border-white/8 bg-gradient-to-br from-gold-light via-surface to-gold-light">
-              <Image
-                src=""
-                alt="The SleepWave Pro eye mask"
-                width={500}
-                height={500}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </ScrollReveal>
-          <div className="grid grid-cols-2 gap-6">
-            {features.map((f, i) => (
-              <ScrollReveal key={f.title} delay={i * 0.05}>
-                <Callout {...f} />
-              </ScrollReveal>
-            ))}
-          </div>
+        <div className="grid sm:grid-cols-2 gap-5 lg:gap-6">
+          {features.map((f, i) => (
+            <ScrollReveal key={f.title} delay={i * 0.08} className="min-w-0">
+              <div className="h-full p-7 md:p-8 rounded-2xl bg-surface border border-white/8 shadow-sm hover:shadow-md hover:border-gold/20 transition-all duration-300 text-center sm:text-left">
+                <div className="w-14 h-14 rounded-2xl bg-gold/5 flex items-center justify-center mb-5 text-gold mx-auto sm:mx-0">
+                  {f.icon}
+                </div>
+                <h3 className="font-heading text-xl font-medium text-heading mb-2">
+                  {f.title}
+                </h3>
+                <p className="text-[15px] text-foreground/80 leading-relaxed">
+                  {f.body}
+                </p>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>
