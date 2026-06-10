@@ -24,23 +24,14 @@ export default function PerfectFor() {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
           <ScrollReveal className="min-w-0">
-            <div className="text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-heading font-medium text-gold tracking-tight mb-1">
-                Made for
-              </h2>
-              <p className="text-xl md:text-2xl font-heading font-medium text-heading tracking-tight mb-8">
-                People who are:
-              </p>
-
-              <div className="rounded-2xl overflow-hidden shadow-lg">
-                <Image
-                  src=""
-                  alt="Perfect for people who struggle with sleep"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
+            <div className="aspect-square rounded-3xl overflow-hidden border border-white/8 shadow-lg">
+              <Image
+                src="/products/who-its-for.webp"
+                alt="Who SleepWave Pro is for"
+                width={700}
+                height={700}
+                className="w-full h-full object-cover"
+              />
             </div>
           </ScrollReveal>
 

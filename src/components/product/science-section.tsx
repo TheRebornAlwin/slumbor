@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import SlowWaveDiagram from "@/components/product/slowwave-diagram";
 
 const signals = [
   {
@@ -24,7 +24,15 @@ export default function ScienceSection() {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <ScrollReveal className="min-w-0">
-            <SlowWaveDiagram />
+            <div className="aspect-square rounded-3xl overflow-hidden border border-white/8 shadow-lg">
+              <Image
+                src="/products/science.webp"
+                alt="The science behind SleepWave Pro"
+                width={700}
+                height={700}
+                className="w-full h-full object-cover"
+              />
+            </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.15} className="min-w-0 text-center md:text-left">
