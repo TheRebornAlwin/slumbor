@@ -6,7 +6,7 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 const steps = [
   {
     step: 1,
-    image: "",
+    image: "https://5jmyzbx4u2.ufs.sh/f/L6n7pVDecsTr6e3ihWxU8chn5GMEuj1fatpV2ABrdT9zw7IP",
     description: "Slip the mask on. Adjust the strap until it feels held, not tight.",
   },
   {
