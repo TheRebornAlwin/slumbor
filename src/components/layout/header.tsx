@@ -85,7 +85,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <button
               onClick={handleAddToCart}
-              className="px-5 py-2 rounded-full bg-gold text-[#0E1626] text-sm font-semibold hover:bg-[#E5B889] hover:shadow-[0_6px_24px_rgba(212,165,116,0.30)] transition-all duration-300 cursor-pointer hover:-translate-y-0.5 active:translate-y-0"
+              className="px-5 py-2 rounded-full bg-gold text-[#0E1626] text-sm font-semibold hover:bg-[#F2C87C] hover:shadow-[0_6px_24px_rgba(232,184,106,0.34)] transition-all duration-300 cursor-pointer hover:-translate-y-0.5 active:translate-y-0"
             >
               {addedToCart ? "Added!" : "Add to Cart"}
             </button>

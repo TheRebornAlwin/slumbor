@@ -8,7 +8,7 @@ export default function CostCallout() {
       <ScrollReveal>
         <div className="max-w-4xl mx-auto relative rounded-3xl overflow-hidden">
           {/* Gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gold via-[#B88654] to-gold" />
+          <div className="absolute inset-0 bg-gradient-to-br from-gold via-[#CFA05A] to-gold" />
           {/* Subtle shine overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-white/10" />
           <div className="relative text-[#0E1626] text-center py-14 md:py-16 px-6 md:px-12">

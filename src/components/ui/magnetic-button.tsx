@@ -29,9 +29,9 @@ export default function MagneticButton({
 
   const variants = {
     primary:
-      "bg-gold text-[#0E1626] shadow-[0_6px_28px_rgba(212,165,116,0.22)] hover:bg-[#E5B889] hover:shadow-[0_10px_38px_rgba(212,165,116,0.32)]",
+      "bg-gold text-[#0E1626] shadow-[0_6px_28px_rgba(232,184,106,0.22)] hover:bg-[#F2C87C] hover:shadow-[0_10px_38px_rgba(232,184,106,0.32)]",
     secondary:
-      "border border-gold/50 text-gold hover:border-gold hover:bg-gold/10 hover:shadow-[0_6px_28px_rgba(212,165,116,0.14)]",
+      "border border-gold/50 text-gold hover:border-gold hover:bg-gold/10 hover:shadow-[0_6px_28px_rgba(232,184,106,0.14)]",
     ghost: "text-gold hover:text-gold-dark hover:bg-gold-light/50",
   };
 

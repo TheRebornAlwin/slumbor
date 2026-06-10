@@ -13,7 +13,7 @@ export default function MidPageCTA() {
           <div className="mt-9 flex justify-center">
             <a
               href="#buy"
-              className="inline-flex w-full sm:w-80 items-center justify-center rounded-full bg-gold px-9 py-4 text-base font-semibold tracking-[0.01em] text-[#0E1626] transition-all duration-500 ease-out hover:-translate-y-0.5 hover:bg-[#E5B889] hover:shadow-[0_10px_38px_rgba(212,165,116,0.32)]"
+              className="inline-flex w-full sm:w-80 items-center justify-center rounded-full bg-gold px-9 py-4 text-base font-semibold tracking-[0.01em] text-[#0E1626] transition-all duration-500 ease-out hover:-translate-y-0.5 hover:bg-[#F2C87C] hover:shadow-[0_10px_38px_rgba(232,184,106,0.36)]"
             >
               Try it tonight
             </a>

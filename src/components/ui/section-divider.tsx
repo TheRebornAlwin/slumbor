@@ -33,7 +33,7 @@ export default function SectionDivider({
         className="h-px w-full max-w-xl animate-shimmer"
         style={{
           backgroundImage:
-            "linear-gradient(90deg, transparent, #d4a853, #e5c06e, #d4a853, transparent)",
+            "linear-gradient(90deg, transparent, #E8B86A, #F2CE84, #E8B86A, transparent)",
           backgroundSize: "200% 100%",
         }}
       />

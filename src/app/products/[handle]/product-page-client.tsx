@@ -371,7 +371,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 </div>
                 <button
                   onClick={handleAddToCart}
-                  className="flex-1 h-12 rounded-full font-semibold text-base transition-all duration-500 cursor-pointer bg-gold text-[#0E1626] hover:bg-[#E5B889] hover:shadow-[0_8px_30px_rgba(212,165,116,0.3)] hover:-translate-y-0.5 active:translate-y-0"
+                  className="flex-1 h-12 rounded-full font-semibold text-base transition-all duration-500 cursor-pointer bg-gold text-[#0E1626] hover:bg-[#F2C87C] hover:shadow-[0_8px_30px_rgba(232,184,106,0.34)] hover:-translate-y-0.5 active:translate-y-0"
                 >
                   {addedToCart ? (
                     <motion.span
