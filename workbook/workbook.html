@@ -1,0 +1,1375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="fonts.css">
+<style>
+@page { size: 8.5in 11in; margin: 0; }
+:root{
+  --midnight:#0E1626;
+  --cream:#F2EDE4;
+  --amber:#D4A574;
+  --ink:#2A2620;
+  --ink-soft:#6B6155;
+  --rule:#C9BBA6;
+}
+*{ box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+html,body{ margin:0; padding:0; }
+body{ font-family:'Inter',sans-serif; color:var(--ink); }
+
+.page{
+  position:relative; width:8.5in; height:11in; overflow:hidden;
+  page-break-after:always; break-after:page;
+}
+.page:last-child{ page-break-after:auto; }
+.light{ background:var(--cream); color:var(--ink); }
+.dark{ background:var(--midnight); color:var(--cream); }
+.pad{ padding:0.92in 0.95in 0.8in; height:100%; }
+.center{ display:flex; flex-direction:column; align-items:center; justify-content:space-between; text-align:center; }
+
+/* shared type */
+.eyebrow{
+  font-size:8.5pt; letter-spacing:0.32em; text-transform:uppercase;
+  color:var(--amber); font-weight:600; margin:0 0 0.12in;
+}
+.h2{
+  font-family:'Fraunces',serif; font-weight:400; color:var(--midnight);
+  font-size:23pt; line-height:1.12; letter-spacing:-0.01em; margin:0 0 0.26in;
+}
+.dense .h2{ font-size:21pt; margin-bottom:0.2in; }
+.lead{
+  font-family:'Fraunces',serif; font-size:22pt; color:var(--midnight);
+  margin:0 0 0.18in; font-weight:400;
+}
+
+/* prose rhythm */
+.prose{ font-size:11.5pt; line-height:1.62; color:var(--ink); }
+.dense .prose{ font-size:10pt; line-height:1.5; }
+.prose .b{ margin:0 0 0.155in; }
+.dense .prose .b{ margin:0 0 0.108in; }
+.prose .mk{
+  font-family:'Fraunces',serif; color:var(--amber); font-weight:500;
+  font-size:13pt; margin-top:0.05in; margin-bottom:0.05in; letter-spacing:0.01em;
+}
+.prose .sig{
+  font-family:'Fraunces',serif; font-style:italic; color:var(--midnight);
+  font-size:13pt; margin-top:0.16in;
+}
+
+/* cover */
+.cover .pad{ padding:1.05in 0.9in 0.95in; }
+.wordmark{
+  font-size:11pt; letter-spacing:0.5em; font-weight:600; color:var(--amber);
+  text-indent:0.5em;
+}
+.wordmark.sm{ font-size:10pt; }
+.cover-mid{ display:flex; flex-direction:column; align-items:center; gap:0.34in; width:100%; }
+.cover-title{
+  font-family:'Fraunces',serif; font-weight:300; color:var(--cream);
+  font-size:46pt; line-height:1.04; letter-spacing:-0.015em; margin:0;
+}
+.cover-sub{
+  font-family:'Fraunces',serif; font-style:italic; font-weight:300;
+  color:var(--cream); opacity:0.82; font-size:13.5pt; line-height:1.7; margin:0;
+}
+.hair{ width:1.1in; height:1px; background:var(--amber); opacity:0.8; }
+.hair.soft{ width:100%; background:var(--rule); opacity:0.55; margin:0.05in 0 0.2in; }
+
+/* back cover */
+.back-line{
+  font-family:'Fraunces',serif; font-weight:300; color:var(--cream);
+  font-size:26pt; line-height:1.45; margin:0;
+}
+.back-foot{ display:flex; flex-direction:column; align-items:center; gap:0.12in; }
+.back-meta{ font-size:9.5pt; letter-spacing:0.06em; color:var(--cream); opacity:0.72; margin:0; }
+.back-copy{ font-size:8.5pt; letter-spacing:0.1em; color:var(--cream); opacity:0.45; margin:0; }
+
+/* questions / fillable */
+.qblock{ margin:0 0 0.3in; }
+.qblock.sm{ margin:0.06in 0 0.22in; }
+.q{
+  font-family:'Fraunces',serif; font-size:14pt; color:var(--midnight);
+  font-weight:500; margin:0 0 0.07in; line-height:1.3;
+}
+.qsub{ font-size:9.5pt; line-height:1.55; color:var(--ink-soft); margin:0 0 0.16in; max-width:6.1in; }
+.qsub.wide{ max-width:6.4in; margin-bottom:0.22in; }
+.footnote{
+  font-size:9pt; line-height:1.6; color:var(--ink-soft); margin:0.26in 0 0;
+  max-width:6.3in; font-style:italic;
+}
+.rule{ border-bottom:1.2px solid var(--rule); height:0.36in; }
+.rule:last-child{ height:0.34in; }
+
+/* nightly form */
+.night .pad{ padding:0.78in 0.95in 0.7in; }
+.night-head{ display:flex; align-items:baseline; justify-content:space-between; }
+.night-title{ font-family:'Fraunces',serif; font-weight:400; font-size:25pt; color:var(--midnight); margin:0; }
+.night-no{ color:var(--amber); }
+.dateline{ font-size:10pt; color:var(--ink-soft); letter-spacing:0.04em; }
+.dl{ display:inline-block; min-width:0.4in; border-bottom:1.2px solid var(--rule); }
+.dl.wide{ min-width:0.55in; }
+
+.field{ margin:0.2in 0 0.14in; }
+.flabel{ font-size:9.5pt; letter-spacing:0.13em; text-transform:uppercase; color:var(--amber); font-weight:600; margin:0 0 0.1in; }
+.flabel.mt{ margin-top:0.16in; }
+.flabel .muted{ text-transform:none; letter-spacing:0; color:var(--ink-soft); font-weight:400; font-style:italic; }
+
+.opts{ display:flex; flex-wrap:wrap; gap:0.1in 0.34in; }
+.opts.two .opt{ width:46%; }
+.opts.col-opts{ flex-direction:column; gap:0.12in; }
+.opts.tight-opts .opt{ width:46%; }
+.opt{ display:inline-flex; align-items:center; gap:0.1in; font-size:10.5pt; color:var(--ink); }
+.ring{
+  display:inline-block; width:13px; height:13px; border:1.4px solid var(--amber);
+  border-radius:50%; flex:0 0 auto;
+}
+.usedrow{ display:flex; align-items:center; gap:0.2in; margin:0 0 0.1in; }
+.uslabel{ font-size:10pt; color:var(--ink); width:1.1in; }
+.nums{ display:inline-flex; gap:0.16in; }
+.num{ display:inline-flex; align-items:center; gap:0.06in; font-size:10pt; color:var(--ink); }
+.num .ring{ width:12px; height:12px; }
+
+.row2{ display:flex; gap:0.5in; }
+.row2 .col{ flex:1; }
+.timeline{ font-size:12pt; color:var(--ink); display:flex; align-items:center; gap:0.08in; }
+.ampm{ font-size:9pt; color:var(--ink-soft); margin-left:0.06in; }
+</style>
+</head>
+<body>
+
+<section class="page dark cover">
+  <div class="pad center">
+    <div class="wordmark">SLUMBOR</div>
+    <div class="cover-mid">
+      <div class="hair"></div>
+      <h1 class="cover-title">the fourteen-<br>night reset</h1>
+      <div class="hair"></div>
+    </div>
+    <p class="cover-sub">a quiet workbook<br>for the people who haven't slept right<br>in a while</p>
+  </div>
+</section>
+
+<section class="page light dense">
+  <div class="pad">
+    <p class="lead">Hey.</p>
+    <div class="prose">
+<p class="b">if you're reading this you probably already know what it's like.</p>
+<p class="b">the 2am ceiling stare.</p>
+<p class="b">the alarm going off when you finally just fell asleep.</p>
+<p class="b">the way your whole day ends up sitting on your shoulders<br>by the time you get into bed.</p>
+<p class="b">maybe you've been like this for months.</p>
+<p class="b">maybe years.</p>
+<p class="b">maybe you can't even remember the last time you woke up<br>feeling like an actual person.</p>
+<p class="b">we're not going to tell you this workbook fixes that.</p>
+<p class="b">nobody knows what fixes anything for sure,<br>and anyone who tells you they have the answer is selling you something.</p>
+<p class="b">what we will say is the next 14 nights matter.</p>
+<p class="b">not because 14 is a magic number.</p>
+<p class="b">because that's roughly how long it takes for a real pattern to show up,<br>and the sleep researchers who study this stuff for a living —<br>the ones with actual data behind them —<br>keep coming back to the same finding.</p>
+<p class="b">tracking your sleep is one of the few things<br>that consistently helps people see what's really happening night to night.</p>
+<p class="b">so we built this.</p>
+<p class="b">one page a night for two weeks.</p>
+<p class="b">a few prompts. some space to think.</p>
+<p class="b">not enough that it feels like another thing on your to-do list.</p>
+<p class="b">just enough that when you flip back at the end you'll see patterns<br>you couldn't see while you were in them.</p>
+<p class="b">if it works for you, we'd love to know.</p>
+<p class="b">if it doesn't, we have a refund policy for a reason —<br>and we mean it.</p>
+<p class="b">either way.</p>
+<p class="b">give it the full 14.</p>
+<p class="b sig">— Slumbor</p>
+    </div>
+  </div>
+</section>
+
+<section class="page light dense">
+  <div class="pad">
+    <p class="eyebrow">how this works</p>
+    <h2 class="h2">the deal</h2>
+    <div class="prose">
+<p class="b">for the next 14 nights, here's what you're doing.</p>
+<p class="b mk">one.</p>
+<p class="b">put the mask on for 15 to 20 minutes before sleep.</p>
+<p class="b">pick whatever heat level feels right that night.</p>
+<p class="b">pick whatever pulse mode feels right.</p>
+<p class="b">there's no “correct” setting.</p>
+<p class="b">some nights you'll want warmer. some nights softer.</p>
+<p class="b">your body knows. just listen.</p>
+<p class="b mk">two.</p>
+<p class="b">in the morning, fill in that night's page.</p>
+<p class="b">should take you about two minutes.</p>
+<p class="b">less if you're rushed.</p>
+<p class="b">don't overthink anything you write — nobody's grading this.</p>
+<p class="b">you can write three words if three words is all you have.</p>
+<p class="b mk">three.</p>
+<p class="b">just pay attention to what's happening.</p>
+<p class="b">this is the part most sleep guides skip completely.</p>
+<p class="b">they tell you to fix your sleep hygiene and download an app.</p>
+<p class="b">they don't tell you that paying attention is itself half the work.</p>
+<p class="b">because most of us run through our nights on autopilot<br>and have no idea what our sleep actually looks like from one week to the next.</p>
+<p class="b">one thing worth knowing now, so you don't quit early.</p>
+<p class="b">most people don't notice changes in the first 3 or 4 nights.</p>
+<p class="b">your nervous system has been wired for a while.</p>
+<p class="b">habits don't break in three days, no matter what the wellness people on instagram say.</p>
+<p class="b">by nights 5 to 7, most people start sleeping a little deeper.</p>
+<p class="b">by nights 10 to 14, most people start waking up feeling more like themselves again.<br>the way they did before whatever started happening, started happening.</p>
+<p class="b">so if night 3 comes and you're thinking “this isn't working” — keep going anyway.</p>
+<p class="b">give it the full two weeks. that's where the actual change tends to live.</p>
+<p class="b">if you've done all 14 nights and nothing has shifted, flip to the page near the end. we've got something specific to say to you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="page light dense">
+  <div class="pad">
+    <p class="eyebrow">the wind-down</p>
+    <h2 class="h2">before you put the mask on</h2>
+    <div class="prose">
+<p class="b">here's something nobody tells you about sleep masks.</p>
+<p class="b">they work way better when your body has already started moving toward sleep on its own.</p>
+<p class="b">you can't go from doom-scrolling at 11:47 to mask-on-pillow at 11:48<br>and expect your brain to flip a switch.</p>
+<p class="b">your brain doesn't have a switch. it has a slope.</p>
+<p class="b">you have to actually walk down it.</p>
+<p class="b">so here are four things that help. pick what fits your actual life, not the life you wish you had.</p>
+<p class="b mk">one.</p>
+<p class="b">dim the lights about an hour before bed.</p>
+<p class="b">bright overhead lights tell your brain it's still daytime.</p>
+<p class="b">lamp light is closer to sunset, and your body has been wired since the cave era to respond to dimming light by getting sleepy.</p>
+<p class="b mk">two.</p>
+<p class="b">put your phone somewhere you can't reach without standing up.</p>
+<p class="b">not the nightstand. somewhere genuinely annoying. the bathroom counter. a chair across the room.</p>
+<p class="b">the friction is the point. this is the one from the actual sleep research that everyone hates.</p>
+<p class="b">nobody wants to do it. do it anyway. it works.</p>
+<p class="b mk">three.</p>
+<p class="b">pick a heat level you actually like. the five settings are different on purpose.</p>
+<p class="b">some nights you'll want level 1, a hint of warmth on a face that's already pretty calm.</p>
+<p class="b">some nights you'll want level 5, the deep heat for when your forehead has been tight since 3pm<br>and your eyes feel like they're full of sand.</p>
+<p class="b">test them over the 14 nights. notice what your body wants on which kind of day.</p>
+<p class="b mk">four.</p>
+<p class="b">set it for 15 minutes and let your eyes close.</p>
+<p class="b">the auto-shutoff means you don't have to think about it. you put it on. you lie back. you let the night actually start.</p>
+<p class="b">that's the practice. that's all of it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="page light dense">
+  <div class="pad">
+    <p class="eyebrow">a little science</p>
+    <h2 class="h2">the part you might find interesting</h2>
+    <div class="prose">
+<p class="b">we're not going to give you a whole biology lecture. but a few things are worth knowing for what you're about to do.</p>
+<p class="b">your face holds an enormous amount of tension. especially around the eyes and forehead, especially if you spend any time looking at screens.</p>
+<p class="b">warm compresses on the face have been used in traditional medicine for actual centuries. way before anyone was selling them online. because they work.</p>
+<p class="b">the warmth tells your nervous system it's safe to let some tension go.<br>your face doesn't know the difference between a hot washcloth your grandmother put on you and a heated mask you ordered online.</p>
+<p class="b">the soft pulse around your eyes mimics rhythm, and your body recognizes rhythm as a cue to settle.</p>
+<p class="b">that's why weighted blankets work. why babies fall asleep in cars. why the sound of rain knocks you out within ten minutes.</p>
+<p class="b">rhythm is regulation. you don't have to know the mechanism. you just have to let it happen.</p>
+<p class="b">the tracking part — this workbook itself — is also research-backed.<br>sleep diaries are one of the central tools in CBT-I: cognitive behavioral therapy for insomnia.</p>
+<p class="b">CBT-I is the gold-standard treatment recommended by every major sleep medicine organization on earth,<br>including the American Academy of Sleep Medicine. this isn't a brand gimmick. tracking your sleep is what the actual experts do.</p>
+<p class="b">one more thing, because we think you need to hear it.</p>
+<p class="b">you are not broken. people who don't sleep well are not broken.</p>
+<p class="b">you're running on a nervous system that's been on alert for too long,<br>and somewhere along the way it forgot how to come down from that.<br>the next 14 nights are about reminding it that it can.</p>
+    </div>
+  </div>
+</section>
+
+<section class="page light">
+  <div class="pad">
+    <p class="eyebrow">before night one</p>
+    <h2 class="h2">two questions before we start</h2>
+
+    <div class="qblock">
+      <p class="q">what made you finally decide to try this?</p>
+      <p class="qsub">not the polished version you'd tell your boss or your in-laws. the actual reason. write it the way you'd text a friend who already knows you.</p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+
+    <div class="qblock">
+      <p class="q">what does &ldquo;sleeping better&rdquo; actually look like for you?</p>
+      <p class="qsub">not the magazine version. the specific everyday version. waking before your alarm. not needing two coffees to feel human. getting through 3pm without that wall. handling your kid spilling juice without snapping. whatever the actual thing is for you.</p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+
+    <p class="footnote">we'll come back to these on night 14. so just write whatever's true right now, even if it sounds small or unrealistic on paper.</p>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">01</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">02</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">03</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">04</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">05</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">06</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">07</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">08</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">09</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">10</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">11</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">12</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">13</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light night">
+  <div class="pad">
+    <div class="night-head">
+      <h2 class="night-title">Night <span class="night-no">14</span></h2>
+      <div class="dateline">Date <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span> / <span class="dl">&nbsp;</span></div>
+    </div>
+    <div class="hair soft"></div>
+
+    <div class="field">
+      <p class="flabel">before bed tonight i felt</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>wired but trying</span></span>
+        <span class="opt"><i class="ring"></i><span>tired but my head wouldn't stop</span></span>
+        <span class="opt"><i class="ring"></i><span>pretty calm</span></span>
+        <span class="opt"><i class="ring"></i><span>wrecked</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">what i used</p>
+      <div class="usedrow">
+        <span class="uslabel">heat level</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span></span>
+      </div>
+      <div class="usedrow">
+        <span class="uslabel">pulse mode</span>
+        <span class="nums"><span class="num"><i class="ring"></i>1</span><span class="num"><i class="ring"></i>2</span><span class="num"><i class="ring"></i>3</span><span class="num"><i class="ring"></i>4</span><span class="num"><i class="ring"></i>5</span><span class="num"><i class="ring"></i>6</span></span>
+      </div>
+    </div>
+
+    <div class="field row2">
+      <div class="col">
+        <p class="flabel">how long i wore it</p>
+        <div class="opts col-opts">
+          <span class="opt"><i class="ring"></i><span>less than 10 min</span></span>
+          <span class="opt"><i class="ring"></i><span>15 min</span></span>
+          <span class="opt"><i class="ring"></i><span>longer</span></span>
+        </div>
+      </div>
+      <div class="col">
+        <p class="flabel">roughly when i fell asleep</p>
+        <div class="timeline"><span class="dl wide">&nbsp;</span> : <span class="dl wide">&nbsp;</span> <span class="ampm">pm / am</span></div>
+        <p class="flabel mt">did i wake during the night</p>
+        <div class="opts two tight-opts">
+          <span class="opt"><i class="ring"></i><span>slept through</span></span>
+          <span class="opt"><i class="ring"></i><span>woke once</span></span>
+          <span class="opt"><i class="ring"></i><span>woke a couple times</span></span>
+          <span class="opt"><i class="ring"></i><span>kept waking up</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">this morning i woke up feeling</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>heavy. just heavy.</span></span>
+        <span class="opt"><i class="ring"></i><span>slow but okay</span></span>
+        <span class="opt"><i class="ring"></i><span>rested</span></span>
+        <span class="opt"><i class="ring"></i><span>actually decent</span></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="flabel">one line about tonight or this morning <span class="muted">— anything. you're not graded.</span></p>
+      <div class="rule "></div><div class="rule "></div><div class="rule "></div>
+    </div>
+  </div>
+</section>
+
+<section class="page light halfway">
+  <div class="pad">
+    <p class="eyebrow">halfway</p>
+    <h2 class="h2">night seven. you're halfway through.</h2>
+    <p class="qsub wide">look back at the last seven pages. actually look. there's stuff there you couldn't see when you were writing it, but you can see it now.</p>
+
+    <div class="qblock sm">
+      <p class="q">what's different now compared to a week ago?</p>
+      <p class="qsub">even something small. even something you're not sure counts.</p>
+      <div class="rule "></div><div class="rule "></div>
+    </div>
+    <div class="qblock sm">
+      <p class="q">what's <em>not</em> different? what's still the same?</p>
+      <p class="qsub">this is just as important as the first question.</p>
+      <div class="rule "></div><div class="rule "></div>
+    </div>
+    <div class="qblock sm">
+      <p class="q">what heat level and pulse mode have been working best?</p>
+      <div class="rule "></div>
+    </div>
+
+    <p class="footnote">if you've found a combination that's working, don't keep changing it just to see what else is there. consistency is what moves the needle from here, not novelty. and if nothing has shifted yet, that's still normal &mdash; about a third of people in CBT-I programs don't see real change until well into the second week. the second week is where most of the real settling happens. don't quit on night seven.</p>
+  </div>
+</section>
+
+<section class="page light">
+  <div class="pad">
+    <p class="eyebrow">night fourteen</p>
+    <h2 class="h2">you made it.</h2>
+    <p class="qsub wide">flip back to <strong>page 6</strong> and read what you wrote before any of this started. don't read it like someone else's words. read it like your own.</p>
+
+    <div class="field">
+      <p class="q">did any of it actually happen?</p>
+      <div class="opts two">
+        <span class="opt"><i class="ring"></i><span>most of it</span></span>
+        <span class="opt"><i class="ring"></i><span>some of it</span></span>
+        <span class="opt"><i class="ring"></i><span>a little</span></span>
+        <span class="opt"><i class="ring"></i><span>not really</span></span>
+      </div>
+      <div class="opts"><span class="opt"><i class="ring"></i><span>nothing changed</span></span></div>
+    </div>
+
+    <div class="qblock sm">
+      <p class="q">the biggest difference between night 1 and night 14?</p>
+      <p class="qsub">even if you're not sure it's the mask. just write what's different.</p>
+      <div class="rule "></div><div class="rule "></div>
+    </div>
+    <div class="qblock sm">
+      <p class="q">what surprised you about this process?</p>
+      <div class="rule "></div><div class="rule "></div>
+    </div>
+    <div class="qblock sm">
+      <p class="q">if a friend asked whether this was worth seventy bucks, what would you honestly tell them?</p>
+      <div class="rule "></div><div class="rule "></div>
+    </div>
+
+    <p class="footnote">if your sleep is better now, even a little &mdash; that counts as real. don't let your brain talk you out of it just because it's not perfect yet. better is the whole game. better compounds. give it another month and see where you land. if your sleep is honestly not better, turn the page. we have something specific to say to you.</p>
+  </div>
+</section>
+
+<section class="page light dense">
+  <div class="pad">
+    <p class="eyebrow">if this didn't work for you</p>
+    <h2 class="h2">we're genuinely sorry.</h2>
+    <div class="prose">
+<p class="b">we built this thing because it worked for us, and for the people around us, and we believed it would probably work for you too.</p>
+<p class="b">but bodies are different. sleep is personal. sometimes a thing that helps one person doesn't help another, even when both have the same problem on paper.</p>
+<p class="b">if you've done the full 14 nights and you're still where you started, here's what we want you to do.</p>
+<p class="b mk">one.</p>
+<p class="b">send us an email. hello@slumbor.com.</p>
+<p class="b">tell us what happened. what you tried, what didn't work, what you noticed or didn't. we read every email. a real person responds, usually within a day.</p>
+<p class="b">we're not going to argue with you, or try to talk you out of feeling the way you feel.</p>
+<p class="b mk">two.</p>
+<p class="b">ask for a refund. you have 180 days from the day the mask arrived. no restocking fee. no questions about what you did wrong.</p>
+<p class="b">because you didn't do anything wrong. send it back, we send your money back. that's the deal.</p>
+<p class="b mk">three.</p>
+<p class="b">keep this workbook either way. it's yours.</p>
+<p class="b">if you want to try the framework with a different approach later — real CBT-I therapy, melatonin under a doctor's guidance, rebuilding your sleep hygiene from scratch —<br>the structure still works. don't throw it away.</p>
+<p class="b mk">four.</p>
+<p class="b">and this one matters. if your sleep has been bad for months and you haven't talked to a doctor, please do.</p>
+<p class="b">chronic insomnia is genuinely treatable. there are real medical pathways that go well beyond what a sleep mask can offer.</p>
+<p class="b">the American Academy of Sleep Medicine specifically recommends seeing a sleep specialist<br>if insomnia has been going on for three months or longer.</p>
+<p class="b">you deserve real help. and you don't have to figure this out alone.</p>
+<p class="b">we would honestly rather give your money back and have you actually sleeping eventually<br>than keep your money and have you still stuck.</p>
+<p class="b">take care of yourself.</p>
+<p class="b sig">— Slumbor</p>
+    </div>
+  </div>
+</section>
+
+<section class="page dark cover">
+  <div class="pad center">
+    <div class="cover-mid">
+      <div class="hair"></div>
+      <p class="back-line">sleep deeper.<br>wake slower.<br>come back to yourself.</p>
+      <div class="hair"></div>
+    </div>
+    <div class="back-foot">
+      <div class="wordmark sm">SLUMBOR</div>
+      <p class="back-meta">slumbor.com &nbsp;·&nbsp; hello@slumbor.com</p>
+      <p class="back-copy">© Slumbor 2026</p>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var m = location.hash.match(/only=(\d+)/);
+  if(!m) return;
+  var i = +m[1]-1, ps = document.querySelectorAll('.page');
+  ps.forEach(function(p,idx){ if(idx!==i) p.style.display='none'; });
+})();
+</script>
+</body>
+</html>
