@@ -11,12 +11,12 @@ const steps = [
   },
   {
     step: 2,
-    image: "",
+    image: "/products/step2.webp",
     description: "Press the button. Choose warmth, or pulse, or both. Dial it to what tonight needs.",
   },
   {
     step: 3,
-    image: "",
+    image: "/products/step3.webp",
     description: "Lie back. Breathe out. Most people are asleep before the timer ends.",
   },
 ];
