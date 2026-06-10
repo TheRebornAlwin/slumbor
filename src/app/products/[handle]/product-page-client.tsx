@@ -16,7 +16,6 @@ import TestimonialCarousel from "@/components/product/testimonial-carousel";
 import PurchaseNotification from "@/components/product/purchase-notification";
 import CostCallout from "@/components/product/cost-callout";
 import BenefitsHero from "@/components/product/benefits-hero";
-import EffectiveFor from "@/components/product/effective-for";
 import MidPageCTA from "@/components/product/mid-page-cta";
 import ReliefIntro from "@/components/product/relief-intro";
 import DiscoverSection from "@/components/product/discover-section";
@@ -440,7 +439,6 @@ export default function ProductPageClient({ product }: { product: Product }) {
       </div>
 
       <BenefitsHero />
-      <EffectiveFor />
       <ReliefIntro />
       <DiscoverSection />
       <ScienceSection />
