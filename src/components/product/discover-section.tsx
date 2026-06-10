@@ -17,42 +17,14 @@ export default function DiscoverSection() {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <ScrollReveal className="min-w-0">
-            <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-1 sm:gap-0">
-              <div className="text-center">
-                <h3 className="text-lg sm:text-xl font-heading font-bold text-heading tracking-tight mb-4">
-                  Before<br />
-                  <span className="text-muted"><BrandName tm /></span>
-                </h3>
-                <div className="aspect-[3/4] rounded-2xl bg-gradient-to-b from-white/5 to-white/2 border border-white/10 overflow-hidden">
-                  <Image
-                    src=""
-                    alt="Before Slumbor"
-                    width={300}
-                    height={400}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              <div className="flex items-center justify-center px-2 mt-8">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </div>
-
-              <div className="text-center">
-                <h3 className="text-lg sm:text-xl font-heading font-bold tracking-tight mb-4">
-                  After<br />
-                  <span className="text-gold"><BrandName tm /></span>
-                </h3>
-                <div className="aspect-[3/4] rounded-2xl bg-gradient-to-b from-gold/5 to-gold/10 border border-gold/20 overflow-hidden">
-                  <Image
-                    src=""
-                    alt="After Slumbor"
-                    width={300}
-                    height={400}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+            <div className="aspect-square rounded-3xl overflow-hidden border border-white/8 shadow-lg">
+              <Image
+                src="/products/before-after.webp"
+                alt="Before and after Slumbor"
+                width={700}
+                height={700}
+                className="w-full h-full object-cover"
+              />
             </div>
           </ScrollReveal>
 
