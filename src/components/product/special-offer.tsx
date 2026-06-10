@@ -28,8 +28,8 @@ export default function SpecialOffer() {
             <Image
               src="/products/what-you-get.webp"
               alt="Everything you get with SleepWave Pro: the mask, the 14-Night Sleep Reset Workbook, free shipping, and the guarantee"
-              width={1448}
-              height={1086}
+              width={1600}
+              height={900}
               className="w-full h-auto object-cover"
             />
           </div>
