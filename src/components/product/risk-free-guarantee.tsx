@@ -43,7 +43,9 @@ export default function RiskFreeGuarantee() {
             </div>
 
             <p className="text-foreground/80 leading-relaxed mb-4 max-w-md mx-auto">
-              We built this because we needed it ourselves. We stand behind it.
+              We built this because we needed it ourselves.
+              <br />
+              We stand behind it.
             </p>
 
             <p className="text-sm text-slate">
