@@ -55,8 +55,7 @@ export default function Header() {
         id: "sleepwave-pro",
         title: "SleepWave Pro",
         price: 69.99,
-        image:
-          "",
+        image: "/products/p1.webp",
       },
       1
     );

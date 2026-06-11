@@ -58,7 +58,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
         id: product.id,
         title: product.title,
         price: effectivePrice,
-        image: "",
+        image: product.images[0],
       },
       quantity * effectiveQty
     );
@@ -97,7 +97,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
         id: product.id,
         title: product.title,
         price: product.price,
-        image: "",
+        image: product.images[0],
       },
       1
     );
