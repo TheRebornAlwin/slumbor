@@ -24,10 +24,10 @@ export default function BenefitsHero() {
             </h2>
             <p className="text-slate leading-relaxed mb-4">
               By the time you finally sit down at night, your nervous system has been
-              running hard for fourteen hours straight, and your body shows it. There is
-              the tension sitting behind your eyes, the sinus pressure that never quite
-              lets up, and a brain that picks this exact moment to replay every awkward
-              thing you said all week.
+              running hard for fourteen hours straight. And your body knows it. The
+              tension sits behind your eyes, the sinus pressure never quite lets up, and
+              your brain picks this exact moment to start replaying every awkward thing
+              you said all week.
             </p>
             <p className="text-slate leading-relaxed mb-8">
               Tonight can go differently. A few quiet minutes with{" "}
