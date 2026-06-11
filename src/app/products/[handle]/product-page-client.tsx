@@ -108,7 +108,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               className="md:hidden min-w-0 -mx-6"
             >
               <div className="relative">
-                {discountPct > 0 && (
+                {discountPct > 0 && mobileActiveImage === 0 && (
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
@@ -163,10 +163,10 @@ export default function ProductPageClient({ product }: { product: Product }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="hidden md:block space-y-4 min-w-0"
+              className="hidden md:block space-y-4 min-w-0 w-full max-w-[440px] mx-auto md:sticky md:top-28 md:self-start"
             >
               <div className="group relative aspect-square rounded-3xl bg-gradient-to-br from-gold-light via-surface to-gold-light border border-white/8 overflow-hidden shadow-lg">
-                {discountPct > 0 && (
+                {discountPct > 0 && selectedImage === 0 && (
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
@@ -248,7 +248,6 @@ export default function ProductPageClient({ product }: { product: Product }) {
             >
               <h1 className="text-3xl md:text-4xl lg:text-[42px] font-heading font-medium text-heading tracking-tight leading-tight mb-3">
                 <BrandName tm /> {product.title}
-                <span className="align-super text-[0.5em] text-gold">™</span>
               </h1>
 
               <p className="text-foreground/70 italic text-base mb-3">
@@ -331,7 +330,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   By 11pm your eyes are fried and your head still won&apos;t switch off.
                 </h3>
                 <p className="text-[15px] text-slate leading-relaxed mb-4 max-w-lg mx-auto md:mx-0">
-                  The <span className="font-medium text-heading"><BrandName tm /> SleepWave Pro</span> wraps your eyes in gentle warmth and a slow pulse, two signals that quietly tell your nervous system the day is finally over. The tension behind your eyes lets go, your brain stops rehearsing tomorrow, and you start to drift. There is no music, no beeping, and no robot voice jolting you awake, and no hard pressure crushing your eyes. Just quiet.
+                  The <span className="font-medium text-heading"><BrandName tm /> SleepWave Pro</span> wraps your eyes in gentle warmth and a slow pulse, two signals that quietly tell your nervous system the day is finally over. The tension behind your eyes lets go, your brain stops rehearsing tomorrow, and you start to drift off. All you feel is the warmth, a soft rhythm around your eyes, and a room quiet enough to actually fall asleep in.
                 </p>
                 <p className="text-[15px] text-slate leading-relaxed max-w-lg mx-auto md:mx-0">
                   Not sleeping better in two weeks? You&apos;ve got a full{" "}
@@ -388,7 +387,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
 
               {/* Offer reassurance line */}
               <p className="text-[13px] text-slate leading-relaxed mb-8 text-center md:text-left">
-                Free US shipping. 180-night guarantee + 2-year warranty. Plus{" "}
+                Free US shipping, a 180-night guarantee, and a 2-year warranty. Plus{" "}
                 <span className="text-gold">The 14-Night Sleep Reset Workbook</span>{" "}
                 ($29 value), free with every order.
               </p>

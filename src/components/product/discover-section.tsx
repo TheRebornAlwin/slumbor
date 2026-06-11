@@ -35,14 +35,15 @@ export default function DiscoverSection() {
             <p className="text-slate leading-relaxed mb-5">
               <span className="font-medium text-heading">Meet</span>{" "}<BrandName tm className="text-heading" />,
               a heated eye mask for anyone who is sick of staring at the ceiling with a
-              fried head and a brain that will not shut up. It works with your body
+              fried head and a brain that won&apos;t shut up. It works with your body
               instead of fighting it. So winding down stops being the hardest part of
               your night and starts being the easiest.
             </p>
             <div className="flex flex-col items-center md:items-start space-y-3">
               {discoveryBullets.map((point, i) => (
-                <p key={i} className="text-sm text-foreground max-w-[90%] md:max-w-none">
-                  <span className="text-gold mr-2">&#8226;</span>{point}
+                <p key={i} className="flex gap-2 text-sm text-foreground max-w-[90%] md:max-w-none text-left">
+                  <span className="text-gold flex-shrink-0">&#8226;</span>
+                  <span>{point}</span>
                 </p>
               ))}
             </div>

@@ -19,7 +19,8 @@ export default function MidPageCTA() {
             </a>
           </div>
           <p className="mt-5 text-sm text-lavender">
-            Free US shipping. 180-night guarantee. Sleep better in 14 nights or full refund.
+            Free US shipping, a 180-night guarantee, and your money back if you are not
+            sleeping better in 14 nights.
           </p>
         </div>
       </ScrollReveal>

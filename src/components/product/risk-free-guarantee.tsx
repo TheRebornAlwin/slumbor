@@ -34,11 +34,11 @@ export default function RiskFreeGuarantee() {
               so here&apos;s the honest version.
             </p>
 
-            <div className="space-y-3 max-w-md mx-auto text-left mb-8">
+            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3.5 max-w-xl mx-auto text-left mb-8">
               {guaranteeBullets.map((point, i) => (
-                <div key={i} className="flex items-start gap-3">
+                <div key={i} className="flex items-start gap-3 rounded-xl bg-white/[0.03] border border-white/8 p-3.5">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span className="text-sm text-foreground">{point}</span>
+                  <span className="text-sm text-foreground leading-snug">{point}</span>
                 </div>
               ))}
             </div>

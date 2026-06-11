@@ -6,39 +6,34 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const faqItems = [
   {
-    question: "Will the shutdown noise wake me back up?",
+    question: "How long does it last on a charge?",
     answer:
-      "No. This was the single biggest complaint people had about other masks, the cheerful voice announcing 'goodbye' right as they drifted off. The SleepWave Pro just goes quiet. It powers down silently after 15 minutes.",
-  },
-  {
-    question: "Is the pressure going to hurt my eyes?",
-    answer:
-      "No. The pulse is designed to wrap your sinuses and temples, not press your eyeballs back into your head. It's soft on purpose. Most people describe it as a hand resting gently over their eyes.",
+      "You will get up to four sessions out of a single charge, and it tops back up in about an hour and a half over USB-C, so it tends to just live on your nightstand and stay ready whenever you need it.",
   },
   {
     question: "Does it actually help with headaches, or just sleep?",
     answer:
-      "Both. The warmth and slow pulse loosen the tension that stacks up behind your eyes and temples after a long day at screens. A lot of people reach for it the moment a tension headache starts, not just at bedtime.",
+      "It helps with both, honestly. The warmth and the slow pulse loosen the tension that builds up behind your eyes and temples after a long day on screens, so a lot of people reach for it the moment a tension headache starts, and not only at bedtime.",
   },
   {
-    question: "How long does it last on a charge?",
+    question: "Is the pulse going to feel like too much on my eyes?",
     answer:
-      "Up to 4 sessions per charge. It tops up in about 1.5 hours over USB-C, so it's always ready on your nightstand.",
+      "Not at all. The pulse is built to sit gently around your sinuses and temples rather than push on your eyes, so most people describe it as feeling like a warm hand resting softly over their face while they fall asleep.",
   },
   {
-    question: "Does it play music or make any sound?",
+    question: "How long do I wear it each night?",
     answer:
-      "No, and that's on purpose. No music, no Bluetooth, no beeps. Just warmth and a soft pulse, and a room that stays quiet enough to actually fall asleep in. The silence is the point.",
+      "About fifteen to twenty minutes is all it takes, and there is an auto shutoff so you do not have to think about it. You put it on, you lie back, and most people are asleep before it finishes the session.",
   },
   {
     question: "What if it breaks?",
     answer:
-      "It's covered by a 2-year warranty. If it ever stops working, email us at shopslumbor@gmail.com and we'll send a free replacement. No fighting, no fine print.",
+      "It is covered by a two-year warranty, so if it ever stops working, just send us a quick email at shopslumbor@gmail.com and we will get a free replacement out to you. There is no fine print and nothing to argue about.",
   },
   {
     question: "What if it doesn't work for me?",
     answer:
-      "You have 180 nights. Sleep better within 14 of them or email us at shopslumbor@gmail.com for a full refund. Keep the bonus workbook either way. No restocking fee, no questions about why.",
+      "Then you send it back, simple as that. You have a full 180 nights to try it, and if you are not sleeping better, email us at shopslumbor@gmail.com for a refund of every cent. You keep the bonus workbook either way, and there is no restocking fee and no questions about why.",
   },
 ];
 
@@ -54,11 +49,8 @@ export default function ProductFAQ() {
       <div className="max-w-3xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-14">
-            <p className="text-xs font-medium tracking-[0.22em] uppercase text-gold mb-3">
-              Common Questions
-            </p>
             <h2 className="text-3xl md:text-4xl font-heading font-medium text-heading tracking-tight">
-              Frequently asked questions
+              FAQs
             </h2>
           </div>
         </ScrollReveal>

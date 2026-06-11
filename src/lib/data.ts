@@ -35,7 +35,7 @@ export const heroProduct: Product = {
   title: "SleepWave Pro",
   tagline: "The kind of quiet your body has been waiting for.",
   description:
-    "By the end of the day your eyes are fried from screens and your head won't switch off. The SleepWave Pro wraps your eyes in gentle warmth and a slow pulse. Two signals that tell your nervous system the day is over and it's safe to let go. No music, no beeps, no robot voice announcing it's done. No pressure crushing your eyes. Just the quiet your body has been waiting for.",
+    "By the end of the day your eyes are fried from screens and your head will not switch off. The SleepWave Pro wraps your eyes in gentle warmth and a slow pulse, two signals that tell your nervous system the day is over and it is safe to let go. The tension behind your eyes eases, your mind goes quiet, and you finally drift off into the kind of rest your body has been waiting for.",
   price: 69.99,
   compareAtPrice: 139.99,
   images: [

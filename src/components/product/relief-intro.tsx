@@ -85,11 +85,11 @@ export default function ReliefIntro() {
         </div>
 
         <ScrollReveal delay={0.2}>
-          <div className="flex items-start gap-4 rounded-2xl border border-gold/20 bg-gold/[0.06] p-6 md:p-7 text-left">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold flex-shrink-0 mt-0.5">
+          <div className="flex flex-col items-center text-center rounded-2xl border border-gold/20 bg-gold/[0.06] p-6 md:p-8">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold mb-3">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <p className="text-[15px] md:text-base text-foreground leading-relaxed">
+            <p className="text-[15px] md:text-base text-foreground leading-relaxed max-w-xl">
               <span className="font-semibold text-heading">You don&apos;t have to keep grinding through it.</span>{" "}
               <BrandName tm /> is built for exactly this: warmth and a slow pulse that
               walk your body down into sleep, in the kind of quiet that lets it work.

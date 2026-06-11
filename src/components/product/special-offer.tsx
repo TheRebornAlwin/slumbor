@@ -26,7 +26,7 @@ export default function SpecialOffer() {
         <ScrollReveal>
           <div className="rounded-3xl overflow-hidden border border-white/8 shadow-lg max-w-4xl mx-auto">
             <Image
-              src="/products/what-you-get.webp"
+              src="/products/what-you-get-v2.webp"
               alt="Everything you get with SleepWave Pro: the mask, the 14-Night Sleep Reset Workbook, free shipping, and the guarantee"
               width={1600}
               height={900}

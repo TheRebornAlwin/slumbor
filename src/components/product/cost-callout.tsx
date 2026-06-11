@@ -16,7 +16,7 @@ export default function CostCallout() {
               A bottle of melatonin runs out in three weeks.
             </h2>
             <p className="text-lg md:text-xl font-medium opacity-85">
-              The SleepWave Pro costs <span className="font-semibold underline underline-offset-4">$69.99 once</span>, and you can use it every single night for years.
+              The SleepWave Pro costs <span className="font-semibold underline underline-offset-4">$69.99 once</span>, and you can use it every night for the rest of your life.
             </p>
           </div>
         </div>
