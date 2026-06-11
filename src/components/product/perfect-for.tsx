@@ -5,17 +5,17 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 import BrandName from "@/components/ui/brand-name";
 
 const bulletPoints = [
-  "Can't fall asleep even when you're completely exhausted",
-  "Stares at screens all day and pays for it by bedtime",
-  "Gets a tension headache by the end of every workday",
-  "Has tried melatonin, apps, and tea and still can't switch off",
-  "Wakes up at 2am with a brain that won't stop",
+  "You can't fall asleep even when you are completely worn out",
+  "You stare at screens all day and feel it by the time night comes",
+  "You get a tension headache by the end of almost every workday",
+  "You have tried melatonin, apps, and tea, and still can't switch off",
+  "You wake up at 2am with a brain that simply will not stop",
 ];
 
 const benefitBullets = [
-  "Relief in the comfort of your own bed",
-  "No supplements, no apps, no subscriptions",
-  "Better sleep, fewer headaches, calmer mornings",
+  "Real relief from the comfort of your own bed",
+  "No supplements, no apps, and nothing to subscribe to",
+  "Deeper sleep, fewer headaches, and calmer mornings",
 ];
 
 export default function PerfectFor() {
@@ -40,7 +40,7 @@ export default function PerfectFor() {
               Who is this for?
             </h2>
             <p className="text-slate leading-relaxed mb-5">
-              If you&apos;re someone who:
+              If any of this sounds like you:
             </p>
             <div className="flex flex-col items-center md:items-start space-y-3 mb-8">
               {bulletPoints.map((point, i) => (
@@ -50,7 +50,7 @@ export default function PerfectFor() {
               ))}
             </div>
             <p className="text-slate leading-relaxed mb-5">
-              Then <BrandName tm className="text-heading" /> is built exactly for you.
+              Then <BrandName tm className="text-heading" /> was made with you in mind.
             </p>
             <div className="flex flex-col items-center md:items-start space-y-3">
               {benefitBullets.map((point, i) => (

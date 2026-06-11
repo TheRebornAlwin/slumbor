@@ -5,10 +5,10 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 import BrandName from "@/components/ui/brand-name";
 
 const discoveryBullets = [
-  "Made for screen-fried eyes and stressed-out nervous systems",
-  "Uses warmth and a soft pulse the body responds to, in total silence",
-  "Works in minutes, not weeks",
-  "Compact enough to live on your nightstand forever",
+  "Built for screen-tired eyes and a nervous system stuck in overdrive",
+  "Uses gentle warmth and a soft pulse your body responds to, in complete silence",
+  "Works in a matter of minutes, not weeks of waiting it out",
+  "Small enough to live on your nightstand and become part of the routine",
 ];
 
 export default function DiscoverSection() {
@@ -34,8 +34,9 @@ export default function DiscoverSection() {
             </h2>
             <p className="text-slate leading-relaxed mb-5">
               <span className="font-medium text-heading">Meet</span>{" "}<BrandName tm className="text-heading" />,
-              a heated eye mask for people who are done staring at the ceiling with a
-              fried head and a brain that won&apos;t quit.
+              a heated eye mask made for anyone who is tired of staring at the ceiling
+              with a fried head and a brain that refuses to quit. It works with your
+              body instead of against it, so winding down stops feeling like a fight.
             </p>
             <div className="flex flex-col items-center md:items-start space-y-3">
               {discoveryBullets.map((point, i) => (

@@ -16,15 +16,25 @@ const navLinks = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
   const { totalItems, setIsOpen, addItem } = useCart();
 
   useEffect(() => {
+    let lastY = window.scrollY;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const y = window.scrollY;
+      setScrolled(y > 20);
+      // Hide when scrolling down past the header; reveal the moment you scroll up.
+      if (y > lastY && y > 120) {
+        setHidden(true);
+      } else if (y < lastY) {
+        setHidden(false);
+      }
+      lastY = y;
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -56,7 +66,12 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-[36px] left-0 right-0 z-40">
+      <header
+        className={cn(
+          "fixed top-[36px] left-0 right-0 z-40 transition-transform duration-300 ease-out",
+          hidden && !mobileOpen ? "-translate-y-[calc(100%+40px)]" : "translate-y-0"
+        )}
+      >
         <div
           className={cn(
             "absolute inset-0 -z-10 bg-[#0E1626]/85 backdrop-blur-xl border-b border-white/[0.04] shadow-[0_4px_30px_rgba(0,0,0,0.4)] transition-opacity duration-300",

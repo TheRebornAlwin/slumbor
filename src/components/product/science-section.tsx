@@ -6,15 +6,15 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 const signals = [
   {
     name: "Warmth",
-    body: "Gentle heat around the eyes opens the blood vessels and tells your parasympathetic nervous system the body is safe to wind down. The tension behind your eyes starts to let go.",
+    body: "Gentle heat around your eyes relaxes the blood vessels and tells your nervous system that the day is over and it is safe to wind down. Slowly, the tension behind your eyes starts to let go.",
   },
   {
     name: "Pulse",
-    body: "A slow, rhythmic pressure that mimics the pace of a human touch. Your body reads that rhythm as a calming signal, the same way a swaddled baby settles.",
+    body: "A slow, rhythmic pressure that moves at the pace of a human touch. Your body reads that rhythm as a signal to calm down, the same way a swaddled baby settles in someone's arms.",
   },
   {
     name: "Silence",
-    body: "No music, no beeps, no robot voice jolting you awake when it's done. Just warmth, a soft pulse, and a room quiet enough to actually drift off in. The silence is the third thing your nervous system needs.",
+    body: "There is no music, no beeping, and no voice announcing it is finished and pulling you back awake. Just warmth, a soft pulse, and a room quiet enough to fall asleep in. That silence is the third thing your nervous system has been missing.",
   },
 ];
 
@@ -23,7 +23,7 @@ export default function ScienceSection() {
     <section className="py-20 md:py-28 px-6 bg-surface section-glow-gold">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-          <ScrollReveal className="min-w-0">
+          <ScrollReveal className="min-w-0 md:order-last">
             <div className="aspect-square rounded-3xl overflow-hidden border border-white/8 shadow-lg">
               <Image
                 src="/products/science.webp"
@@ -43,9 +43,9 @@ export default function ScienceSection() {
               How warmth and a slow pulse walk your nervous system to sleep.
             </h2>
             <p className="text-slate leading-relaxed mb-8">
-              No gimmicks, no spec sheet to take on faith. Two signals your body was
-              built to respond to, delivered in the kind of quiet that lets them
-              actually work.
+              There are no gimmicks here and no spec sheet you have to take on faith. It
+              comes down to two signals your body was built to respond to, delivered in
+              the kind of quiet that lets them do their job.
             </p>
             <div className="space-y-5">
               {signals.map((s, i) => (
@@ -59,8 +59,8 @@ export default function ScienceSection() {
               ))}
             </div>
             <p className="text-foreground/80 leading-relaxed mt-8 italic">
-              It&apos;s not about forcing sleep. It&apos;s about giving your body
-              permission.
+              None of this is about forcing yourself to sleep. It is about giving your
+              body permission to do what it already knows how to do.
             </p>
           </ScrollReveal>
         </div>

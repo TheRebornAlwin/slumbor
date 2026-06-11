@@ -5,11 +5,11 @@ import ScrollReveal from "@/components/ui/scroll-reveal";
 import BrandName from "@/components/ui/brand-name";
 
 const benefits = [
-  "Loosen the tension that stacks up behind your eyes",
-  "Quiet the screen-fatigue headache before it lands",
-  "Let your racing mind settle into the dark and the quiet",
-  "Fall asleep without forcing it, supplements, or a phone",
-  "Wake up without that heavy-eyed, run-over feeling",
+  "Loosen the tension that builds up behind your eyes after a long day",
+  "Ease off a screen headache before it has the chance to settle in",
+  "Let a racing mind slow down enough to actually drift off",
+  "Fall asleep on your own, without supplements, apps, or your phone",
+  "Wake up feeling clear instead of heavy and run down",
 ];
 
 export default function BenefitsHero() {
@@ -20,18 +20,19 @@ export default function BenefitsHero() {
         <div className="text-center md:text-left order-1">
           <ScrollReveal>
             <h2 className="text-2xl md:text-3xl font-heading font-medium text-heading tracking-tight mb-6">
-              The benefits:
+              What it actually does for you.
             </h2>
             <p className="text-slate leading-relaxed mb-4">
-              By the time you sit down at night, your nervous system has been running
-              flat-out for fourteen hours. Tension behind the eyes. Sinus pressure that
-              won&apos;t quit. A brain that picks now to rehearse every awkward thing you
-              said this week.
+              By the time you finally sit down at night, your nervous system has been
+              running hard for fourteen hours straight, and your body shows it. There is
+              the tension sitting behind your eyes, the sinus pressure that never quite
+              lets up, and a brain that picks this exact moment to replay every awkward
+              thing you said all week.
             </p>
             <p className="text-slate leading-relaxed mb-8">
-              Tonight can go differently. With{" "}
-              <BrandName tm className="text-heading" /> your body finally gets the
-              off-switch it&apos;s been asking for:
+              Tonight can go differently. A few quiet minutes with{" "}
+              <BrandName tm className="text-heading" /> give your body the off-switch it
+              has been asking for, so you can:
             </p>
             <div className="flex flex-col items-center md:items-start space-y-3">
               {benefits.map((benefit, i) => (

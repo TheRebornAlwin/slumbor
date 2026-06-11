@@ -7,17 +7,17 @@ const steps = [
   {
     step: 1,
     image: "/products/step1.webp",
-    description: "Slip the mask on. Adjust the strap until it feels held, not tight.",
+    description: "Slip the mask on and adjust the strap until it feels held in place, not tight.",
   },
   {
     step: 2,
     image: "/products/step2.webp",
-    description: "Press the button. Choose warmth, or pulse, or both. Dial it to what tonight needs.",
+    description: "Press the button and choose warmth, pulse, or both, then dial it in to whatever tonight calls for.",
   },
   {
     step: 3,
     image: "/products/step3.webp",
-    description: "Lie back. Breathe out. Most people are asleep before the timer ends.",
+    description: "Lie back and let your breath slow down. Most people are asleep before the timer even ends.",
   },
 ];
 
