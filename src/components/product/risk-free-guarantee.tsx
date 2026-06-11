@@ -29,9 +29,8 @@ export default function RiskFreeGuarantee() {
             </h2>
 
             <p className="text-slate leading-relaxed mb-8 max-w-md mx-auto">
-              Then you send it back and we refund every cent, and you still keep the
-              bonus. If you&apos;ve made it this far, you&apos;re tired of being sold to,
-              so here&apos;s the honest version.
+              If you&apos;ve made it this far, you&apos;re tired of being sold to. So
+              here&apos;s the honest version.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3.5 max-w-xl mx-auto text-left mb-8">

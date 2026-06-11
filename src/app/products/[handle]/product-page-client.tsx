@@ -330,12 +330,13 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   By 11pm your eyes are fried and your head still won&apos;t switch off.
                 </h3>
                 <p className="text-[15px] text-slate leading-relaxed mb-4 max-w-lg mx-auto md:mx-0">
-                  The <span className="font-medium text-heading"><BrandName tm /> SleepWave Pro</span> wraps your eyes in gentle warmth and a slow pulse, two signals that quietly tell your nervous system the day is finally over. The tension behind your eyes lets go, your brain stops rehearsing tomorrow, and you start to drift off. All you feel is the warmth, a soft rhythm around your eyes, and a room quiet enough to actually fall asleep in.
+                  Gentle warmth and a slow pulse. Two signals that tell your body the day
+                  is over. No music, no beeping, just quiet.
                 </p>
                 <p className="text-[15px] text-slate leading-relaxed max-w-lg mx-auto md:mx-0">
-                  Not sleeping better in two weeks? You&apos;ve got a full{" "}
+                  Not better in two weeks? You&apos;ve got{" "}
                   <span className="font-medium text-heading">six months</span> to send it
-                  back for every cent. Keep the bonus workbook either way.
+                  back for every cent. Keep the workbook either way.
                 </p>
               </div>
 

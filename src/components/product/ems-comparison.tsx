@@ -40,7 +40,7 @@ export default function EMSComparison() {
               </div>
               <h3 className="text-xl font-heading font-medium text-lavender mb-2 text-center md:text-left">Pills, apps, and the wait-it-out method</h3>
               <p className="text-sm text-muted leading-relaxed mb-4 text-center md:text-left">
-                Melatonin tends to work once and then stops. Sleep apps keep a phone in your hand right when you should be putting it down, and a hot shower wears off within twenty minutes. None of it ever tells your nervous system that the day is actually over.
+                Melatonin fades, apps keep you on your phone, and a hot shower wears off fast. None of it tells your body the day is actually over.
               </p>
               <div className="flex items-center gap-2 text-muted justify-center md:justify-start">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -72,7 +72,7 @@ export default function EMSComparison() {
               </div>
               <h3 className="text-xl font-heading font-medium text-heading mb-2 text-center md:text-left">Warmth and a slow pulse, in silence</h3>
               <p className="text-sm text-slate leading-relaxed mb-4 text-center md:text-left">
-                Two signals your nervous system was built to respond to, given to it over fifteen quiet minutes a night. It becomes the last calm thing you do before sleep, instead of the thing you lie there fighting for.
+                Two signals your body is built to respond to, in fifteen quiet minutes a night. The last calm thing you do before sleep, instead of the thing you fight.
               </p>
               <div className="flex items-center gap-2 text-gold justify-center md:justify-start">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>

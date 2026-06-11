@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/scroll-reveal";
-import BrandName from "@/components/ui/brand-name";
 
 const benefits = [
   "Loosen the tension that builds up behind your eyes after a long day",
@@ -22,17 +21,9 @@ export default function BenefitsHero() {
             <h2 className="text-2xl md:text-3xl font-heading font-medium text-heading tracking-tight mb-6">
               What it actually does for you.
             </h2>
-            <p className="text-slate leading-relaxed mb-4">
-              By the time you finally sit down at night, your nervous system has been
-              running hard for fourteen hours straight. And your body knows it. The
-              tension sits behind your eyes, the sinus pressure never quite lets up, and
-              your brain picks this exact moment to start replaying every awkward thing
-              you said all week.
-            </p>
             <p className="text-slate leading-relaxed mb-8">
-              Tonight can go differently. A few quiet minutes with{" "}
-              <BrandName tm className="text-heading" /> give your body the off-switch it
-              has been asking for, so you can:
+              Your nervous system has been running hard for fourteen hours. A few quiet
+              minutes gives it the off-switch it&apos;s been asking for, so you can:
             </p>
             <div className="flex flex-col items-center md:items-start space-y-3">
               {benefits.map((benefit, i) => (

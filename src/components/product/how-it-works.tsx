@@ -28,7 +28,7 @@ export default function HowItWorks() {
         <ScrollReveal>
           <div className="text-center mb-14">
             <h2 className="text-2xl md:text-3xl font-heading font-medium text-heading tracking-tight">
-              The 7-minute wind-down ritual.
+              How to use it
             </h2>
           </div>
         </ScrollReveal>
