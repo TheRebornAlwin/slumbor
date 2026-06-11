@@ -4,11 +4,35 @@ import Image from "next/image";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 import BrandName from "@/components/ui/brand-name";
 
-const offerLines = [
-  "50% off the SleepWave Pro",
-  "The 14-Night Sleep Reset Workbook, a $29 value, free",
-  "A full 180-night money-back guarantee",
-  "Free US shipping",
+const offerItems = [
+  {
+    value: "50% OFF",
+    label: "the SleepWave Pro",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+    ),
+  },
+  {
+    value: "FREE",
+    label: "$29 Sleep Reset Workbook",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    ),
+  },
+  {
+    value: "180 nights",
+    label: "money-back guarantee",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+    ),
+  },
+  {
+    value: "FREE",
+    label: "US shipping",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+    ),
+  },
 ];
 
 export default function SpecialOffer() {
@@ -23,16 +47,26 @@ export default function SpecialOffer() {
             <h2 className="text-2xl md:text-3xl font-heading font-medium text-heading tracking-tight mb-5">
               Everything you need to finally sleep.
             </h2>
-            <p className="text-[15px] md:text-base text-foreground leading-relaxed max-w-xl mx-auto mb-6">
+            <p className="text-[15px] md:text-base text-foreground leading-relaxed max-w-xl mx-auto mb-8">
               <span className="text-gold font-semibold">Special offer today.</span> Try
               the SleepWave Pro risk-free at the lowest price it has ever been.
             </p>
-            <div className="inline-flex flex-col items-start gap-2.5 text-left">
-              {offerLines.map((line) => (
-                <span key={line} className="inline-flex items-center gap-2.5 text-sm md:text-[15px] text-foreground">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gold flex-shrink-0"><polyline points="20 6 9 17 4 12" /></svg>
-                  {line}
-                </span>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-3xl mx-auto">
+              {offerItems.map((item) => (
+                <div
+                  key={item.label}
+                  className="flex flex-col items-center text-center gap-2 rounded-2xl bg-gold/5 border border-gold/15 p-4 md:p-5"
+                >
+                  <div className="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+                    {item.icon}
+                  </div>
+                  <p className="font-heading text-lg md:text-xl font-semibold text-gold leading-none">
+                    {item.value}
+                  </p>
+                  <p className="text-[11px] md:text-xs text-slate leading-tight">
+                    {item.label}
+                  </p>
+                </div>
               ))}
             </div>
           </div>
