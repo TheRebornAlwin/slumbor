@@ -86,7 +86,7 @@ export default function PurchaseNotification() {
           animate={{ opacity: 1, y: 0, x: 0 }}
           exit={{ opacity: 0, y: 50 }}
           transition={{ type: "spring", damping: 25, stiffness: 200 }}
-          className="fixed bottom-4 left-1/2 -translate-x-1/2 sm:left-auto sm:right-4 sm:translate-x-0 z-40 max-w-xs w-[calc(100%-2rem)] sm:w-full"
+          className="fixed bottom-24 sm:bottom-4 left-1/2 -translate-x-1/2 sm:left-auto sm:right-4 sm:translate-x-0 z-40 max-w-xs w-[calc(100%-2rem)] sm:w-full"
         >
           <div className="bg-surface-raised rounded-xl shadow-lg border border-white/8 p-4 flex items-center gap-3 border-l-4 border-l-gold">
             <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">

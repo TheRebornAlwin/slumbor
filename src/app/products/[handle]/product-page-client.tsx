@@ -67,15 +67,29 @@ export default function ProductPageClient({ product }: { product: Product }) {
   };
 
   const mobileScrollRef = useRef<HTMLDivElement>(null);
+  const loopResetRef = useRef<number | null>(null);
 
   const handleMobileScroll = useCallback(() => {
     const container = mobileScrollRef.current;
     if (!container) return;
-    const scrollLeft = container.scrollLeft;
     const width = container.clientWidth;
-    const index = Math.round(scrollLeft / width);
-    setMobileActiveImage(index);
-  }, []);
+    const index = Math.round(container.scrollLeft / width);
+    const realCount = product.images.length;
+    setMobileActiveImage(index % realCount);
+
+    // The last slide is a clone of the first image. Once a swipe past the end
+    // settles on that clone, jump back to the real first slide so the gallery
+    // loops seamlessly.
+    if (loopResetRef.current) window.clearTimeout(loopResetRef.current);
+    if (index >= realCount) {
+      loopResetRef.current = window.setTimeout(() => {
+        const prev = container.style.scrollBehavior;
+        container.style.scrollBehavior = "auto";
+        container.scrollLeft = 0;
+        container.style.scrollBehavior = prev;
+      }, 120);
+    }
+  }, [product.images.length]);
 
   const handleStickyAddToCart = () => {
     addItem(
@@ -108,24 +122,21 @@ export default function ProductPageClient({ product }: { product: Product }) {
               className="md:hidden min-w-0 -mx-6"
             >
               <div className="relative">
-                {discountPct > 0 && mobileActiveImage === 0 && (
-                  <motion.span
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    className="absolute top-4 right-4 px-4 py-1.5 bg-gold text-navy text-sm font-medium rounded-full z-10 shadow-lg shadow-gold/20"
-                  >
-                    -{discountPct}% OFF
-                  </motion.span>
-                )}
                 <div
                   ref={mobileScrollRef}
                   onScroll={handleMobileScroll}
                   className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
                   style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
                 >
-                  {product.images.map((img, i) => (
+                  {[...product.images, product.images[0]].map((img, i) => (
                     <div key={i} className="min-w-full snap-center">
                       <div className="relative aspect-square bg-gradient-to-br from-gold-light via-surface to-gold-light overflow-hidden">
+                        {/* Badge lives inside the first image so it travels with it on swipe */}
+                        {discountPct > 0 && i === 0 && (
+                          <span className="absolute top-4 right-4 px-4 py-1.5 bg-gold text-navy text-sm font-medium rounded-full z-10 shadow-lg shadow-gold/20">
+                            -{discountPct}% OFF
+                          </span>
+                        )}
                         <Image
                           src={img}
                           alt={`${product.title} - Image ${i + 1}`}
@@ -330,13 +341,13 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   By 11pm your eyes are fried and your head still won&apos;t switch off.
                 </h3>
                 <p className="text-[15px] text-slate leading-relaxed mb-4 max-w-lg mx-auto md:mx-0">
-                  Gentle warmth and a slow pulse. Two signals that tell your body the day
-                  is over. No music, no beeping, just quiet.
+                  Gentle warmth and a slow pulse, two signals that tell your body the day
+                  is over, with no music and no beeping.
                 </p>
                 <p className="text-[15px] text-slate leading-relaxed max-w-lg mx-auto md:mx-0">
                   Not better in two weeks? You&apos;ve got{" "}
                   <span className="font-medium text-heading">six months</span> to send it
-                  back for every cent. Keep the workbook either way.
+                  back for every cent, and you keep the workbook either way.
                 </p>
               </div>
 
@@ -456,7 +467,10 @@ export default function ProductPageClient({ product }: { product: Product }) {
       <PurchaseNotification />
 
       {/* Sticky mobile ATC bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-surface border-t border-white/8 shadow-[0_-2px_10px_rgba(0,0,0,0.3)] px-4 py-3">
+      <div
+        className="fixed inset-x-0 bottom-0 z-50 md:hidden bg-surface border-t border-white/8 shadow-[0_-2px_10px_rgba(0,0,0,0.3)] px-4 py-3"
+        style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}
+      >
         <div className="flex items-center gap-3">
           <div className="flex-1 min-w-0">
             <p className="text-sm font-semibold text-heading truncate">{product.title}</p>

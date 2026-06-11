@@ -39,7 +39,7 @@ export default function DiscoverSection() {
             </p>
             <div className="flex flex-col items-center md:items-start space-y-3">
               {discoveryBullets.map((point, i) => (
-                <p key={i} className="flex gap-2 text-sm text-foreground max-w-[90%] md:max-w-none text-left">
+                <p key={i} className="inline-flex gap-2 text-sm text-foreground max-w-[90%] md:max-w-none text-left">
                   <span className="text-gold flex-shrink-0">&#8226;</span>
                   <span>{point}</span>
                 </p>
