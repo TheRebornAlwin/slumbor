@@ -44,8 +44,8 @@ export default function ScienceSection() {
             </h2>
             <div className="space-y-5 mt-2">
               {signals.map((s, i) => (
-                <div key={i} className="flex gap-4 text-left">
-                  <span className="flex-shrink-0 mt-1 text-gold">&#8226;</span>
+                <div key={i} className="flex gap-4 text-left items-center">
+                  <span className="flex-shrink-0 text-gold leading-none">&#8226;</span>
                   <p className="text-[15px] text-foreground leading-relaxed">
                     <span className="font-medium text-heading">{s.name}.</span>{" "}
                     {s.body}

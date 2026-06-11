@@ -163,7 +163,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="hidden md:block space-y-4 min-w-0 w-full max-w-[440px] mx-auto md:sticky md:top-28 md:self-start"
+              className="hidden md:block space-y-4 min-w-0 w-full max-w-[520px] mx-auto md:sticky md:top-28 md:self-start"
             >
               <div className="group relative aspect-square rounded-3xl bg-gradient-to-br from-gold-light via-surface to-gold-light border border-white/8 overflow-hidden shadow-lg">
                 {discountPct > 0 && selectedImage === 0 && (
