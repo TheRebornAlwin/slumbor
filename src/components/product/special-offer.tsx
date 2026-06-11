@@ -17,8 +17,8 @@ export default function SpecialOffer() {
               Everything you need to fall asleep tonight.
             </h2>
             <p className="text-slate text-[15px] leading-relaxed max-w-md mx-auto">
-              One simple price, a genuine bonus to help you build the routine, and a
-              full six months to decide for yourself whether it works.
+              One simple price, with a real bonus to help you build the routine. And a
+              full six months to decide for yourself whether it actually works.
             </p>
           </div>
         </ScrollReveal>

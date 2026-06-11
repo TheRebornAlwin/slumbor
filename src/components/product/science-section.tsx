@@ -43,9 +43,9 @@ export default function ScienceSection() {
               How warmth and a slow pulse walk your nervous system to sleep.
             </h2>
             <p className="text-slate leading-relaxed mb-8">
-              There are no gimmicks here and no spec sheet you have to take on faith. It
-              comes down to two signals your body was built to respond to, delivered in
-              the kind of quiet that lets them do their job.
+              No gimmicks, and nothing you have to take on faith. It really comes down
+              to two signals your body was built to respond to, given the kind of quiet
+              that actually lets them work.
             </p>
             <div className="space-y-5">
               {signals.map((s, i) => (

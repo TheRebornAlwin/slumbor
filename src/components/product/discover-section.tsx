@@ -34,9 +34,10 @@ export default function DiscoverSection() {
             </h2>
             <p className="text-slate leading-relaxed mb-5">
               <span className="font-medium text-heading">Meet</span>{" "}<BrandName tm className="text-heading" />,
-              a heated eye mask made for anyone who is tired of staring at the ceiling
-              with a fried head and a brain that refuses to quit. It works with your
-              body instead of against it, so winding down stops feeling like a fight.
+              a heated eye mask for anyone who is sick of staring at the ceiling with a
+              fried head and a brain that will not shut up. It works with your body
+              instead of fighting it. So winding down stops being the hardest part of
+              your night and starts being the easiest.
             </p>
             <div className="flex flex-col items-center md:items-start space-y-3">
               {discoveryBullets.map((point, i) => (
