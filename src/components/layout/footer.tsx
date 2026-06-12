@@ -4,7 +4,6 @@ import Link from "next/link";
 import BrandName from "@/components/ui/brand-name";
 
 const shopLinks = [
-  { href: "/shop/", label: "All Products" },
   { href: "/products/sleepwave-pro/", label: "SleepWave Pro" },
   { href: "/cart/", label: "Cart" },
 ];
