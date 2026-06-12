@@ -7,6 +7,7 @@ import { type Product, reviewDisplay } from "@/lib/data";
 import { useCart } from "@/contexts/cart-context";
 import ProductTabs from "@/components/product/product-tabs";
 import VolumeDiscounts from "@/components/product/volume-discounts";
+import OrderBumps, { ADDONS } from "@/components/product/order-bumps";
 import HowItWorks from "@/components/product/how-it-works";
 import EMSComparison from "@/components/product/ems-comparison";
 import ComparisonTable from "@/components/product/comparison-table";
@@ -33,6 +34,18 @@ export default function ProductPageClient({ product }: { product: Product }) {
   const [selectedTier, setSelectedTier] = useState(0);
   const [addedToCart, setAddedToCart] = useState(false);
   const [stickyAddedToCart, setStickyAddedToCart] = useState(false);
+  const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
+
+  const toggleAddon = (id: string) =>
+    setSelectedAddons((prev) =>
+      prev.includes(id) ? prev.filter((a) => a !== id) : [...prev, id]
+    );
+
+  const addSelectedAddons = () => {
+    ADDONS.filter((a) => selectedAddons.includes(a.id)).forEach((a) =>
+      addItem({ id: a.id, title: a.title, price: a.price, image: a.image }, 1)
+    );
+  };
 
   useEffect(() => {
     product.images.forEach((src) => {
@@ -62,6 +75,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
       },
       quantity * effectiveQty
     );
+    addSelectedAddons();
     setAddedToCart(true);
     setTimeout(() => setAddedToCart(false), 2000);
   };
@@ -357,6 +371,10 @@ export default function ProductPageClient({ product }: { product: Product }) {
                   selectedTier={selectedTier}
                   onSelect={handleTierSelect}
                 />
+              </div>
+
+              <div className="mb-8">
+                <OrderBumps selected={selectedAddons} onToggle={toggleAddon} />
               </div>
 
               {/* Quantity + ATC */}
