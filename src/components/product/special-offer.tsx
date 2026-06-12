@@ -74,7 +74,7 @@ export default function SpecialOffer() {
 
         <ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 items-center w-full">
-            <div className="rounded-3xl overflow-hidden border border-white/8 shadow-lg">
+            <div className="rounded-3xl overflow-hidden border border-white/8 shadow-lg w-full md:max-w-[60%] md:mx-auto">
               <Image
                 src="/products/what-you-get-left.webp"
                 alt="The SleepWave Pro mask and the 14-Night Sleep Reset Workbook"
