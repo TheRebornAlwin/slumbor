@@ -17,13 +17,8 @@ export default function CartPage() {
     setProtectionPlan,
   } = useCart();
 
-  const handleCheckout = async () => {
-    try {
-      const url = await createCheckout(items);
-      window.location.href = url;
-    } catch (err) {
-      console.error("Checkout error:", err);
-    }
+  const handleCheckout = () => {
+    window.location.href = createCheckout(items, protectionPlan);
   };
 
   return (

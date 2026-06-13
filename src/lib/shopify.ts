@@ -1,5 +1,11 @@
 const SHOPIFY_DOMAIN = "slumbor.myshopify.com";
 
+// Shopify variant IDs (from the product URLs' ?variant= value).
+const VARIANT_IDS: Record<string, string> = {
+  "sleepwave-pro": "58281487565181",
+};
+const PROTECTION_PLAN_VARIANT = "58281499689341";
+
 interface CartItem {
   id: string;
   title: string;
@@ -8,28 +14,34 @@ interface CartItem {
   image: string;
 }
 
-let cachedVariantId: string | null = null;
+// Builds a Shopify cart permalink, e.g.
+//   https://slumbor.myshopify.com/cart/58281487565181:2,58281499689341:1?discount=SAVE10
+// which drops the shopper straight into Shopify's cart/checkout with the right
+// items, the protection plan (when selected), and the matching bundle discount.
+export function createCheckout(
+  items: CartItem[],
+  includeProtectionPlan = false
+): string {
+  const lines = items
+    .map((i) => {
+      const variant = VARIANT_IDS[i.id];
+      return variant ? `${variant}:${i.quantity}` : null;
+    })
+    .filter((line): line is string => line !== null);
 
-async function getVariantId(): Promise<string> {
-  if (cachedVariantId) return cachedVariantId;
-
-  const response = await fetch(`https://${SHOPIFY_DOMAIN}/products.json?limit=10`);
-  const data = await response.json();
-
-  const product = data.products?.[0];
-
-  if (!product?.variants?.[0]?.id) {
-    throw new Error("Could not find product variant");
+  if (includeProtectionPlan && lines.length > 0) {
+    lines.push(`${PROTECTION_PLAN_VARIANT}:1`);
   }
 
-  cachedVariantId = String(product.variants[0].id);
-  return cachedVariantId;
-}
+  let url = `https://${SHOPIFY_DOMAIN}/cart/${lines.join(",")}`;
 
-export async function createCheckout(items: CartItem[]): Promise<string> {
-  const variantId = await getVariantId();
+  // Carry the bundle discount over to Shopify via a code (create SAVE10 / SAVE20
+  // in Shopify Discounts). Invalid/missing codes are simply ignored by Shopify.
+  const maskQty = items
+    .filter((i) => i.id === "sleepwave-pro")
+    .reduce((sum, i) => sum + i.quantity, 0);
+  const discountCode = maskQty >= 3 ? "SAVE20" : maskQty >= 2 ? "SAVE10" : "";
+  if (discountCode) url += `?discount=${discountCode}`;
 
-  const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
-
-  return `https://${SHOPIFY_DOMAIN}/cart/${variantId}:${totalQuantity}`;
+  return url;
 }
