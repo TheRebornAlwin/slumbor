@@ -7,6 +7,7 @@ import { type Product, reviewDisplay } from "@/lib/data";
 import { useCart } from "@/contexts/cart-context";
 import ProductTabs from "@/components/product/product-tabs";
 import VolumeDiscounts from "@/components/product/volume-discounts";
+import OfferCountdown from "@/components/product/offer-countdown";
 import HowItWorks from "@/components/product/how-it-works";
 import EMSComparison from "@/components/product/ems-comparison";
 import ComparisonTable from "@/components/product/comparison-table";
@@ -267,7 +268,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 <span className="text-sm text-slate">{reviewDisplay.avg} ({reviewDisplay.count.toLocaleString()} reviews)</span>
               </div>
 
-              <div className="flex items-center gap-3 mb-5 justify-center md:justify-start flex-wrap">
+              <div className="flex items-center gap-3 mb-2.5 justify-center md:justify-start flex-wrap">
                 <span className="text-3xl md:text-4xl font-medium text-gold">
                   ${product.price.toFixed(2)}
                 </span>
@@ -277,6 +278,10 @@ export default function ProductPageClient({ product }: { product: Product }) {
                 <span className="px-3 py-1 rounded-full bg-gold-light text-gold text-xs font-medium">
                   SAVE {discountPct}%
                 </span>
+              </div>
+
+              <div className="mb-6">
+                <OfferCountdown />
               </div>
 
               {/* Benefit Badges */}
