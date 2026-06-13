@@ -29,6 +29,17 @@ export const offer = {
   shipping: "Free US shipping",
 };
 
+export const SLEEPWAVE_PRO_ID = "sleepwave-pro";
+
+// Bundle discount for the SleepWave Pro, driven purely by quantity:
+// 2 = 10% off, 3 or more = 20% off. Used in the buy box and the cart so the
+// price always matches the quantity, even when it changes in the cart.
+export function bundleDiscount(qty: number): number {
+  if (qty >= 3) return 20;
+  if (qty === 2) return 10;
+  return 0;
+}
+
 export const heroProduct: Product = {
   id: "sleepwave-pro",
   handle: "sleepwave-pro",

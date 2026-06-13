@@ -40,11 +40,9 @@ export default function ProductPageClient({ product }: { product: Product }) {
     });
   }, [product.images]);
 
-  // Quantity is the single source of truth. The bundle discount follows it:
-  // 1 = full price, 2 = 10% off, 3+ = 20% off.
+  // Quantity is the single source of truth. The cart recomputes the bundle
+  // discount from quantity (2 = 10% off, 3+ = 20% off), so we store the base price.
   const tierQuantities = [1, 2, 3];
-  const discount = quantity >= 3 ? 20 : quantity === 2 ? 10 : 0;
-  const effectivePrice = product.price * (1 - discount / 100);
   const selectedTier = quantity >= 3 ? 2 : quantity === 2 ? 1 : 0;
 
   const handleTierSelect = (tier: number) => {
@@ -56,7 +54,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
       {
         id: product.id,
         title: product.title,
-        price: effectivePrice,
+        price: product.price,
         image: product.images[0],
       },
       quantity

@@ -16,6 +16,8 @@ export default function CartDrawer() {
     total,
     protectionPlan,
     setProtectionPlan,
+    unitPrice,
+    lineDiscount,
   } = useCart();
 
   const handleCheckout = () => {
@@ -94,9 +96,21 @@ export default function CartDrawer() {
                         <h3 className="text-sm font-semibold text-heading truncate">
                           {item.title}
                         </h3>
-                        <p className="text-sm text-gold font-medium">
-                          ${item.price.toFixed(2)}
-                        </p>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <p className="text-sm text-gold font-medium">
+                            ${unitPrice(item).toFixed(2)}
+                          </p>
+                          {lineDiscount(item) > 0 && (
+                            <>
+                              <span className="text-xs text-lavender line-through">
+                                ${item.price.toFixed(2)}
+                              </span>
+                              <span className="px-2 py-0.5 text-[10px] font-bold bg-gold text-navy rounded-full">
+                                {lineDiscount(item)}% OFF
+                              </span>
+                            </>
+                          )}
+                        </div>
                         <div className="flex items-center gap-2 mt-2">
                           <button
                             onClick={() =>

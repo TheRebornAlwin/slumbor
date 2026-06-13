@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
+import { SLEEPWAVE_PRO_ID, bundleDiscount } from "@/lib/data";
 
 export interface CartItem {
   id: string;
@@ -31,6 +32,10 @@ interface CartContextType {
   protectionPlan: boolean;
   setProtectionPlan: (value: boolean) => void;
   total: number;
+  // Live unit price for a line (applies the bundle discount to the mask by qty).
+  unitPrice: (item: CartItem) => number;
+  // Discount percent currently applied to a line (0 when none).
+  lineDiscount: (item: CartItem) => number;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -113,9 +118,22 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     setItems([]);
   }, []);
 
+  // The stored item.price is the full (base) price. The mask's effective price
+  // is recomputed from its current quantity so the cart always stays accurate.
+  const lineDiscount = useCallback(
+    (item: CartItem) =>
+      item.id === SLEEPWAVE_PRO_ID ? bundleDiscount(item.quantity) : 0,
+    []
+  );
+  const unitPrice = useCallback(
+    (item: CartItem) =>
+      Math.round(item.price * (1 - lineDiscount(item) / 100) * 100) / 100,
+    [lineDiscount]
+  );
+
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const subtotal = items.reduce(
-    (sum, item) => sum + item.price * item.quantity,
+    (sum, item) => sum + unitPrice(item) * item.quantity,
     0
   );
   const planSelected = protectionPlan && items.length > 0;
@@ -136,6 +154,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         protectionPlan,
         setProtectionPlan,
         total,
+        unitPrice,
+        lineDiscount,
       }}
     >
       {children}
