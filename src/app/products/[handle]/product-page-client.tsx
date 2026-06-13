@@ -30,7 +30,6 @@ export default function ProductPageClient({ product }: { product: Product }) {
   const [selectedImage, setSelectedImage] = useState(0);
   const [mobileActiveImage, setMobileActiveImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const [selectedTier, setSelectedTier] = useState(0);
   const [addedToCart, setAddedToCart] = useState(false);
   const [stickyAddedToCart, setStickyAddedToCart] = useState(false);
 
@@ -41,14 +40,14 @@ export default function ProductPageClient({ product }: { product: Product }) {
     });
   }, [product.images]);
 
-  const tierDiscounts = [0, 10, 20];
+  // Quantity is the single source of truth. The bundle discount follows it:
+  // 1 = full price, 2 = 10% off, 3+ = 20% off.
   const tierQuantities = [1, 2, 3];
-  const discount = tierDiscounts[selectedTier];
+  const discount = quantity >= 3 ? 20 : quantity === 2 ? 10 : 0;
   const effectivePrice = product.price * (1 - discount / 100);
-  const effectiveQty = tierQuantities[selectedTier];
+  const selectedTier = quantity >= 3 ? 2 : quantity === 2 ? 1 : 0;
 
   const handleTierSelect = (tier: number) => {
-    setSelectedTier(tier);
     setQuantity(tierQuantities[tier]);
   };
 
@@ -60,7 +59,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
         price: effectivePrice,
         image: product.images[0],
       },
-      quantity * effectiveQty
+      quantity
     );
     setAddedToCart(true);
     setTimeout(() => setAddedToCart(false), 2000);

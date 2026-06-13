@@ -22,16 +22,20 @@ export function createCheckout(
   items: CartItem[],
   includeProtectionPlan = false
 ): string {
-  const lines = items
+  const productLines = items
     .map((i) => {
       const variant = VARIANT_IDS[i.id];
       return variant ? `${variant}:${i.quantity}` : null;
     })
     .filter((line): line is string => line !== null);
 
-  if (includeProtectionPlan && lines.length > 0) {
+  // Shopify lists the last-added line on top, so put the protection plan first in
+  // the permalink and the product last, making the product appear first at checkout.
+  const lines: string[] = [];
+  if (includeProtectionPlan && productLines.length > 0) {
     lines.push(`${PROTECTION_PLAN_VARIANT}:1`);
   }
+  lines.push(...productLines);
 
   let url = `https://${SHOPIFY_DOMAIN}/cart/${lines.join(",")}`;
 
