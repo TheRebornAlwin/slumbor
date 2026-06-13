@@ -2,13 +2,21 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useCart } from "@/contexts/cart-context";
+import { useCart, PROTECTION_PLAN } from "@/contexts/cart-context";
 import { createCheckout } from "@/lib/shopify";
 import MagneticButton from "@/components/ui/magnetic-button";
 
 export default function CartDrawer() {
-  const { items, isOpen, setIsOpen, removeItem, updateQuantity, subtotal } =
-    useCart();
+  const {
+    items,
+    isOpen,
+    setIsOpen,
+    removeItem,
+    updateQuantity,
+    total,
+    protectionPlan,
+    setProtectionPlan,
+  } = useCart();
 
   const handleCheckout = async () => {
     try {
@@ -130,10 +138,40 @@ export default function CartDrawer() {
 
             {items.length > 0 && (
               <div className="p-6 border-t border-white/5">
+                <label className="flex items-start gap-3 mb-4 cursor-pointer rounded-xl border border-gold/20 bg-gold/[0.05] p-3">
+                  <input
+                    type="checkbox"
+                    checked={protectionPlan}
+                    onChange={(e) => setProtectionPlan(e.target.checked)}
+                    className="sr-only"
+                  />
+                  <span
+                    className={`mt-0.5 w-5 h-5 rounded-md border-2 flex items-center justify-center flex-shrink-0 transition-all ${
+                      protectionPlan ? "border-gold bg-gold" : "border-muted"
+                    }`}
+                  >
+                    {protectionPlan && (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0E1626" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                    )}
+                  </span>
+                  <span className="flex-1 min-w-0">
+                    <span className="flex items-baseline justify-between gap-3">
+                      <span className="text-sm font-semibold text-heading">
+                        {PROTECTION_PLAN.title}
+                      </span>
+                      <span className="text-sm font-bold text-gold flex-shrink-0">
+                        +${PROTECTION_PLAN.price.toFixed(2)}
+                      </span>
+                    </span>
+                    <span className="block text-xs text-slate leading-snug mt-1">
+                      Covers accidental damage for 3 years. One free replacement, no questions.
+                    </span>
+                  </span>
+                </label>
                 <div className="flex items-center justify-between mb-4">
                   <span className="font-medium text-muted">Subtotal</span>
                   <span className="text-lg font-bold text-heading">
-                    ${subtotal.toFixed(2)}
+                    ${total.toFixed(2)}
                   </span>
                 </div>
                 <MagneticButton

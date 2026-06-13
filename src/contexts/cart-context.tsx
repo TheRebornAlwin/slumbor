@@ -10,6 +10,14 @@ export interface CartItem {
   image: string;
 }
 
+// Tiny, auto-selected order bump shown on the cart. Pure margin, the shopper can
+// uncheck it. Backed by a real Shopify variant when the store is wired up.
+export const PROTECTION_PLAN = {
+  id: "protection-plan-3yr",
+  title: "3-Year Protection Plan",
+  price: 2.99,
+};
+
 interface CartContextType {
   items: CartItem[];
   isOpen: boolean;
@@ -20,6 +28,9 @@ interface CartContextType {
   clearCart: () => void;
   totalItems: number;
   subtotal: number;
+  protectionPlan: boolean;
+  setProtectionPlan: (value: boolean) => void;
+  total: number;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -28,6 +39,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [protectionPlan, setProtectionPlan] = useState(true);
 
   useEffect(() => {
     const saved = localStorage.getItem("slumbor-cart");
@@ -38,6 +50,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         localStorage.removeItem("slumbor-cart");
       }
     }
+    const savedPlan = localStorage.getItem("slumbor-protection-plan");
+    if (savedPlan === "0") setProtectionPlan(false);
     setMounted(true);
   }, []);
 
@@ -46,6 +60,12 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       localStorage.setItem("slumbor-cart", JSON.stringify(items));
     }
   }, [items, mounted]);
+
+  useEffect(() => {
+    if (mounted) {
+      localStorage.setItem("slumbor-protection-plan", protectionPlan ? "1" : "0");
+    }
+  }, [protectionPlan, mounted]);
 
   const addItem = useCallback(
     (item: Omit<CartItem, "quantity">, quantity: number = 1) => {
@@ -96,6 +116,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+  const planSelected = protectionPlan && items.length > 0;
+  const total = subtotal + (planSelected ? PROTECTION_PLAN.price : 0);
 
   return (
     <CartContext.Provider
@@ -109,6 +131,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         clearCart,
         totalItems,
         subtotal,
+        protectionPlan,
+        setProtectionPlan,
+        total,
       }}
     >
       {children}
