@@ -43,10 +43,10 @@ export default function OfferCountdown() {
   const totalMinutes = Math.floor(remaining / 60000);
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
-  const label = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
+  const mm = String(minutes).padStart(2, "0");
 
   return (
-    <div className="flex items-center gap-1.5 text-xs text-gold/90 justify-center md:justify-start">
+    <div className="flex items-center gap-1.5 text-xs text-red-400 justify-center md:justify-start">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="13"
@@ -63,7 +63,12 @@ export default function OfferCountdown() {
         <polyline points="12 6 12 12 16 14" />
       </svg>
       <span>
-        Discount ends in <span className="font-semibold">{label}</span>
+        Discount ends in{" "}
+        <span className="font-semibold tabular-nums">
+          {hours}
+          <span className="blink-colon">:</span>
+          {mm}
+        </span>
       </span>
     </div>
   );
