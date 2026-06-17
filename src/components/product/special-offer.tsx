@@ -76,9 +76,9 @@ export default function SpecialOffer() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 items-center w-full">
             <div className="rounded-3xl overflow-hidden border border-white/8 shadow-lg w-full md:max-w-[60%] md:mx-auto">
               <Image
-                src="/products/what-you-get-left.webp"
+                src="/products/what-you-get-left-v2.webp"
                 alt="The SleepWave Pro mask and the 14-Night Sleep Reset Workbook"
-                width={960}
+                width={1200}
                 height={1200}
                 className="w-full h-auto object-cover"
               />
