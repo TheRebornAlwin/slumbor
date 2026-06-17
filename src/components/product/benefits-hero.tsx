@@ -16,7 +16,7 @@ export default function BenefitsHero() {
     <section className="py-20 md:py-28 px-6 bg-surface">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
         {/* Text */}
-        <div className="text-center md:text-left order-1">
+        <div className="text-center md:text-left order-2 md:order-1">
           <ScrollReveal>
             <h2 className="text-2xl md:text-3xl font-heading font-medium text-heading tracking-tight mb-6">
               What it actually does for you.
@@ -37,7 +37,7 @@ export default function BenefitsHero() {
         </div>
 
         {/* Image */}
-        <div className="order-2">
+        <div className="order-1 md:order-2">
           <ScrollReveal delay={0.1}>
             <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/8 shadow-lg">
               <Image

@@ -32,7 +32,6 @@ export default function ProductPageClient({ product }: { product: Product }) {
   const [mobileActiveImage, setMobileActiveImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [addedToCart, setAddedToCart] = useState(false);
-  const [stickyAddedToCart, setStickyAddedToCart] = useState(false);
 
   useEffect(() => {
     product.images.forEach((src) => {
@@ -88,20 +87,6 @@ export default function ProductPageClient({ product }: { product: Product }) {
       }, 120);
     }
   }, [product.images.length]);
-
-  const handleStickyAddToCart = () => {
-    addItem(
-      {
-        id: product.id,
-        title: product.title,
-        price: product.price,
-        image: product.images[0],
-      },
-      1
-    );
-    setStickyAddedToCart(true);
-    setTimeout(() => setStickyAddedToCart(false), 2000);
-  };
 
   const discountPct = Math.round(
     ((product.compareAtPrice - product.price) / product.compareAtPrice) * 100
@@ -453,8 +438,8 @@ export default function ProductPageClient({ product }: { product: Product }) {
       <BenefitsHero />
       <ReliefIntro />
       <DiscoverSection />
-      <ScienceSection />
       <PerfectFor />
+      <ScienceSection />
       <FeaturesLove />
       <HowItWorks />
       <EMSComparison />
@@ -467,26 +452,6 @@ export default function ProductPageClient({ product }: { product: Product }) {
       <ProductReviews />
 
       <PurchaseNotification />
-
-      {/* Sticky mobile ATC bar */}
-      <div
-        className="fixed inset-x-0 bottom-0 z-50 md:hidden bg-surface border-t border-white/8 shadow-[0_-2px_10px_rgba(0,0,0,0.3)] px-4 py-3"
-        style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}
-      >
-        <div className="flex items-center gap-3">
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-semibold text-heading truncate">{product.title}</p>
-            <p className="text-sm font-bold text-gold">${product.price.toFixed(2)}</p>
-          </div>
-          <button
-            onClick={handleStickyAddToCart}
-            className="flex-shrink-0 px-6 h-10 rounded-full font-semibold text-sm bg-gold text-navy hover:bg-gold-dark transition-all duration-200 cursor-pointer"
-          >
-            {stickyAddedToCart ? "Added!" : "Add to Cart"}
-          </button>
-        </div>
-      </div>
-      <div className="h-16 md:hidden" />
     </>
   );
 }

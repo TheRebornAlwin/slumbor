@@ -43,7 +43,8 @@ export default function OfferCountdown() {
   const totalMinutes = Math.floor(remaining / 60000);
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
-  const mm = String(minutes).padStart(2, "0");
+  const hourLabel = `${hours} ${hours === 1 ? "hour" : "hours"}`;
+  const minuteLabel = `${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
 
   return (
     <div className="flex items-center gap-1.5 text-xs text-red-400 justify-center md:justify-start">
@@ -65,9 +66,7 @@ export default function OfferCountdown() {
       <span>
         Discount ends in{" "}
         <span className="font-semibold tabular-nums">
-          {hours}
-          <span className="blink-colon">:</span>
-          {mm}
+          {hourLabel} {minuteLabel}
         </span>
       </span>
     </div>
