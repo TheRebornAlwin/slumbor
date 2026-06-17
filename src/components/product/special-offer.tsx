@@ -100,7 +100,7 @@ export default function SpecialOffer() {
           <div className="mt-14 text-center">
             <div className="flex items-end justify-center gap-4">
               <span className="text-2xl text-lavender line-through leading-none mb-1">
-                $197.98
+                $243
               </span>
               <span className="font-heading text-5xl md:text-6xl font-medium text-gold leading-none">
                 $69.99
