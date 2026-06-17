@@ -53,7 +53,7 @@ export const heroProduct: Product = {
     "/products/p1.webp",
     "/products/p2.webp",
     "/products/p3.webp",
-    "/products/p4.webp",
+    "/products/p4-v2.webp",
     "/products/p5.webp",
     "/products/p6.webp",
     "/products/p7.webp",
