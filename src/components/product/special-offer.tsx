@@ -85,7 +85,7 @@ export default function SpecialOffer() {
             </div>
             <div className="rounded-3xl overflow-hidden border border-white/8 shadow-lg">
               <Image
-                src="/products/what-you-get-right.webp"
+                src="/products/what-you-get-right-v2.webp"
                 alt="Everything included: free shipping, the bonus workbook, and the 180-night guarantee"
                 width={1200}
                 height={900}
