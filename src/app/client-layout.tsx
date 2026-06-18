@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { CartProvider } from "@/contexts/cart-context";
 import LoadingScreen from "@/components/layout/loading-screen";
@@ -14,8 +14,15 @@ import CartDrawer from "@/components/layout/cart-drawer";
 
 function MetaPixelPageView() {
   const pathname = usePathname();
+  const firstRun = useRef(true);
 
   useEffect(() => {
+    // The base snippet in <head> already fires PageView on the initial load,
+    // so skip the first run and only track subsequent client-side navigations.
+    if (firstRun.current) {
+      firstRun.current = false;
+      return;
+    }
     if (typeof window !== "undefined" && typeof window.fbq === "function") {
       window.fbq("track", "PageView");
     }

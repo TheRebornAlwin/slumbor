@@ -40,6 +40,19 @@ export default function ProductPageClient({ product }: { product: Product }) {
     });
   }, [product.images]);
 
+  // Meta Pixel: track a product view for catalog matching and retargeting.
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", "ViewContent", {
+        content_name: product.title,
+        content_ids: [product.id],
+        content_type: "product",
+        value: product.price,
+        currency: "USD",
+      });
+    }
+  }, [product.id, product.title, product.price]);
+
   // Quantity is the single source of truth. The cart recomputes the bundle
   // discount from quantity (2 = 10% off, 3+ = 20% off), so we store the base price.
   const tierQuantities = [1, 2, 3];
